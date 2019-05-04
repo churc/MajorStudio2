@@ -32,7 +32,7 @@
 d3.json("data/allracejobtypespercorderedtot.json").then((datapercent) => {
 //   dataWrangling(datapercent);  // called later in the dateWrangling function
    svgPlot21(datapercent); 
-  d3.json("alljobtypes.json").then((datastaff) => {
+  d3.json("data/alljobtypes.json").then((datastaff) => {
 //////for data by jobtype
     // svgPlot22(datastaff);
   });
