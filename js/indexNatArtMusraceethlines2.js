@@ -1,6 +1,6 @@
-////National Art Museum Staff Survey Intellectual Leadership Positions Only
+////National Art Museum Staff Survey Intellectual Leadership Positions 
 ////by number 2015 and 2018 from 2018 report survey
-////numbers, race and ethnicity, increased hiring 
+////numbers, race and ethnicity increased hiring 
 
 			d3.json("data/2018artmus_intLeadershiprace.json").then((data) => {
 				// console.log(data);
@@ -157,10 +157,11 @@ var n = 6;
 							var color = "turquoise";
 							return color;								
 						} else {
-							var color = "yellow";
+							var color = "gold";
 							return color;								
 						}
 					})
+					.style("opacity", 0.65)
 			  // position the circles right where the path elements end
 			  .attr('cy', (d, i) => { //// d is shorthand for element in the data and i is index
 						return i * 33;
@@ -183,15 +184,15 @@ var n = 6;
 				// 	  	title2.text(d.year15)
 				// 	  	d3.select(j[i])
 				// 	  	.style('fill', 'pink')
-    		//           .style('opacity', '.5');
+    //           .style('opacity', '.5');
 				// 		})
-	  		 //     .on('mouseout', (d, i,j) => {
-			  //           // console.log(d);
-			  //           title2.text((d) => { return "NYC Museum Staff"; });
-			  //     	 d3.select(j[i])
-					// 	  	.style('fill', 'blue')
-					// 	  	 .style('opacity', '1');
-					// 		})
+	   //     .on('mouseout', (d, i,j) => {
+		  //           // console.log(d);
+		  //           title2.text((d) => { return "NYC Museum Staff"; });
+		  //     	 d3.select(j[i])
+				// 	  	.style('fill', 'blue')
+				// 	  	 .style('opacity', '1');
+				// 		})
 
 
 				////number each bar 
@@ -207,7 +208,7 @@ var numlabel =		bars1.append('text')
 					.style("font-size", "60%")
 					.style('fill', 'white') ///////numbers on top of bars
 					.attr("text-anchor", "middle")
-				.attr("transform", "translate(30, 4)")
+				  .attr("transform", "translate(30, 4)")
 			
 					
 
@@ -261,6 +262,13 @@ var numlabel =		bars1.append('text')
 				// 	);
 	
 
+			// let heading = g.append('text')
+			// 		// .text('National Art Museum Staff Survey Intellectual Leadership Positions, Total Hires')
+			// 		.text('National Art Museum Staff Survey Intellectual Leadership Positions, Total Hires')
+			// 		.attr('x', -margin.left/2)
+			// 		.attr('y', height+margin.top+margin.top/0.5)
+			// 		.attr('font-size', '90%');
+
 			let title = g.append('text')
 					.text('Intellectual Leadership Positions, National Art Museum Staff')
 					.attr('x', 0)
@@ -275,11 +283,18 @@ var numlabel =		bars1.append('text')
 					.attr('font-size', '1.8em');
 					
 			let heading2 = g.append('text')
-					.text('Number of total hires - excluding white, non-Hispanic')
+					// .text('excluding white,')
+					.text('curators, educators, museum leadership, including executive positions, conservators')
 					.attr('x', 0)
 					.attr('y', -margin.bottom/1.3)
-					.attr('font-size', '1em')
+					.attr('font-size', '0.98em')
 					.style("fill", "#f5f9f4");
+
+			let title2 = g.append('text')
+					// .text('non-Hispanic')
+					.attr('x', -margin.left)
+					.attr('y', height+margin.top/0.5)
+					.attr('font-size', '70%');
 
 /////==================
 
@@ -332,13 +347,13 @@ var n = 6;
 					 // 	title2.text(d[i].year15)
 					 // 	d3.select(j[i])
 					 // 	.style('fill', 'blue')
-				      	//     .style('opacity', '.5');
-										// })
-					     //   .on('mouseout', (d, i,j) => {
-						    //         // console.log(d);
-						    //         title2.text((d) => { return ""; });
-						    //   	 d3.select(j[i])
-					// 	.style('fill', 'sienna')
+      //         .style('opacity', '.5');
+						// })
+	     //   .on('mouseout', (d, i,j) => {
+		    //         // console.log(d);
+		    //         title2.text((d) => { return ""; });
+		    //   	 d3.select(j[i])
+					 // 	.style('fill', 'sienna')
 					 // 	 .style('opacity', '1');
 						// })
 	        	
@@ -363,20 +378,18 @@ var n = 6;
 							var color = "turquoise";
 							return color;								
 						} else {
-							var color = "yellow";
+							var color = "gold";
 							return color;								
 						}
 					})
-			  
-			  
-			  
-			  // position the circles right where the path elements end
-			  .attr('cy', (d, i) => { //// d is shorthand for element in the data and i is index
-						return i * 33;
-					})
-			  .attr('cx', (d,i) => { 
-			  	return  xScale5(d.year18); 
-			  })
+					.style("opacity", 0.65)
+				  // position the circles right where the path elements end
+				  .attr('cy', (d, i) => { 
+							return i * 33;
+						})
+				  .attr('cx', (d,i) => { 
+				  	return  xScale5(d.year18); 
+				  })
 	
 
 			// /////add transparent rect on top so can select bars more easily
@@ -485,17 +498,16 @@ var numlabel = bars3.append('text')
 	
 					
 			let heading23 = g2.append('text')
-					// .text('excluding white,')
-					.attr('x', -margin.left/1.4)
-					.attr('y', height+margin.top/0.7)
-					.attr('font-size', '0.8em');
+					.text('Number of total hires, excluding white, non-Hispanic. Repeat survey participants')
+					// .style("fill", "#f5f9f4")
+					.attr('x', 0)
+					.attr('y', -margin.top*2.78)
+					.attr('font-size', '1em');
 
 			let title23 = g2.append('text')
-					.text('excluding white, non-Hispanic')
+					// .text('excluding white, non-Hispanic')
 					.attr('x', -margin.left/1.44)
 					.attr('y', height+margin.top/0.5)
 					.attr('font-size', '0.9em');
-					
 
 };
-
