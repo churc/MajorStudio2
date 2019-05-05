@@ -428,11 +428,9 @@ main {
   width: auto;
   display: flex;
   padding-top: 0;
-  border-bottom: 1px dashed #f4c6bd;
 }
 #chartsbubblemain{
-  /*max-width: 1200px;*/
-  /*height: auto;*/
+  margin-top: 0;
   max-height: 870px;
   width: auto;
   display: flex;
