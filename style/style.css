@@ -407,7 +407,7 @@ main {
   margin: 2em auto;
   display: flex;
   border: 0;
-  border-bottom: 1px dashed #f4c6bd;
+  border-bottom: 1px dashed #A9A9A9;
 }
 
 .main2col2{
@@ -415,7 +415,7 @@ main {
   margin: 2em auto;
   display: flex;
   border: 0;
-  border-top: 1px dashed #f4c6bd;
+  border-top: 1px dashed #A9A9A9;
   padding-top: 4em;
 }
 
@@ -489,13 +489,13 @@ article {
   /*border-bottom:2px solid black;*/
   border-style: groove;
   /*border-bottom: 1.5px dashed #9fbfcc;*/
-  border-bottom: 1px dashed #f4c6bd;
+  border-bottom: 1px dashed #A9A9A9;
   padding-bottom: 1em;
 }
 
 .dashline {
   border: 0;
-  border-bottom: 1px dashed #f4c6bd;
+  border-bottom: 1px dashed #A9A9A9;
   /*border-bottom: 1.5px dashed #9fbfcc;*/
 }
 
