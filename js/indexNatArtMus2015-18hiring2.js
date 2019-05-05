@@ -1,6 +1,6 @@
 ///National Art Museum 2018 staff data from 2018 staff survey report
-// intellectual leadership positions new hiring since 2014
-/////// parallel lines comparing new hiring by curators / educators and by museum leadership incl exec / conservators
+// intellectual leadership positions new hiring since 2014 percentages
+//// parallel lines comparing new hiring by curators / educators and by museum leadership incl exec / conservators
 
              
                     
@@ -17,7 +17,7 @@
 ////Race/Ethnicity 
 
 
-	let margin = {top: 125, right: 140, bottom: 180, left: 5};
+	let margin = {top: 125, right: 35, bottom: 180, left: 115};
 		
 			let width = 990 - margin.left - margin.right; // Use the window's width 
 			let height = 450 - margin.top - margin.bottom; // Use the window's height
@@ -31,7 +31,7 @@
 
 			var g = svg.append('g')
 				////then append to global g - so now the div svg is appended - see further down
-				    .attr("transform", "translate(" + margin.left*7 + "," + margin.top + ")");
+				    .attr("transform", "translate(" + margin.left*1.3 + "," + margin.top + ")");
 			
 
 /////// parallel lines comparing new hiring by curators / educators and by museum leadership incl exec / conservators
@@ -84,28 +84,41 @@ var n = 10;
 				// }
 				// 	})
 					// .attr("fill", "sienna")
-					
+// multiple bar colors
+// .attr("fill", function(d,i) { 
+			// 			if(i <= 1){
+			// 				var color = "pink";
+			// 				return color; 
+			// 			} else if(i <= 3) {
+			// 				var color = "purple";
+			// 				return color; 							
+			// 			} else if(i <= 5){
+			// 				var color = "turquoise";
+			// 				return color;							
+			// 			} else if (i <= 7){
+			// 				var color = "yellow";
+			// 				return color;								
+			// 			} else {
+			// 				var color = "blue";
+			// 				return color;								
+			// 			}
+			// 
 ////color every 2 bars differently
 ////color by color scheme
 			bars1.append("rect")
-			.attr("fill", function(d,i) { 
-						if(i <= 1){
-							var color = "pink";
+				// .attr("fill", "sienna")
+					// .attr("fill", "none")
+					// .attr("stroke", "sienna")
+					.attr("fill", function(d,i) { 
+						if(i % 2 == 0){
+							var color = "sienna";
 							return color; 
-						} else if(i <= 3) {
-							var color = "purple";
-							return color; 							
-						} else if(i <= 5){
-							var color = "turquoise";
-							return color;							
-						} else if (i <= 7){
-							var color = "yellow";
-							return color;								
 						} else {
-							var color = "blue";
-							return color;								
+							var color = "#635d53";
+							return color 
 						}
 					})
+					.style("opacity", 1)
 					.attr('x', function(d,i) { 
 						return 0; 
 					})
@@ -116,8 +129,7 @@ var n = 10;
 					.attr('width', function(d,i) { 
 						return xScale(d.percent); 
 					})
-					.attr('height', 3) ///bar width
-						.style("opacity", 0.7)
+					.attr('height', 3.3) ///bar width
 						.on('mouseenter', (d,i,j) => {
 							console.log("hover")
 							console.log(d.jobtype)
@@ -135,21 +147,10 @@ var n = 10;
                 .delay(500)
                 .duration(2000)
 					  	// .style('fill', 'sienna')
-					  	 .style('opacity', '0.7');
+					  	 .style('opacity', '1');
 						})
 	        	
-	   // bars1.append("circle")
-  		// 	.data(data)
-			 // .attr("r", 3)
-			 //// .attr("fill", "green")
-			 // // position the circles right where the path elements end
-			 // .attr('cy', (d, i) => { //// d is shorthand for element in the data and i is index
-				// 		return i * 25;
-				// 	})
-			 // .attr('cx', (d,i) => { 
-			 // 	return  xScale(d.percent); 
-			 // })
-	
+
 
 			// /////add transparent rect on top so can select bars more easily
 				bars1.append("rect")
@@ -172,7 +173,7 @@ var n = 10;
 								headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
 							d3.select(j[i])
 					  	// .style('fill', 'lightgrey')
-              .style('opacity', '1');
+              // .style('opacity', '1');
 						})
 	        .on('mouseout', (d, i,j) => {
 		            // console.log(d);
@@ -183,15 +184,32 @@ var n = 10;
                 .delay(500)
                 .duration(2000)
 					  	// .style('fill', 'sienna')
-					  	 .style('opacity', '0.7');
+					  	 //.style('opacity', '0.7');
 						})
 
 		 bars1.append("circle")
 		  			.data(data)
-					  .attr("r", 2)
+					  .attr("r", 5)
 					  // .attr("fill", "#513c2f")
-					  .style("opacity", 0)
-					  // .attr("color", "grey")
+					  .style("opacity", 1)
+					  .attr("fill", function(d,i) { 
+						  	if(i <= 1){
+								var color = "pink";
+								return color; 
+							} else if(i <= 3) {
+								var color = "purple";
+								return color; 							
+							} else if(i <= 5){
+								var color = "turquoise";
+								return color;							
+							} else if (i <= 7){
+								var color = "yellow";
+								return color;								
+							} else {
+								var color = "blue";
+								return color;								
+							}
+						})
 					  .attr('cy', (d, i) => {
                               	return i * 30;
                        })
@@ -203,54 +221,68 @@ var n = 10;
 									console.log("hover")
 									headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
 								d3.select(j[i])
-						  	// .style('fill', 'lightgrey')
-	              .style('opacity', '0');
+						  			.attr("r", 6.3)
+	              // .style('opacity', '0.6');
 							})
 			        .on('mouseout', (d, i,j) => {
 				            // console.log(d);
 				            // title2.text((d) => { return "national art museum intellectual leadership"; });
 				      	 d3.select(j[i])
-							  	// .style('fill', 'grey')
-							  	 .style('opacity', '0');
+				      		.transition()	
+		                .delay(100)
+		                .duration(400)
+							  		.attr("r", 5)
+							  	 .style('opacity', '1');
 								})
 
-////label each bar 
+////label each bar - percent
 var numlabel = bars1.append('text')
 					.text((d,i) => {
 						if(i % 2 == 0){
-							return (d.percent + "% " + d.raceethnicity + " " + d.jobtype) 
+							// return (d.percent + "% " + d.raceethnicity + " " + d.jobtype) 
+							return (d.percent + "% " ) 
 						} else {
-							return (d.percent + "% "  + d.jobtype) 							
+							return (d.percent + "% " ) 							
 						// return (d.percent + "% " + d.raceethnicity + " " + d.jobtype)
-					}
+							}
+							})
+							.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
+								return i * 30;
+							})
+							.attr('x', (d, i) => { return  xScale(d.percent); 
+							})
+							// .attr('transform', (d) => { return 'translate(' + 20 + ', ' + (500 - yScale(d) ); });
+							.style("font-size", "80%")
+							.style("fill", "#ffffff")
+							.style("opacity", 1)
+							.attr("text-anchor", "start")
+							.attr("transform", "translate(15, 6)")
+	
+	// label each bar		
+let raceethnicity = bars1.append('text')
+					.data(data)
+					.attr("class", "numlabel")
+					.attr("text-anchor", "bottom")
+					.attr("text-anchor","end")
+					// .text((d,i)=> { 
+					// 	if(i % 2 == 0){
+					// 		return (d.jobtype)
+					// 	} else {
+					// 		return (d.raceethnicity)
+					// 	}
+					// })
+					.text((d,i) => {
+						return (d.raceethnicity)
 					})
+					.attr("x", -margin.left/2)
 					.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
 						return i * 30;
 					})
-					.attr('x', (d, i) => { return  xScale(d.percent); 
-					})
-					// .attr('transform', (d) => { return 'translate(' + 20 + ', ' + (500 - yScale(d) ); });
-					.style("font-size", "80%")
-					// .style('fill', '#000000') ///////numbers on top of bars
-					.style("fill", "#f5f4f9")
-					.attr("text-anchor", "start")
-				.attr("transform", "translate(4, 3)")
-			
-// let raceethnicity = bars1.append('text')
-// 					.data(data)
-// 					.text((d,i) => {
-// 						return (d.raceethnicity)
-// 					})
-// 					.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
-// 						return i * 25;
-// 					})
-// 					.attr('x', (d,i) => { return xScale(d.percent); 
-// 					})
-// 					// .attr('transform', (d) => { return 'translate(' + 20 + ', ' + (500 - yScale(d) ); });
-// 					.style("font-size", "80%")
-// 					.style('fill', '#000000') ///////numbers on top of bars
-// 					.attr("text-anchor", "start")
-// 				.attr("transform", `translate(${margin.left*2}, 8)`)					
+					.attr("transform", `translate(${margin.left/2.4}, 4)`)
+					.style("font-family", "sans-serif")
+					.style("font-size", "70%")
+					.style("fill", "#000000") 
+					.style("font-weight", "bolder")
 
 				//////label text for each bar
 // 	bars1.append('text')
@@ -324,42 +356,42 @@ let yAxispercentline = g.append('g') // just append axis to global space
 					.attr("transform", "rotate(-65)")
 					.attr("text-anchor", "end");
 
- // add the X gridlines
-  // let gridxpercent = g.append("g")
-  //         .attr("class", "gridx")
-  //         .style('stroke', 'darkslategrey')
-		// 			.attr('stroke-width', 0.2)
-  //         // .style('font-size', "80%")
-  //         // .attr("transform", `translate(0, ${height } )`)
-  //         .call(d3.axisBottom(xScale)
-  //           .tickSize(height*2.2)
-  //           .ticks("10")
-  //           .tickFormat("")
-  //       )
-          
-          
-          
-// // add top line
-//   let gridy = g.append("path")
-//         .attr("class", "gridy")
-//         .attr('x', 0)
-// 					.attr('y', height*1.07)
-//         // .style('font-size', "70%")
-//         .attr("transform", `translate(0, ${5} )`)
+				 // add the X gridlines
+				  // let gridxpercent = g.append("g")
+				  //         .attr("class", "gridx")
+				  //         .style('stroke', 'darkslategrey')
+						// 			.attr('stroke-width', 0.2)
+				  //         // .style('font-size', "80%")
+				  //         // .attr("transform", `translate(0, ${height } )`)
+				  //         .call(d3.axisBottom(xScale)
+				  //           .tickSize(height*2.2)
+				  //           .ticks("10")
+				  //           .tickFormat("")
+				  //       )
+
+
+
+				// // add top line
+				//   let gridy = g.append("path")
+				//         .attr("class", "gridy")
+				//         .attr('x', 0)
+				// 					.attr('y', height*1.07)
+				//         // .style('font-size', "70%")
+				//         .attr("transform", `translate(0, ${5} )`)
         
 
 let xlabel = g.append('text')
             .attr("class", "y18axis")
             .attr("transform", "translate(" + (width/3.22) + " ," + (height*2.2) + ")")
-            .style("font-size", "0.9em")
-            .style("opacity", 0.8)
+            .style("font-size", "0.85em")
+            .style("opacity", 0.88)
               .text("percent")
                 
 			let headingpercent = g.append('text')
 					.text('New Hiring Since 2014: Percent Comparison Among Repeat 2015 & 2018 Survey Participants')
 					.attr('x', -margin.left/20)
 					.attr('y', -margin.top/1.2)
-					.attr('font-size', '1.43em');
+					.attr('font-size', '1.3em');
 					
 			let headingpercent2 = g.append('text')
 					// .text('excluding white,')
@@ -382,8 +414,4 @@ let xlabel = g.append('text')
 					.attr('x', -margin.left/25)
 					.attr('y', -margin.top/1.61)
 					.attr('font-size', '0.95em');
-
-
-};
-
 
