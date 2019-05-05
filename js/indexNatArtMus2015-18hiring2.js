@@ -17,7 +17,7 @@
 ////Race/Ethnicity 
 
 
-	let margin = {top: 125, right: 35, bottom: 180, left: 115};
+	let margin = {top: 125, right: 35, bottom: 180, left: 125};
 		
 			let width = 990 - margin.left - margin.right; // Use the window's width 
 			let height = 450 - margin.top - margin.bottom; // Use the window's height
@@ -85,18 +85,18 @@ var n = 10;
 				// 	})
 					// .attr("fill", "sienna")
 // multiple bar colors
-// .attr("fill", function(d,i) { 
-			// 			if(i <= 1){
-			// 				var color = "pink";
-			// 				return color; 
-			// 			} else if(i <= 3) {
-			// 				var color = "purple";
+// .avar color = "purple";
 			// 				return color; 							
 			// 			} else if(i <= 5){
 			// 				var color = "turquoise";
 			// 				return color;							
 			// 			} else if (i <= 7){
-			// 				var color = "yellow";
+			// 				vttr("fill", function(d,i) { 
+			// 			if(i <= 1){
+			// 				var color = "pink";
+			// 				return color; 
+			// 			} else if(i <= 3) {
+			// 				ar color = "yellow";
 			// 				return color;								
 			// 			} else {
 			// 				var color = "blue";
@@ -106,21 +106,18 @@ var n = 10;
 ////color every 2 bars differently
 ////color by color scheme
 			bars1.append("rect")
-				// .attr("fill", "sienna")
-					// .attr("fill", "none")
-					// .attr("stroke", "sienna")
-					.attr("fill", function(d,i) { 
-						if(i % 2 == 0){
-							var color = "sienna";
-							return color; 
-						} else {
-							var color = "#7a5a25";
-							return color 
-						}
-					})
-					.style("opacity", 1)
-					.attr('x', function(d,i) { 
-						return 0; 
+					.attr("fill", "none")
+					// .attr("stroke", "none")
+					.attr("fill", function(d,i){
+					if(i % 2 == 0){
+						var color = "sienna"
+							return color
+					// bars1.attr("stroke", "sienna")
+					} else {
+						// bars1.attr("stroke", "gold")
+							var color = "saddlebrown"
+							return color
+					}
 					})
 					.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
 						return i *30;
@@ -129,19 +126,22 @@ var n = 10;
 					.attr('width', function(d,i) { 
 						return xScale(d.percent); 
 					})
-					.attr('height', 3.3) ///bar width
+					.attr('height',2) ///bar width
 						.on('mouseenter', (d,i,j) => {
 							console.log("hover")
 							console.log(d.jobtype)
 					  	
 					  	headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
 					  	d3.select(j[i])
+					  		.transition()	
+                .delay(50)
+                .duration(100)
 					  	// .style('fill', 'lightgrey')
-              .style('opacity', '1');
+              	.style('opacity', '1');
 						})
 	        .on('mouseout', (d, i,j) => {
 		            // console.log(d);
-		           headingpercent2.text((d) => { return "Curators & Educators compared to Museum Leadership, including Executive Positions, & Conservators"; });
+		           headingpercent2.text((d) => { return "curators & educators compared to museum leadership, including executive positions, & conservators"; });
 		      	 d3.select(j[i])
 		      			.transition()	
                 .delay(500)
@@ -172,12 +172,15 @@ var n = 10;
 								console.log("hover")
 								headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
 							d3.select(j[i])
+								.transition()	
+                .delay(50)
+                .duration(100)
 					  	// .style('fill', 'lightgrey')
               // .style('opacity', '1');
 						})
 	        .on('mouseout', (d, i,j) => {
 		            // console.log(d);
-				         headingpercent2.text((d) => { return "Curators & Educators compared to Museum Leadership, including Executive Positions, & Conservators"; });
+				         headingpercent2.text((d) => { return "curators & educators compared to museum leadership, including executive positions, & conservators"; });
 		      	 d3.select(j[i])
 		      		.transition()	
                 .transition()	
@@ -189,26 +192,35 @@ var n = 10;
 
 		 bars1.append("circle")
 		  			.data(data)
-					  .attr("r", 5)
-					  // .attr("fill", "#513c2f")
-					  .style("opacity", 1)
-					  .attr("fill", function(d,i) { 
-						  	if(i <= 1){
-								var color = "pink";
-								return color; 
-							} else if(i <= 3) {
-								var color = "purple";
-								return color; 							
-							} else if(i <= 5){
-								var color = "turquoise";
-								return color;							
-							} else if (i <= 7){
-								var color = "gold";
-								return color;								
-							} else {
-								var color = "blue";
-								return color;								
-							}
+					  .attr("r", 7)
+					 // .attr("stroke", "sienna")
+					 ////.attr('x', function(d,i) { 
+					 // // .attr("fill", "#513c2f")
+					  .style("opacity", 0.85)
+					  .attr("fill", function(d,i) {
+					  		if(i % 2 == 0){
+							var color = "#843f1a";
+							return color; 
+						} else {
+							var color = "#205560";
+							return color; 							
+						}
+						 // 	if(i <= 1){
+							// 	var color = "pink";
+							// 	return color; 
+							// } else if(i <= 3) {
+							// 	var color = "purple";
+							// 	return color; 							
+							// } else if(i <= 5){
+							// 	var color = "turquoise";
+							// 	return color;							
+							// } else if (i <= 7){
+							// 	var color = "gold";
+							// 	return color;								
+							// } else {
+							// 	var color = "blue";
+							// 	return color;								
+							// }
 						})
 					  .attr('cy', (d, i) => {
                               	return i * 30;
@@ -221,17 +233,20 @@ var n = 10;
 									console.log("hover")
 									headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
 								d3.select(j[i])
-						  			.attr("r", 6.3)
-	              // .style('opacity', '0.6');
+									.transition()	
+		                .delay(50)
+		                .duration(400)
+						  			.attr("r", 7.8)
+						  			.style('opacity', '1')
 							})
 			        .on('mouseout', (d, i,j) => {
 				            // console.log(d);
-				            headingpercent2.text((d) => { return "Curators & Educators compared to Museum Leadership, including Executive Positions, & Conservators"; });
+				            headingpercent2.text((d) => { return "curators & educators compared to museum leadership, including executive positions, & conservators"; });
 				      	 d3.select(j[i])
 				      		.transition()	
 		                .delay(100)
 		                .duration(400)
-							  		.attr("r", 5)
+							  		.attr("r", 7)
 							  	 .style('opacity', '1');
 								})
 
@@ -252,8 +267,8 @@ var numlabel = bars1.append('text')
 							.attr('x', (d, i) => { return  xScale(d.percent); 
 							})
 							// .attr('transform', (d) => { return 'translate(' + 20 + ', ' + (500 - yScale(d) ); });
-							.style("font-size", "80%")
-							.style("fill", "#ffffff")
+							.style("font-size", "90%")
+							.style("fill", "#f5fcf7")
 							.style("opacity", 1)
 							.attr("text-anchor", "start")
 							.attr("transform", "translate(15, 6)")
@@ -279,10 +294,10 @@ let raceethnicity = bars1.append('text')
 						return i * 30;
 					})
 					.attr("transform", `translate(${margin.left/2.4}, 4)`)
-					.style("font-family", "sans-serif")
-					.style("font-size", "70%")
+					// .style("font-size", "100%")
 					.style("fill", "#000000") 
 					.style("font-weight", "bolder")
+					.style("font-size", "0.85em")
 
 				//////label text for each bar
 // 	bars1.append('text')
@@ -330,9 +345,9 @@ let raceethnicity = bars1.append('text')
 					.attr("class", "y18axis")
 					// .attr('fill', 'none')
 					.style('color', 'darkslategrey')
-					.attr('opacity', 0.6)
+					.attr('opacity', 1)
 					.attr("transform", `translate(0, ${height*2.05} )`)
-					.style("font-size", "0.7em")
+					.style("font-size", "0.9em")
 					.call(d3.axisBottom(xScale)
 						////above move the axis to place that the chart ends - within the margins
 						.tickSize(3)
@@ -396,7 +411,7 @@ let xlabel = g.append('text')
 			let headingpercent2 = g.append('text')
 					// .text('excluding white,')
 					.style("fill", "#f5f4f9")
-					.text('Curators & Educators compared to Museum Leadership, including Executive Positions, & Conservators')
+					.text('comparing curators & cducators to museum leadership, including executive positions, & conservators')
 					.attr('x',  -margin.left/20)
 					.attr('y', -margin.top/2.8)
 					.attr('font-size', '1.12em');
