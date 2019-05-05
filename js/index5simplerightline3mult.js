@@ -39,32 +39,6 @@ let svgPlot3 = (data) => {
 	console.log(margin.top)
 
 
-	var color_legend = {
-		1: ["American Indian or Alaskan Native & Native Hawaiian or Pacific Islander", "purple"],
-		2: ["Asian", "pink"],
-		3: ["Black or African American", "green"],
-		4: ["Hispanic", "orange"],
-		5: ["Two Or More Races", "blue"],
-		6: ["white, non-Hispanic", "yellow"],
-		7: ["Declined to State", "red"]
-	}
-
-
-	// var svg = d3.select('#svg1')
-	// 	.append('svg') ////then append an svg 
-	// 	.attr("width", width + margin.left + margin.right)
-	// 	.attr("height", height + margin.top + margin.bottom)
-
-	// var g1 = svg.append('g') ////then append to global g - so now the div svg is appended
-	// 	///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
-
-	// 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	// ////the above transform gives the space around the chart
-
-	// let svgPlot = (data) => { ////need to call a different svgPlot 
-	// 	// console.log(data); ////with each chart for multiple charts
-
-
 	////FILTER the data set to get MUSEUM only
 	let museum = data.filter((e) => { ////this loops through and selects museum only within the discipline column
 		if (e.DISCIPLINE == "Museum") {
@@ -265,85 +239,6 @@ let svgPlot3 = (data) => {
 
 
 
-
-
-	/////TURN TO 2nd chart to check this for job seniority - were these mid / senior levels
-
-
-	// 	///mid & senior level curators last five years filter by race/ethnicity
-	// 		let curatorfiveyrjob = curatorfiveyrs.filter((e)=> {
-	// 			if (e.LEVEL=="2" || e.LEVEL=="3")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorfiveyrjob);
-
-	// 		let curatorfiveyrjob1 = curatorfiveyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY=="1")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorfiveyrjob1);
-
-	// 		let curatorfiveyrjob2 = curatorfiveyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY=="2")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorfiveyrjob2);
-
-	// 		let curatorfiveyrjob3 = curatorfiveyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY=="3")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorfiveyrjob3);
-
-	// 		let curatorfiveyrjob4 = curatorfiveyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY=="4")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorfiveyrjob4);
-
-	// 		let curatorfiveyrjob5 = curatorfiveyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY=="5")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorfiveyrjob5);
-
-	// 		let curatorfiveyrjob6 = curatorfiveyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY=="6")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorfiveyrjob6);
-
-	// 		let curatorfiveyrjobundef = curatorfiveyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY=="-8")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorfiveyrjobundef);
-
-	// var ethjobcuratorgrp = [curatorfiveyrjob1.length, curatorfiveyrjob2.length, curatorfiveyrjob3.length, curatorfiveyrjob4.length, curatorfiveyrjob5.length, curatorfiveyrjob6.length, curatorfiveyrjobundef.length];
-
-	// // console.log(ethjobcuratorgrp);
-
-
-
-	//////////TURN to 3rd bar chart - data for ALL YEARS
-
-
 	/////paid curators ALL YEARS working at large museums filter by race/ethnicity
 	let curatorallyr1 = curator.filter((e) => {
 		if (e.RACEETHNICITY == "1") {
@@ -401,77 +296,6 @@ let svgPlot3 = (data) => {
 	////318
 	console.log(ethcuratorallgrp);
 	console.log(curatorallyr6.length);
-
-
-	////4th chart filter by mid senior level curators
-
-	// 		let curatorallyrjob = curator.filter((e)=> {
-	// 			if (e.LEVEL=="2" || e.LEVEL=="3")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorallyrjob);
-
-	// 		let curatorallyrjob1 = curatorallyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY==="1")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorallyrjob1);
-
-	// 		let curatorallyrjob2 = curatorallyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY==="2")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorallyrjob2);
-
-	// 		let curatorallyrjob3 = curatorallyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY==="3")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorallyrjob3);
-
-	// 		let curatorallyrjob4 = curatorallyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY==="4")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorallyrjob4);
-
-	// 		let curatorallyrjob5 = curatorallyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY==="5")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorallyrjob5);
-
-	// 		let curatorallyrjob6 = curatorallyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY==="6")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorallyrjob6);
-
-	// 		let curatorallyrjobundef = curatorallyrjob.filter((e)=> {
-	// 			if (e.RACEETHNICITY=="-8")
-	// 				{
-	// 					return e;
-	// 				}
-	// 		});
-	// 		// console.log(curatorallyrjobundef);
-
-	// var ethjoballcuratorgrp = [curatorallyrjob1.length, curatorallyrjob2.length, curatorallyrjob3.length, curatorallyrjob4.length, curatorallyrjob5.length, curatorallyrjob6.length, curatorallyrjobundef.length];
-
-	// // console.log(ethjoballcuratorgrp);
 
 
 	//////////////=============== now GROUP by pairs and draw graph========
@@ -580,7 +404,7 @@ let svgPlot3 = (data) => {
 			// return i ==11 || i ==4;
 		}
 	});
-	let all6tot6not = alltotnot.filter((d, i) => { ////////do I turn  the other way round for the chart slope?
+	let all6tot6not = alltotnot.filter((d, i) => { 
 		{
 			return i == 5 || i == 12;
 			// return i ==12 || i ==5;
@@ -667,19 +491,6 @@ let svgPlot3 = (data) => {
 	// height = 120
 	// margin = { top: 15, right: 10, bottom: 40, left: 35 }
 
-
-
-	var color_legend = {
-		1: ["American Indian or Alaskan Native & Native Hawaiian or Pacific Islander", "purple"],
-		2: ["Asian", "pink"],
-		3: ["Black or African American", "green"],
-		4: ["Hispanic", "orange"],
-		5: ["Two Or More Races", "blue"],
-		6: ["White, non-Hispanic", "yellow"],
-		7: ["Declined to State", "red"]
-	}
-
-
 	var svgheading = d3.select('#svgheading')
 		// .append('svg') ////then append an svg
 		// .attr('x', width )
@@ -763,46 +574,6 @@ let svgPlot3 = (data) => {
 	////the above transform gives the space around the chart
 
 
-
-	////////===========
-	// chart = (selection) =>
-	// 	selection.each(rawData) - > #Set local variable
-	// for input data.#Transformation of this data has already# been done by the time it reaches chart.
-	// data = rawData
-
-	// # Create a div and an SVG element
-	// for each element in #our data array.Note that data is a nested array# with each element containing another array of 'values'
-	// div = d3.select(this).selectAll(".chart").data(data)
-
-	// div = d3.selectAll(".chart").data(data)
-
-	// div = d3.select("svg")
-	// 	.selectAll(".chart")
-	// 	.data(alltotnot)
-
-
-	// div.enter()
-	// 	.append("div")
-	// 	.attr("class", "chart")
-	// 	.append("svg")
-	// 	.append("g")
-
-	// svg = div.select("svg")
-	// 	.attr("width", width + margin.left + margin.right)
-	// 	.attr("height", height + margin.top + margin.bottom)
-
-	// g = svg.select("g")
-	// 	.attr("transform", "translate(${margin.left},${margin.top})")
-
-	// // # Invisible background rectangle that will# capture all our mouse movements
-	// g.append("rect")
-	// 	.attr("class", "background")
-	// 	.style("pointer-events", "all")
-	// 	.attr("width", width + margin.right)
-	// 	.attr("height", height)
-	// 	.style("fill", "pink")
-
-
 	let headingmult = g.append('g') //// append text to global
 		.attr("class", "svgheading")
 		.append('text')
@@ -819,7 +590,7 @@ let svgPlot3 = (data) => {
 		.text('New York City Department of Cultural Affairs Grantees 2015')
 		.attr('x', margin.right*2.2)
 		.attr('y', 5.5)
-		.style('font-size', '1.2em');
+		.style('font-size', '1.1em');
 
 	/////////////
 	// The number of datapoints for paired lines
@@ -849,33 +620,13 @@ let svgPlot3 = (data) => {
 			return yScale(d);
 		});
 
-	// for multiples
-	// var setupScales = d3.line(data)
-	// // 	maxY = d3.max(data, (c) - > d3.max(c.values, (d) - > yValue(d)))
-	// // maxY = maxY + (maxY * 1 / 4)
-	// 		yScale.domain([0, 270])
-
-	// extentX = d3.extent(data[0].values, (d) - > xValue(d))
-	// 		xScale.domain(extentX)
-
 
 
 	///////\\\\\\\\\\\\\\\showing one line only
 
-	// lines = g.append("g")
-	// lines.append("path")
-	// 	.attr("class", "areayellow")
-	// 	.style("pointer-events", "none")
-	// 	.attr("d", (c) => area(c.values))
 
-	// lines.append("path")
-	// 	.attr("class", "linemult")
-	// 	.style("pointer-events", "none")
-	// 	.attr("d", (c) => line(c.values))
-
-	var area1 = d3.area() //////can use this twice just call in each of the 2 lines
+	var area1 = d3.area() 
 		.x(function (d, i) { // to use “i” in xScale 
-			// you have to list d first and then i and separate by comma
 			// console.log(xScale(i))
 			return xScale(i);
 		})
@@ -933,7 +684,7 @@ let svgPlot3 = (data) => {
 	let line1_2 = g1.append("path")
 		.datum(line1v2) /////use the new array with the same 2 numbers
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke-dasharray', '4')
 		.attr('stroke', '#a557fc')
@@ -1029,7 +780,7 @@ let svgPlot3 = (data) => {
 		.datum(all2tot2notRev)
 		.attr("class", "linemult") // Assign a class for styling
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator  
 		})
 		.attr('stroke', 'yellow')
 		.attr("opacity", 0.8)
@@ -1069,7 +820,7 @@ let svgPlot3 = (data) => {
 	let line2_2 = g2.append("path")
 		.datum(line2v2) /////use the new array with the same 2 numbers
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke-dasharray', '4')
 		.attr('stroke', '#a557fc')
@@ -1150,7 +901,7 @@ let svgPlot3 = (data) => {
 		.datum(all3tot3notRev)
 		.attr("class", "linemult") // Assign a class for styling
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke', 'yellow')
 		.attr("opacity", 0.8)
@@ -1191,7 +942,7 @@ let svgPlot3 = (data) => {
 	let line3_2 = g3.append("path")
 		.datum(line3v2) /////use the new array with the same 2 numbers
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke-dasharray', '4')
 		.attr('stroke', '#a557fc')
@@ -1271,7 +1022,7 @@ let svgPlot3 = (data) => {
 		.datum(all4tot4notRev)
 		.attr("class", "linemult") // Assign a class for styling
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke', 'yellow')
 		.attr("opacity", 0.8)
@@ -1309,7 +1060,7 @@ let svgPlot3 = (data) => {
 	let line4_2 = g4.append("path")
 		.datum(line4v2) /////use the new array with the same 2 numbers
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke-dasharray', '4')
 		.attr('stroke', '#a557fc')
@@ -1387,7 +1138,7 @@ let svgPlot3 = (data) => {
 		.datum(all5tot5notRev)
 		.attr("class", "linemult") // Assign a class for styling
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke', 'yellow')
 		.attr("opacity", 0.8)
@@ -1426,7 +1177,7 @@ let svgPlot3 = (data) => {
 	let line5_2 = g5.append("path")
 		.datum(line5v2) /////use the new array with the same 2 numbers
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke-dasharray', '4')
 		.attr('stroke', '#a557fc')
@@ -1514,7 +1265,7 @@ let svgPlot3 = (data) => {
 		.datum(all6tot6notRev)
 		.attr("class", "linemult") // Assign a class for styling
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke', 'yellow')
 		.attr("opacity", 0.8)
@@ -1552,7 +1303,7 @@ let svgPlot3 = (data) => {
 	let line6_2 = g6.append("path")
 		.datum(line6v2) /////use the new array with the same 2 numbers
 		.attr('d', function (d, i) {
-			return line(d, i) ////\\here add function in the line generator taking in the 
+			return line(d, i) ////\\here add function in the line generator 
 		})
 		.attr('stroke-dasharray', '4')
 		.attr('stroke', '#a557fc')
@@ -1630,275 +1381,4 @@ let svgPlot3 = (data) => {
 		.attr("x", -margin.right/4)
 		.text('curators'); ////mouseenter event on area
 
-
-
-
-	// //     			.on('mouseenter', function(d){
-	// //                         console.log('hover');
-	// //                         console.log(d)
-	// //                         headingmult.text(d[0]  + ' American Indian or Alaskan Native & Native Hawaiian or Pacific Islander curators; ' + d[1] + ' hired 2010+')
-	// //                         .attr('font-size', '10px')
-	// //                         })                            ////// tspan
-	// //                 .on('mouseout', function(d) {
-	// //                 		console.log(d)
-	// //                 	// .transition()
-	// //                 	// 	.ease(Math.sqrt)
-	// //                  //       .delay(100)
-	// //                         headingmult.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-	// //                         .attr('font-size', '12px')
-	// //                         .attr("class", "line");
-	// //                     });
-	// //console.log(line1)
-
-	// // let line2 = g.append("path")
-	// //     			.datum(all2tot2)
-	// //     			// .attr("class", "line") // Assign a class for styling
-	// //     			.attr('d', function(d,i) {
-	// //     				return line(d,i)    ////\\here add function in the line generator taking in the 
-	// //     			})
-	// //     			.attr('fill', 'none')
-	// //     			// .attr('stroke', 'pink')
-	// //     			.attr('stroke', "#9cb749")
-	// //     			.attr('stroke-width', 1.5)
-	// //     			.attr('shape-rendering', 'crispEdges')
-	// //     			.on('mouseenter', function(d){
-	// //                         console.log('hover');
-	// //                         console.log(d)
-	// //                         headingmult.text(d[0]  + ' Asian curators; '+ d[1] + ' were hired 2010-2015')
-	// //     					})   
-	// //                  .on('mouseout', function(d) {
-	// //                 		console.log(d)
-	// //                         headingmult.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-	// //                         .attr("class", "line"); 
-	// //                     });
-	// //  //console.log(line2)
-
-	// // let line3 = g.append("path")
-	// //     			.datum(all3tot3)
-	// //     			// .attr("class", "line") // Assign a class for styling
-	// //     			.attr('d', function(d,i) {
-	// //     				return line(d,i)    ////\\here add function in the line generator taking in the 
-	// //     			})
-	// //     			.attr('fill', 'none')
-	// //     			.attr('stroke', '#58f97e')
-	// //     			.attr('stroke-width', 1.5)
-	// //     			.attr('shape-rendering', 'crispEdges')
-	// //     			.on('mouseenter', function(d){
-	// //                         console.log('hover');
-	// //                         console.log(d)
-	// //                         headingmult.text(d[0]  + ' Black or African American curators; '+ d[1] + ' were hired 2010-2015')
-	// //     		     	}) 
-	// //                  .on('mouseout', function(d) {
-	// //                 		console.log(d)
-	// //                         headingmult.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-	// //                         .attr("class", "line"); 
-	// //                     });
-	// //  //console.log(line3)
-
-	// // let line4 = g.append("path")
-	// //     			.datum(all4tot4)
-	// //     			// .attr("class", "line") // Assign a class for styling
-	// //     			.attr('d', function(d,i) {
-	// //     				return line(d,i)    ////\\here add function in the line generator taking in the 
-	// //     			})
-	// //     			.attr('fill', 'none')
-	// //     			.attr('stroke', '#2be6fc')
-	// //     			.attr('stroke-width', 1.5)
-	// //     			.attr('shape-rendering', 'crispEdges')
-	// //     			.on('mouseenter', function(d){
-	// //                         console.log('hover');
-	// //                         console.log(d)
-	// //                         headingmult.text(d[0]  + ' Hispanic curators; '+ d[1] + ' were hired 2010-2015')
-	// //     			   }) 
-	// //                  .on('mouseout', function(d) {
-	// //                 		console.log(d)
-	// //                         headingmult.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-	// //                         .attr("class", "line"); 
-	// //                     });
-	// //  //console.log(line4)
-
-	// // let line5 = g.append("path")
-	// //     			.datum(all5tot5)
-	// //     			// .attr("class", "line") // Assign a class for styling
-	// //     			.attr('d', function(d,i) {
-	// //     				return line(d,i)    ////\\here add function in the line generator taking in the 
-	// //     			})
-	// //     			.attr('fill', 'none')
-	// //     			.attr('stroke', '#fcc42b')
-	// //     			.attr('stroke-width', 1.5)
-	// //     			.attr('shape-rendering', 'crispEdges')
-	// //     				.on('mouseenter', function(d){
-	// //                         console.log('hover');
-	// //                         console.log(d)
-	// //                         headingmult.text(d[0]  + ' curators of two or more races; '+ d[1] + ' were hired 2010-2015')
-	// //     				}) 
-	// //                  .on('mouseout', function(d) {
-	// //                 		console.log(d)
-	// //                         headingmult.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-	// //                         .attr("class", "line"); 
-	// //                     });
-	// //  //console.log(line5)
-
-	// /////////////\\\\\\\\\\\\\\\end of showing one line only
-	// // area 
-
-	// // 724 above used the line generator
-	// // var line = d3.line()
-	// // 	.x(function(d,i) { // to use “i” in xScale 
-	// // 					   // you have to list d first and then i and separate by comma
-	// // 		console.log(xScale(i))
-	// // 		return width/3-(xScale(i)); 
-
-	// // 	})
-	// // 	.y(function(d, i) { 
-	// // 		// console.log(d)
-	// // 		// return height-(yScale(d)); 
-	// // 		return yScale(d);
-	// // 	});
-
-
-	// // var area = d3.area()
-	// //     .x(function(d) { return x(d.date); })
-	// //     .y1(function(d) { return y(d.value); })
-	// //     .y0(y(0));
-
-
-
-
-	// ///////race/ethnicity white - 6
-	// /////line at top showing increase
-	// // let line6 = g.append("path")
-	// // 	.datum(data[0])
-	// // 	// .attr("class", "line") // Assign a class for styling
-	// // 	.attr('d', function (d, i) {
-	// // 		return line(d, i) ////\\here add function in the line generator taking in the 
-	// // 	})
-	// // 	.attr('stroke', 'yellow')
-	// // 	.attr('stroke-width', 1)
-	// // 	.on('mouseenter', function (d) {
-	// // 		console.log('hover');
-	// // 		console.log(d)
-	// // 		headingmult.text(d[0] + ' white curators; ' + d[1] + ' were hired prior to 2010')
-	// // 	})
-	// // 	.on('mouseout', function (d) {
-	// // 		console.log(d)
-	// // 		headingmult.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-	// // 			.attr("class", "line");
-	// // 	});
-
-	// // let line6_area = g.append("path")
-	// // 	.datum(data[7])
-	// // 	.attr("fill", "yellow")
-	// // 	.attr('d', area1(data[7]))
-	// // 	.on('mouseenter', function (d) {
-	// // 		console.log('hover');
-	// // 		console.log(d)
-	// // 		headingmult.text(d[0] + ' white curators; ' + d[1] + ' were hired prior to 2010')
-	// // 	})
-	// // 	.on('mouseout', function (d) {
-	// // 		console.log(d)
-	// // 		headingmult.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-	// // 			.attr("class", "line");
-	// // 	});
-
-	// // console.log(line6v2)
-
-	// // /////line at top of area - for area see below
-	// // let line6_2 = g.append("path")
-	// // 	.datum(line6v2) /////use the new array with the same 2 numbers
-	// // 	.attr('d', function (d, i) {
-	// // 		return line(d, i) ////\\here add function in the line generator taking in the 
-	// // 	})
-	// // 	.attr('stroke-dasharray', '4')
-	// // 	.attr('stroke', '#a557fc')
-	// // 	.attr('stroke-width', 1);
-
-	// /////area from y to parallel line   			
-	// // let line6_2area = g.append("path")
-	// // 	.datum(line6v2) /////use the new array with the same 2 numbers
-	// // 	.attr("fill-opacity", "0.5")
-	// // 	.attr('fill', 'orange')
-	// // 	.attr('d', area1(line6v2)); /////use area 1
-
-
-	// /////no one declined to state so removing this
-	// //let line7 = g.append("path")
-	// //   			.datum(all7tot7)
-	// //   			// .attr("class", "line") // Assign a class for styling
-	// //   			.attr('d', function(d,i) {
-	// //   				return line(d,i)    ////\\here add function in the line generator taking in the 
-	// //   			})
-	// //   			.attr('fill', 'none')
-	// //   			.attr('stroke', 'red')
-	// //   			.attr('stroke-width', 1.5)
-	// //   			.attr('shape-rendering', 'crispEdges')
-	// //   				.on('mouseenter', function(d){
-	// //                       console.log('hover');
-	// //                       console.log(d)
-	// //                       headingmult.text(d[0]  + ' curators who declined to state race/ethnicity of which '+ d[1] + ' were hired since 2010'); 
-	// //                   });
-	// //console.log(line7)
-
-
-
-
-	// let headingmult = g.append('g') //// append text to global
-	// 	.append('text')
-	// 	.text('NYC DCLA Grantees 2015: Museum Curators')
-	// 	// .attr('x', -125)
-	// 	// .attr('y', -48)
-	// 	.attr('x', 0 - margin.left)
-	// 	.attr('y', 0 - margin.top / 1.2)
-	// 	.attr('font-size', '80%');
-
-	// let subhead1 = g.append('g')
-	// 	.append('text') /////to site text you can always do negative values to be outside the chart
-	// 	.text('Out of 7,647 staff at museums with budgets $999,999+, 318 are curators')
-	// 	.attr('x', 0 - margin.left)
-	// 	.attr('y', 0 - margin.top / 1.9)
-	// 	.attr('font-size', '65%');
-
-	// let subhead2 = g.append('g')
-	// 	.append('text')
-	// 	.text('132 of those curators were hired between 2010-2015')
-	// 	.attr('x', 0 - margin.left)
-	// 	.attr('y', 0 - margin.top / 3)
-	// 	.attr('font-size', '65%');
-
-	// let legend = g.append("g")
-	// 	.append("text")
-	// 	.attr("class", "legend")
-	// 	.attr("height", 120)
-	// 	.attr("width", 100)
-	// 	.attr('transform', 'translate(20,50)')
-	// 	.style("font-size", "10px");
-	// // .call(d3.legend);
-
-	// legend.selectAll('rect')
-	// 	//.data(d)
-	// 	.enter()
-	// 	.append("rect")
-	// 	.attr("x", width - 65)
-	// 	.attr("y", function (d, i) {
-	// 		return i * 20;
-	// 	})
-	// 	.attr("width", 2)
-	// 	.attr("height", 5)
-	// 	.style("fill", function (d) {
-	// 		var color = color_legend[dataset.indexOf(d)][1];
-	// 		return color;
-	// 	})
-
-	// legend.selectAll('text')
-	// 	//.data(d)
-	// 	.enter()
-	// 	.append("text")
-	// 	.attr("x", width - 52)
-	// 	.attr("y", function (d, i) {
-	// 		return i * 20 + 9;
-	// 	})
-	// 	.text(function (d) {
-	// 		var text = color_legend[dataset.indexOf(d)][0];
-	// 		return text;
-	// 	});
 }
