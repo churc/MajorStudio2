@@ -327,7 +327,7 @@ let datanumcircles = [];
     let endnote2 = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textpink")
-            .text('8,094 staff at museums; 7,647 are at museums with budgets $999,999+. Board volunteers + 6,768 non-volunteer staff totals 7,346')
+            .text('8,094 staff at museums; 7,647 are at museums with budgets $1,000,000+. Board volunteers + 6,768 non-volunteer staff totals 7,346')
             .attr('x', margin.left*2.5)
             .attr('y', height - margin.bottom / 3.8)
             .style('font-size', '0.65em');
