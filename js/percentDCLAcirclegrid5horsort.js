@@ -1,5 +1,5 @@
 //// NYC Department of Cultural Affairs by 22 job types grouped by race and ethnicity data
-//// larger budgets over $999999 - these percents do not include volunteers 
+//// larger budgets over $1,000,000 - these percents do not include volunteers 
 //// except for board job type
 //// grid with circles for numbers and for percent
 //// with percentDCLAcirclegridhor5sort.html
@@ -302,7 +302,7 @@ let datanumcircles = [];
     let subheading2 = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textsubhead")
-            .text('At museums with budgets $999,999+. Paid staff + board members: 7,346 people')
+            .text('At museums with budgets $1,000,000+. Paid staff + board members: 7,346 people')
             .attr('x', margin.left*3.1)
             .attr('y', margin.top / 5.5)
             .style('font-size', '1.1em');
