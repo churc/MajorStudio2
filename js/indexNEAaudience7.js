@@ -324,7 +324,7 @@ let ytext2 = g.append('g')
   let subhead1 = g.append('g')
 				.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhead")
-                    .text('% of U.S. adult population (2017 population was 246.7 million adults')
+                    .text('% of U.S. adult population (2017 population was 246.7 million adults)')
                     .attr('x', margin.left/35)
                     .attr('y', 0-margin.top/1.9)
                     .attr('font-size', '1.5em'); 
