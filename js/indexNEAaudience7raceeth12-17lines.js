@@ -33,7 +33,7 @@
                 
         	var margin = {top: 105, right: 90, bottom: 80, left: 90}; ////this works outside the svgPlot
 	
-	var width = 800 - margin.left - margin.right; // specify the width and give space around the chart
+	var width = 780 - margin.left - margin.right; // specify the width and give space around the chart
 	var height = 550 - margin.top - margin.bottom; // specify the width and give space around the chart
 	console.log(margin.top)
  
