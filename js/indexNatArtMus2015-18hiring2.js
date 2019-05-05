@@ -1,6 +1,6 @@
 ///National Art Museum 2018 staff data from 2018 staff survey report
 // intellectual leadership positions new hiring since 2014 percentages
-//// parallel lines comparing new hiring by curators / educators and by museum leadership incl exec / conservators
+/////// parallel lines comparing new hiring by curators / educators and by museum leadership incl exec / conservators
 
              
                     
@@ -114,7 +114,7 @@ var n = 10;
 							var color = "sienna";
 							return color; 
 						} else {
-							var color = "#635d53";
+							var color = "#7a5a25";
 							return color 
 						}
 					})
@@ -203,7 +203,7 @@ var n = 10;
 								var color = "turquoise";
 								return color;							
 							} else if (i <= 7){
-								var color = "yellow";
+								var color = "gold";
 								return color;								
 							} else {
 								var color = "blue";
@@ -356,28 +356,28 @@ let yAxispercentline = g.append('g') // just append axis to global space
 					.attr("transform", "rotate(-65)")
 					.attr("text-anchor", "end");
 
-				 // add the X gridlines
-				  // let gridxpercent = g.append("g")
-				  //         .attr("class", "gridx")
-				  //         .style('stroke', 'darkslategrey')
-						// 			.attr('stroke-width', 0.2)
-				  //         // .style('font-size', "80%")
-				  //         // .attr("transform", `translate(0, ${height } )`)
-				  //         .call(d3.axisBottom(xScale)
-				  //           .tickSize(height*2.2)
-				  //           .ticks("10")
-				  //           .tickFormat("")
-				  //       )
-
-
-
-				// // add top line
-				//   let gridy = g.append("path")
-				//         .attr("class", "gridy")
-				//         .attr('x', 0)
-				// 					.attr('y', height*1.07)
-				//         // .style('font-size', "70%")
-				//         .attr("transform", `translate(0, ${5} )`)
+ // add the X gridlines
+  // let gridxpercent = g.append("g")
+  //         .attr("class", "gridx")
+  //         .style('stroke', 'darkslategrey')
+		// 			.attr('stroke-width', 0.2)
+  //         // .style('font-size', "80%")
+  //         // .attr("transform", `translate(0, ${height } )`)
+  //         .call(d3.axisBottom(xScale)
+  //           .tickSize(height*2.2)
+  //           .ticks("10")
+  //           .tickFormat("")
+  //       )
+          
+          
+          
+// // add top line
+//   let gridy = g.append("path")
+//         .attr("class", "gridy")
+//         .attr('x', 0)
+// 					.attr('y', height*1.07)
+//         // .style('font-size', "70%")
+//         .attr("transform", `translate(0, ${5} )`)
         
 
 let xlabel = g.append('text')
@@ -414,5 +414,5 @@ let xlabel = g.append('text')
 					.attr('x', -margin.left/25)
 					.attr('y', -margin.top/1.61)
 					.attr('font-size', '0.95em');
-
-	   };
+					
+};
