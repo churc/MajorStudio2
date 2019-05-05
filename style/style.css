@@ -1335,20 +1335,21 @@ max-width: 1250px;
                 transition: 2s;
             }
 
+
 /*small national art museum staff 2015 and 2018*/
 
-#svg16, #svg18 {
-	font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
+			#svg16, #svg18 {
+				font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
         padding-right: 0;
-   	padding-bottom: 0;
+   			padding-bottom: 1em;
         padding-top: 0;
         padding-left: 0;
         /*stroke-width: 0.02;*/
         background: #877c74;             
         padding-top: 0;
-        padding-left: 0;
-			}
-			
+        padding-left: 1.5em;
+	}
+						
 .barchange:hover{
 	fill: pink;
 	}
