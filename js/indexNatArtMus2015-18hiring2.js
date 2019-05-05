@@ -141,7 +141,7 @@ var n = 10;
 						})
 	        .on('mouseout', (d, i,j) => {
 		            // console.log(d);
-		            // title2.text((d) => { return ""; });
+		           headingpercent2.text((d) => { return "Curators & Educators compared to Museum Leadership, including Executive Positions, & Conservators"; });
 		      	 d3.select(j[i])
 		      			.transition()	
                 .delay(500)
@@ -177,7 +177,7 @@ var n = 10;
 						})
 	        .on('mouseout', (d, i,j) => {
 		            // console.log(d);
-		            // title2.text((d) => { return "national art museum intellectual leadership"; });
+				         headingpercent2.text((d) => { return "Curators & Educators compared to Museum Leadership, including Executive Positions, & Conservators"; });
 		      	 d3.select(j[i])
 		      		.transition()	
                 .transition()	
@@ -226,7 +226,7 @@ var n = 10;
 							})
 			        .on('mouseout', (d, i,j) => {
 				            // console.log(d);
-				            // title2.text((d) => { return "national art museum intellectual leadership"; });
+				            headingpercent2.text((d) => { return "Curators & Educators compared to Museum Leadership, including Executive Positions, & Conservators"; });
 				      	 d3.select(j[i])
 				      		.transition()	
 		                .delay(100)
