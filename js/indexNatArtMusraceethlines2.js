@@ -13,9 +13,9 @@
 
 		console.log(data);
 
-	let margin = { top: 38, right: 60, bottom: 110, left: 280 };
+	let margin = { top: 38, right: 75, bottom: 110, left: 310 };
 		
-			let width = 770 - margin.left - margin.right; // Use the window's width 
+			let width = 815 - margin.left - margin.right; // Use the window's width 
 			let height = 320 - margin.top - margin.bottom; // Use the window's height
 
 
@@ -29,7 +29,7 @@
 			var g = svg.append('g')
 				////then append to global g - so now the div svg is appended - see further down
 				///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
-				.attr("transform", "translate(" + margin.left/1.45 + "," + margin.top*3.7 + ")");
+				.attr("transform", "translate(" + margin.left/1.35 + "," + margin.top*3.5 + ")");
 			// console.log(width);  ////the above transform gives the space around the chart
 
 /////for 2015 Hispanic non-Hispanic data
@@ -54,20 +54,20 @@
 	var g2 = svg2.append('g') ////then append to global g - so now the div svg is appended
 		///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
 
-		.attr("transform", "translate(" + margin.left/1.45 + "," + margin.top*3.7 + ")");
+		.attr("transform", "translate(" + margin.left/1.35 + "," + margin.top*2.8 + ")");
 	////the above transform gives the space around the chart
 
 /////for 2018 Hispanic non-Hispanic data
-	var svg3 = d3.select('#svg19')
-		.append('svg') ////then append an svg 
-			.attr("width", width + margin.left + margin.right)
-			.attr("height", height + margin.top + margin.bottom)
+	// var svg3 = d3.select('#svg19')
+	// 	.append('svg') ////then append an svg 
+	// 		.attr("width", width + margin.left + margin.right)
+	// 		.attr("height", height + margin.top + margin.bottom)
 
-	var g3 = svg3.append('g') ////then append to global g - so now the div svg is appended
-		///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
+	// var g3 = svg3.append('g') ////then append to global g - so now the div svg is appended
+	// 	///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
 
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-	////the above transform gives the space around the chart
+	// 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+	// ////the above transform gives the space around the chart
 
 
 ///////======2015 parallel lines
@@ -138,29 +138,29 @@ var n = 6;
 	        	
 	    bars1.append("circle")
   			.data(data)
-			  .attr("r", 5)
-			  // .attr("fill", "pink")
-			   .attr("fill", function(d,i) { 
-						if(i == 0){
-							var color = "lightgoldenrodyellow";
-							return color; 
-						} else if(i == 1) {
-							var color = "darkcyan";
-							return color; 							
-						} else if(i == 2){
-							var color = "pink";
-							return color;							
-						} else if (i == 3){
-							var color = "purple";
-							return color;								
-						} else if (i == 4){
-							var color = "turquoise";
-							return color;								
-						} else {
-							var color = "gold";
-							return color;								
-						}
-					})
+			  .attr("r", 7)
+			  .attr("fill", "#11593b")
+			  // .attr("fill", function(d,i) { 
+					// 	if(i == 0){
+					// 		var color = "lightgoldenrodyellow";
+					// 		return color; 
+					// 	} else if(i == 1) {
+					// 		var color = "darkcyan";
+					// 		return color; 							
+					// 	} else if(i == 2){
+					// 		var color = "pink";
+					// 		return color;							
+					// 	} else if (i == 3){
+					// 		var color = "purple";
+					// 		return color;								
+					// 	} else if (i == 4){
+					// 		var color = "turquoise";
+					// 		return color;								
+					// 	} else {
+					// 		var color = "gold";
+					// 		return color;								
+					// 	}
+					// })
 					.style("opacity", 0.65)
 			  // position the circles right where the path elements end
 			  .attr('cy', (d, i) => { //// d is shorthand for element in the data and i is index
@@ -169,6 +169,26 @@ var n = 6;
 			  .attr('cx', (d,i) => { 
 			  	return  xScale5(d.year15); 
 			  })
+			  .on('mouseenter', (d,i,j) => {
+								console.log("hover")
+								console.log(d.jobtype)
+						  	heading2.text("2015 -> 2018: " + " " + d.raceethnicity + ": " + d.year15 + " total hires -> " + d.year18)
+					  	d3.select(j[i])
+					  	// .style('fill', 'lightgrey')
+	              .style('opacity', '1');
+							})
+	        .on('mouseout', (d, i,j) => {
+		            // console.log(d);
+		           heading2.text((d) => { return "curators, educators, museum leadership, including executive positions, conservators"; });
+		      	 d3.select(j[i])
+		      			.transition()	
+                .delay(500)
+                .duration(2000)
+					  	// .style('fill', 'sienna')
+					  	.style("font-size", "0.98em")
+					  	 .style('opacity', '1');
+						})
+
 	
 
 			// /////add transparent rect on top so can select bars more easily
@@ -205,9 +225,9 @@ var numlabel =		bars1.append('text')
 					})
 					.attr('x', (d, i) => { return  xScale5(d.year15); })
 					// .attr('transform', (d) => { return 'translate(' + 20 + ', ' + (500 - yScale(d) ); });
-					.style("font-size", "60%")
-					.style('fill', 'white') ///////numbers on top of bars
-					.attr("text-anchor", "middle")
+					.style("font-size", "90%")
+					.style('fill', '#f5fcf7') ///////numbers on top of bars
+					.attr("text-anchor", "start")
 				  .attr("transform", "translate(30, 4)")
 			
 					
@@ -226,9 +246,9 @@ var numlabel =		bars1.append('text')
 						return i * 33;
 					})
 					// .attr("x", margin.left/10)
-					.attr("transform", `translate(${margin.left/2.1}, 0)`)
-					.style("font-family", "sans-serif")
-					.style("font-size", "65%")
+					.attr("transform", `translate(${margin.left/2.1}, 2)`)
+					// .style("font-family", "sans-serif")
+					.style("font-size", "80%")
 					.style('fill', 'dark grey') 
 				
 
@@ -239,8 +259,8 @@ var numlabel =		bars1.append('text')
 					.style('stroke', 'darkslategrey')
 					.attr('stroke-width', 0.3)
 					// .attr("transform", `translate(${-margin.top}, ${-margin.bottom/0.7} )`)
-					.attr("transform", `translate(0, ${-margin.top/1.5} )`)
-					.call(d3.axisLeft(xScale5) //call axisLeft to use yScale for axis ticks and scale
+						.attr("transform", `translate(0, ${margin.top/200} )`)
+					.call(d3.axisLeft(yScale5) //call axisLeft to use yScale for axis ticks and scale
 						.tickSize(0)
 						.ticks(0)
 						.tickFormat("") ////empty no text
@@ -280,10 +300,11 @@ var numlabel =		bars1.append('text')
 					.text('2015')
 					.attr('x', -margin.left/3.9)
 					.attr('y', -margin.bottom/2.5)
-					.attr('font-size', '1.8em');
+					.attr('font-size', '1.9em');
 					
 			let heading2 = g.append('text')
 					// .text('excluding white,')
+					.attr("class", "intelhead")
 					.text('curators, educators, museum leadership, including executive positions, conservators')
 					.attr('x', 0)
 					.attr('y', -margin.bottom/1.3)
@@ -359,29 +380,29 @@ var n = 6;
 	        	
 	    bars3.append("circle")
   			.data(data)
-			  .attr("r", 5)
-			  // .attr("fill", "pink")
-			  .attr("fill", function(d,i) { 
-						if(i == 0){
-							var color = "lightgoldenrodyellow";
-							return color; 
-						} else if(i == 1) {
-							var color = "darkcyan";
-							return color; 							
-						} else if(i == 2){
-							var color = "pink";
-							return color;							
-						} else if (i == 3){
-							var color = "purple";
-							return color;								
-						} else if (i == 4){
-							var color = "turquoise";
-							return color;								
-						} else {
-							var color = "gold";
-							return color;								
-						}
-					})
+			  .attr("r", 7)
+			  .attr("fill", "#11593b")
+			  // .attr("fill", function(d,i) { 
+					// 	if(i == 0){
+					// 		var color = "lightgoldenrodyellow";
+					// 		return color; 
+					// 	} else if(i == 1) {
+					// 		var color = "darkcyan";
+					// 		return color; 							
+					// 	} else if(i == 2){
+					// 		var color = "pink";
+					// 		return color;							
+					// 	} else if (i == 3){
+					// 		var color = "purple";
+					// 		return color;								
+					// 	} else if (i == 4){
+					// 		var color = "turquoise";
+					// 		return color;								
+					// 	} else {
+					// 		var color = "gold";
+					// 		return color;								
+					// 	}
+					// })
 					.style("opacity", 0.65)
 				  // position the circles right where the path elements end
 				  .attr('cy', (d, i) => { 
@@ -390,7 +411,25 @@ var n = 6;
 				  .attr('cx', (d,i) => { 
 				  	return  xScale5(d.year18); 
 				  })
-	
+					.on('mouseenter', (d,i,j) => {
+								console.log("hover")
+								console.log(d.jobtype)
+						  	heading2.text("2015 -> 2018: " + " " + d.raceethnicity + ": " + d.year15 + " total hires -> " + d.year18)
+					  	d3.select(j[i])
+					  	// .style('fill', 'lightgrey')
+	              .style('opacity', '1');
+							})
+	        .on('mouseout', (d, i,j) => {
+		            // console.log(d);
+		           heading2.text((d) => { return "curators, educators, museum leadership, including executive positions, conservators"; });
+		      	 d3.select(j[i])
+		      			.transition()	
+                .delay(500)
+                .duration(2000)
+					  	// .style('fill', 'sienna')
+					  	.style("font-size", "0.98em")
+					  	 .style('opacity', '1');
+						})
 
 			// /////add transparent rect on top so can select bars more easily
 				// bars1.append("rect")
@@ -426,11 +465,13 @@ var numlabel = bars3.append('text')
 					})
 					.attr('x', (d, i) => { return  xScale5(d.year18); })
 					// .attr('transform', (d) => { return 'translate(' + 20 + ', ' + (500 - yScale(d) ); });
-					.style("font-size", "60%")
-					.style('fill', 'white') ///////numbers on top of bars
+					.style("font-size", "90%")
+					.style('fill', '#f5fcf7') ///////numbers on top of bars
 					.attr("text-anchor", "middle")
-				.attr("transform", "translate(30, 4)")
-	
+					.attr("transform", "translate(30, 4)")
+					.attr('height', 3.3) ///bar width
+						
+	        	
 
 				//////label text for each bar
 	bars3.append('text')
@@ -446,9 +487,9 @@ var numlabel = bars3.append('text')
 						return i * 33;
 					})
 					// .attr("x", margin.left/10)
-					.attr("transform", `translate(${margin.left/2.1}, 0)`)
-					.style("font-family", "sans-serif")
-					.style("font-size", "65%")
+					.attr("transform", `translate(${margin.left/2.1}, 2)`)
+					// .style("font-family", "sans-serif")
+					.style("font-size", "80%")
 					.style('fill', 'dark grey') 
 				
 
@@ -458,8 +499,8 @@ var numlabel = bars3.append('text')
 					.style('stroke', 'darkslategrey')
 					.attr('stroke-width', 0.3)
 					// .attr("transform", `translate(0, ${-margin.top/0.9} )`)
-						.attr("transform", `translate(0, ${-margin.top/1.5} )`)
-					.call(d3.axisLeft(xScale5) //call axisLeft to use yScale for axis ticks and scale
+						.attr("transform", `translate(0, ${margin.top/200} )`)
+					.call(d3.axisLeft(yScale5) //call axisLeft to use yScale for axis ticks and scale
 						.tickSize(0)
 						.ticks(0)
 						.tickFormat("") ////empty no text
@@ -494,14 +535,14 @@ var numlabel = bars3.append('text')
 					.text('2018')
 					.attr('x', -margin.left/3.9)
 					.attr('y', -margin.bottom/2.5)
-					.attr('font-size', '1.8em');
+					.attr('font-size', '1.9em');
 	
 					
 			let heading23 = g2.append('text')
 					.text('Number of total hires, excluding white, non-Hispanic. Repeat survey participants')
 					// .style("fill", "#f5f9f4")
 					.attr('x', 0)
-					.attr('y', -margin.top*2.78)
+					.attr('y', height+margin.bottom/3.2)
 					.attr('font-size', '1em');
 
 			let title23 = g2.append('text')
@@ -510,4 +551,4 @@ var numlabel = bars3.append('text')
 					.attr('y', height+margin.top/0.5)
 					.attr('font-size', '0.9em');
 
-};
+	};					
