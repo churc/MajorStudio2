@@ -22,16 +22,7 @@
 			let width = 990 - margin.left - margin.right; // Use the window's width 
 			let height = 450 - margin.top - margin.bottom; // Use the window's height
 
-			// var color_legend = {
-			// 	1: ["American Indian or Alaskan Native & Native Hawaiian or Pacific Islander", "purple"],
-			// 	2: ["Asian", "pink"],
-			// 	3: ["Black or African American", "green"],
-			// 	4: ["Hispanic", "orange"],
-			// 	5: ["Two Or More Races", "blue"],
-			// 	6: ["white, non-Hispanic", "yellow"],
-			// 	7: ["Declined to State", "red"]
-			// }
-
+	
 
 			var svg = d3.select('#svg27') 
     				.append('svg') ////then append an svg 
@@ -40,7 +31,7 @@
 
 			var g = svg.append('g')
 				////then append to global g - so now the div svg is appended - see further down
-				    .attr("transform", "translate(" + margin.left*7 + "," + margin.top/1.1 + ")");
+				    .attr("transform", "translate(" + margin.left*7 + "," + margin.top + ")");
 			
 
 /////// parallel lines comparing new hiring by curators / educators and by museum leadership incl exec / conservators
@@ -119,7 +110,7 @@ var n = 10;
 						return 0; 
 					})
 					.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
-						return i *33;
+						return i *30;
 						// return line(d.percent) 
 					})
 					.attr('width', function(d,i) { 
@@ -168,7 +159,7 @@ var n = 10;
 						return 0; 
 					})
 					.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
-						return i *33;
+						return i *30;
 						// return line(d.percent) 
 					})
 					.attr('width', function(d,i) { 
@@ -202,7 +193,7 @@ var n = 10;
 					  .style("opacity", 0)
 					  // .attr("color", "grey")
 					  .attr('cy', (d, i) => {
-                              	return i * 33;
+                              	return i * 30;
                        })
 					  .attr('cx', (d,i) => {
                               	return xScale(d.percent);
@@ -234,13 +225,14 @@ var numlabel = bars1.append('text')
 					}
 					})
 					.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
-						return i * 33;
+						return i * 30;
 					})
 					.attr('x', (d, i) => { return  xScale(d.percent); 
 					})
 					// .attr('transform', (d) => { return 'translate(' + 20 + ', ' + (500 - yScale(d) ); });
 					.style("font-size", "80%")
-					.style('fill', '#000000') ///////numbers on top of bars
+					// .style('fill', '#000000') ///////numbers on top of bars
+					.style("fill", "#f5f4f9")
 					.attr("text-anchor", "start")
 				.attr("transform", "translate(4, 3)")
 			
@@ -307,7 +299,7 @@ var numlabel = bars1.append('text')
 					// .attr('fill', 'none')
 					.style('color', 'darkslategrey')
 					.attr('opacity', 0.6)
-					.attr("transform", `translate(0, ${height*2.1} )`)
+					.attr("transform", `translate(0, ${height*2.05} )`)
 					.style("font-size", "0.7em")
 					.call(d3.axisBottom(xScale)
 						////above move the axis to place that the chart ends - within the margins
@@ -321,8 +313,8 @@ let yAxispercentline = g.append('g') // just append axis to global space
 					.style('color', 'darkslategrey')
 					.attr('stroke-width', 0.2)
 					.attr("opacity", 0.8)
-				// 	.attr("transform", `translate(0, ${-margin.top} )`)
-					.attr("transform", `translate(0, ${height*2.12} )`)
+				  .attr("transform", `translate(0, ${height*2.05} )`)
+					// .attr("transform", `translate(0, ${height*2.12} )`)
 					.call(d3.axisBottom(xScale) //call axisLeft to use yScale for axis ticks and scale
 						.tickSize(3)
 						.ticks(10)
@@ -358,24 +350,24 @@ let yAxispercentline = g.append('g') // just append axis to global space
 
 let xlabel = g.append('text')
             .attr("class", "y18axis")
-            .attr("transform", "translate(" + (width/3.22) + " ," + (height*2.28) + ")")
+            .attr("transform", "translate(" + (width/3.22) + " ," + (height*2.2) + ")")
             .style("font-size", "0.9em")
             .style("opacity", 0.8)
               .text("percent")
                 
 			let headingpercent = g.append('text')
-					.text('New Hiring Since 2014: Percent Comparison Among Repeat 2015,2018 Survey Participants')
+					.text('New Hiring Since 2014: Percent Comparison Among Repeat 2015 & 2018 Survey Participants')
 					.attr('x', -margin.left/20)
-					.attr('y', -margin.top/1.31)
-					.attr('font-size', '1.4em');
+					.attr('y', -margin.top/1.2)
+					.attr('font-size', '1.43em');
 					
 			let headingpercent2 = g.append('text')
 					// .text('excluding white,')
-					// .style("fill", "#ffffff")
-					.text('Curators and Educators compared to Museum Leadership (including Executive Positions) and Conservators')
+					.style("fill", "#f5f4f9")
+					.text('Curators & Educators compared to Museum Leadership, including Executive Positions, & Conservators')
 					.attr('x',  -margin.left/20)
-					.attr('y', -margin.top/3.5)
-					.attr('font-size', '1.08em');
+					.attr('y', -margin.top/2.8)
+					.attr('font-size', '1.12em');
 
 			let titlepercent2 = g.append('text')
 				// 	.text('')
@@ -386,10 +378,10 @@ let xlabel = g.append('text')
 				
 
 			let datanote = g.append('text')
-					.text('Data from Art Museum Staff Demographic Survey 2018, Westermann, M., Sweeney, L., & Schonfeld, R. C. (2019, January 28)')
+					.text('Data from Art Museum Staff Demographic Survey 2018, Westermann, M., Sweeney, L., & Schonfeld, R. C. (January 2019)')
 					.attr('x', -margin.left/25)
-					.attr('y', -margin.top/1.8)
-					.attr('font-size', '0.9em');
+					.attr('y', -margin.top/1.61)
+					.attr('font-size', '0.95em');
 
 /////==================
 
