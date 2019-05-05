@@ -415,3 +415,4 @@ let xlabel = g.append('text')
 					.attr('y', -margin.top/1.61)
 					.attr('font-size', '0.95em');
 
+	    }
