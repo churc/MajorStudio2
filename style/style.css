@@ -1378,7 +1378,7 @@ max-width: 1250px;
       }
       .x18axis {
         font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
-        opacity: 0.8;
+        opacity: 0.9;
         /*stroke-dasharray: 2,4;*/
         stroke: darkslategrey;
         stroke-width: 0.3;
@@ -1388,14 +1388,14 @@ max-width: 1250px;
       }
       .y18axis{
          stroke-width: 0.2;
-         opacity: 0.6;
+         opacity: 0.7;
       }
   .thinbar{
        -webkit-transition: fill 12s ease-out;
         -moz-transition: fill 12s ease-out;
         -o-transition: fill 12s ease-out;
         transition: fill 12s ease-out;
-        opacity: 0.6;
+        opacity: 0.9;
   }
   
 /*museum artworks bubble svg15*/
