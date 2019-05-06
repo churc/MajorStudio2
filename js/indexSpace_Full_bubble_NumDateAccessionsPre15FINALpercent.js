@@ -1,10 +1,8 @@
-// <!--PERCENT-->
+// <!--PERCENT 1943-2015 artworks-->
 //////full Brooklyn Museum contemporary collection artworks dataset with accession information
 //////accession number and accession dates of artworks with artist name and nationality 
-/////count nationality for artwork bubbles grouped by artist nationality by before 2015 and 2015 and after
 /////3 with no accession number / corresponding accession date
-/////here artworks acquired before 2015
-////data from full Brooklyn Museum contemporary collection, artist, accession date and accession number - see cloud9
+
 // <!--see indexSpace_Full_bubble_NumDateAccessionspre15.js for data wrangling-->
 
 // d3.json("BkMus10253fullaccessNumDatenationalityAll.json").then((data) => {
@@ -12,7 +10,7 @@
 //   svgPlot26(data); // called later in the dateWrangling function
 // });
 
-d3.json("../data/before15groupsortcontinent.json").then((before15groupCount) => {
+d3.json("data/before15groupsortcontinent.json").then((before15groupCount) => {
   // dataWrangling(data);
   svgPlot28(before15groupCount); // called later in the dateWrangling function
 });
@@ -44,10 +42,10 @@ d3.json("../data/before15groupsortcontinent.json").then((before15groupCount) => 
 //               })
 // //              
 // console.log(test_data)
-   var margin = {top: 5, right: 120, bottom: 60, left: 120}; ////this works outside the svgPlot
+   var margin = {top: 40, right: 40, bottom: 30, left: 40}; ////this works outside the svgPlot
 	
-	var width = 960 - margin.left - margin.right; // specify the width and give space around the chart
-	var height = 850 - margin.top - margin.bottom; // specify the width and give space around the chart
+	var width = 735 - margin.left - margin.right; // specify the width and give space around the chart
+	var height = 670 - margin.top - margin.bottom; // specify the width and give space around the chart
 // 	console.log(margin.top)
 
 
@@ -60,15 +58,15 @@ d3.json("../data/before15groupsortcontinent.json").then((before15groupCount) => 
         var g = svg.append('g')    ////then append to global g - so now the div svg is appended
              ///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
 
-            	.attr("transform", "translate(" + margin.left*2 + "," + margin.top + ")");
+            	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         ////the above transform moves the whole chart away from the left and top of the browser
         
         var modal3 = svg.append('g').attr("id", "modal3")     
 
-              .attr("transform", "translate(" + margin.left*2 + "," + margin.top + ")");
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
      
                 
-// /////data wrangling
+////////========data wrangling - keep ======
 // /////returns data with accession number 4 digits, artist name and artist nationality for each artwork
 
 //       var return_data = [];
@@ -256,8 +254,7 @@ d3.json("../data/before15groupsortcontinent.json").then((before15groupCount) => 
 // before15groupsort = before15groupCount.sort((a, b) => (a.count > b.count) ? -1 : 1); // This is to sort the array large to small
 // console.log(before15groupsort)
 
-  
-// // ////to get max number
+// // get max number
 // //             let nat = after15group.map((e,i) => { 
 // //                     return {count: e.values.length}; /////returns count: value
 // //                 });
@@ -274,6 +271,8 @@ d3.json("../data/before15groupsortcontinent.json").then((before15groupCount) => 
             
 // //             let maxnatcount = d3.max(maxnatct);
 // //                  console.log(maxnatcount);   //////max number
+
+///////============= end of data wrangling =============
 
 
 console.log(before15groupCount)
@@ -304,20 +303,9 @@ console.log(sum)
 //   console.log(percentage+"%")
 // }
 
-////do this on the whole dataset
+////do get percentages on the whole dataset
 
 
-// for (var i = 0; i<before15groupCount.length; i++){
-//   var percentage = before15groupCount[i].count*100/sum;
-//           // return {percent: percentage}
-//           console.log(percentage)
-//     //       before15groupCountperc.push(percentage)
-//     // console.log(percentage+"%");
-  
-// }
-// console.log(percentage)
-
-////to get percentages
 return_data = [];
 
 var before15groupCountpercent 
@@ -327,21 +315,12 @@ for (let i = 0; i < before15groupCount.length; i++){
           console.log(percentage)
           
            return_data[i] = [percentage, before15groupCount[i].artists, before15groupCount[i].continent, before15groupCount[i].continentnum, before15groupCount[i].nationality, counts];
-          
-          // before15groupCountperc = percentage
+       
   }
 }
 
 before15groupCountpercent= return_data;
 console.log(before15groupCountpercent)
-
-
-// var before15groupCountperc 
-// for (let i = 0; i < before15groupCount.length; i++){
-//             before15groupCountperc[i] = [count[i].count]
-// }
-// console.log(before15groupCountperc)
-
 
 
 ////map to add keys
@@ -351,34 +330,23 @@ let before15grouppercent = [];
                     return {percent: e[0], artist: e[1], continent: e[2], continentnum: e[3], nationality: e[4], count: e[5]};
                 })
 
-  
-// console.log("hi")
+
 console.log(before15grouppercent)
   
 
-// ////use same max number as in all artwork circles 
-//////percentages use max percentage and range is relative % of range 97.18% from number (270)
-let radareadate = d3.scaleSqrt()    ////to get area of circles need square root 
-                      // .domain([0, 68.37666900913563])  
-                      .domain([0, 68.37666900913563]) 
-                      // .range([0, 270]); change range to 97.18%
-                      .range([0, 262.39]);
-                      // .range([0, 97]);
-            console.log(radareadate(68.37666900913563))
 
-// let radareadate = d3.scaleSqrt()    ////to get area of circles need square root 
-//                       .domain([0, 6811])  
-//                       // .domain([0, 116]) 
-//                       .range([0, 270]);
-//             console.log(radareadate(6811))
+let radareadate = d3.scaleSqrt()    ////get area of circles use square root 
+                      .domain([0, 6811])  ////max number use this domain size in both
+                      // .domain([0, 116]) 
+                      .range([0, 1800]);  /////use same range in both
+            console.log(radareadate(6811))
 
 // //Initialize a simple force layout, using the nodes and edges in dataset
 
 let force = d3.forceSimulation(before15grouppercent) 
-  			  .force("charge", d3.forceManyBody().strength(15))
-  			   // .force("charge", d3.forceManyBody().strength(20))
-  				// .force("link", d3.forceLink(dataset.edges).distance(30))  
-  			  .force("center", d3.forceCenter().x(width/3.5).y(height/1.66))
+  			  .force("charge", d3.forceManyBody().strength(5))
+  				// .force("link", d3.forceLink(dataset.edges).distance(30)) 
+  				.force("center", d3.forceCenter().x(width/2.1).y(height/1.8))
   				.force("collision", d3.forceCollide().radius(function(d, i) {
   				    return radareadate(d.percent) + 1;
   				}));
@@ -386,11 +354,6 @@ let force = d3.forceSimulation(before15grouppercent)
 
 
 // var colors = d3.scaleLinear().domain([1,13]).range(["#c9d3d6", "#ffe114"])
-// // var colors = d3.scale.threshold()
-// //   .domain([1, 14])  
-// //   .range(["blue","yellow","green","orange"]); 
-
-// var colors = d3.scaleLinear().domain([1,13]).range(["#c9d3d6", "#ffe114","#c9d3d6", "#e0f75d", "#c5e3f9","#ffd6c9","#ffa14f"])
 
 // var colors = d3.scaleOrdinal().domain([1,13]).range(["#E0D985","#ffe114","#c9d3d6", "#98ba9e", "#e0f75d", "#c5e3f9", "#c9d3d6", "#ffa14f","#b50f26","#b61127","#b81327","#ba1527","#bc1727"])
 
@@ -400,18 +363,6 @@ let force = d3.forceSimulation(before15grouppercent)
  //Create nodes as circles
 console.log(before15grouppercent.length)
 
-// //tooltip for information
-// //         ////tooltip
-//   let div = d3.select("g").append("div")
-//         .attr("class", "tooltipcircles26") ////best to use #tooltip div for styling
-//             .style("opacity", 0)
-//             .style("display", "none");
-
-//   function mouseover() {
-//     div.style("display", "inline");
-//   }
-  
-// //enter
 
 var nodes = g.selectAll("g")
             .data(before15grouppercent)
@@ -427,11 +378,9 @@ var nodes = g.selectAll("g")
   
             		d3.select(`#tooltippre15perc${i}`).style("display", "none").style("opacity", 0)
             		
-            		
           			   //d3.select("#modal3").select(`#tooltippre15perc${i}`).select("rect").style("fill", "#fff")
           		  });
     
-
 
 /////create tooltip for each circle - percent
  var newtooltips3 = modal3.selectAll("g")
@@ -462,12 +411,8 @@ var nodes = g.selectAll("g")
     
     newtooltips3.append("text")       	      	
               	   .text((d)=> {
-                  	 // if (d.nationality != "") {
                               return (d.nationality + ': ' + (d3.format(".4g")(d.percent)) + "%  " + d.count + ' artworks')
-                            // }
-                            //   else {
-                            //   return "not recorded"
-                            //   }
+                           
                           })
                           .attr("x", 0)
                           .attr("y", -6)
@@ -586,10 +531,13 @@ console.log(sortcontinent)
             }
         })
           .style("fill", "white")
+          // .style("fill", "black")
+          .attr("class", "bubblenames")
           .style("text-anchor", "middle")
           .style("font-size", function (d) {
             // console.log(d.count)
-            return radareadate(d.percent) * 0.3 + 2 + "px"
+            return radareadate(d.percent) * 0.275 + 2 + "px"
+            // return radareadate(d.percent) * 0.3 + 2 + "px"
           })
           .attr("translate", "transform(0,10)")
        
@@ -603,18 +551,6 @@ console.log(sortcontinent)
   		 .attr("y2", function(d) { return d.target.y; });
     */
     
-    // nodes.attr("x", (before15grouppercent,(d)=> { return d.x; }))
-  		//   .attr("y", (before15grouppercent,(d)=> { return d.y; }))
-
-
-    // circles.attr("cx", (before15grouppercent,(d)=> { return d.x; }))
-  		//     .attr("cy", (before15grouppercent,(d)=> { return d.y; }))
-  		 
-
-    // texts.attr("x", (before15grouppercent,(d)=> { return d.x; }))
-  		// 	.attr("y", (before15grouppercent,(d)=> { 
-  		// 	 // console.log(d.count)
-  		// 	  return d.y + radareadate(d.percent) * 0.07; }))
   		
     nodes.attr("x", function(d) { return d.x; })
   		  .attr("y", function(d) { return d.y; })
@@ -626,21 +562,18 @@ console.log(sortcontinent)
 
     texts.attr("x", function(d) { return d.x; })
   			.attr("y", function(d) {  
-  			 // console.log(d.count)
   			  return d.y + radareadate(d.percent) * 0.07; })
   			  
-    // newtooltips.attr("transform", d =>`translate(${d.x}, ${d.y-radareadate(d.percent)/3 -15} )`) 
    newtooltips3.attr("transform", d =>`translate(${d.x}, ${d.y-radareadate(d.percent)/3 -15} )`) 
 
 })
 
 let heading15 = g.append('text')  //// append text to global
                 .text('1943-2015 - percentages')
-                .attr('x', margin.left*1.25)
-                .attr('y', margin.bottom/3.6)
+                .attr('x', width/4)
+                .attr('y', height+margin.bottom/1.4)
                 .attr("fill", "#f5fcf7")
-                .attr('font-size', '1.15em') 
+                .attr('font-size', '1.5em') 
 
   
 }
-
