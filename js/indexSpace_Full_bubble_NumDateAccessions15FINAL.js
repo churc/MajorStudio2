@@ -345,12 +345,11 @@ d3.json("data/after15groupsortcontinent.json").then((after15groupCount) => {
 // //             let maxnatcount = d3.max(maxnatct);
 // //                  console.log(maxnatcount);   //////max number
 
-// ////use same max number as in all artwork circles 
+// ////use max number as in all artwork circles 
 let radareadate = d3.scaleSqrt()    ////to get area of circles need square root 
-                      .domain([0, 6930])  
-                      // .domain([0, 116]) 
+                      .domain([0, 6811])  
                       .range([0, 270]);
-            console.log(radareadate(6930))
+            console.log(radareadate(6811))
 
 // //Initialize a simple force layout, using the nodes and edges in dataset
 
@@ -466,8 +465,51 @@ console.log(nationalityCount)
               	.style("fill", (d,i) => {
               	  console.log(after15groupCount[i].continentnum)
               	  console.log(after15groupCount[i].continent)
-          		  return colors(after15groupCount[i].continentnum);
-          	})
+//           		  return colors(after15groupCount[i].continentnum);
+							    	 if(d.continentnum == 1){
+								var color = "KHAKI";
+								return color; 
+							} else if(d.continentnum == 2) {
+								var color1 = "DARKKHAKI";
+								return color1; 							
+							} else if(d.continentnum == 3){
+								var color2 = "PALEGOLDENROD";
+								return color2;							
+							} else if (d.continentnum == 4){
+								var color3 = "gold";
+								return color3;	
+							} else if(d.continentnum == 6) {
+								var color4 = "WHITESMOKE";
+								return color4; 							
+							} else if(d.continentnum == 7){
+								var color5 = "TAN";
+								return color5;							
+							} else if (d.continentnum == 8){
+								var color6 = "gray";
+								return color6;		
+							} else if(d.continentnum == 9) {
+								var color7 = "DARKGOLDENROD";
+								return color7; 							
+							} else if(d.continentnumm == 10){
+								var color8 = "lightgray";
+								return color8;							
+							} else if (d.continentnum == 11){
+								var color9 = "sienna";
+								return color9;	
+							} else if (d.continentnum == 12){
+								var color10 = "wheat";
+								return color10;	
+							} else if (d.continentnum == 13){
+								var color11 = "BURLYWOOD";
+								return color11;	
+							} else if (d.continentnum == 14){
+								var color12 = "THISTLE";
+								return color12;	
+							} else {
+								  var color13 = "ROSYBROWN";
+								  return color13;
+								  }
+              })	
       //     	.on("mouseover", function (d, i) {
       //     	  div.transition()
       //             .duration(200)
@@ -557,420 +599,6 @@ let heading15 = g.append('text')  //// append text to global
                 .attr("fill", "#f5fcf7")
                 .attr('font-size', '1.5em') 
 
-
 }
 
   
-// ///////////////////========
-// // var nodes = [];
-// // // console.log(data)
-// // for (var i = 0; i<n; i++){
-// //     nodes.push(create_nodes(nationalityCount.length,i));
-// // }
-
-// // var force = d3.layout.force()
-//     // .nodes(nodes)
-//     // .size([width, height])
-//     // .gravity(.02)
-//     // .charge(0)
-//     // .on("tick", tick)
-//     // .start();
-
-// // var svg = d3.select("body").append("svg")
-// //     .attr("width", width)
-// //     .attr("height", height);
-
-
-// // var node = svg.selectAll("circle")
-// //     .nationalityCount(nodes)
-// //     .enter().append("g").call(force.drag);
-
-
-// // node.append("circle")
-// //     .style("fill", function (d) {
-// //     return color(d.cluster);
-// //     })
-// //     .attr("r", function(d){return d.radius})
-    
-// // node.append("text")
-// //       .attr("dy", ".3em")
-// //       .style("text-anchor", "middle")
-// //       .text(function(d) { return d.text.substring(0, d.radius / 3); });
-      
-// // ////////radius or sqroot?
-// // console.log(nationalityCount.count)
-
-// // function create_nodes(nationalityCount,node_counter) {
-// // //   var i = nationalityCount.indexOf(nationalityCount[node_counter].group),
-// //   var i = nationalityCount.length,
-// //       r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
-// //       d = {
-// //         cluster: i,
-// //         // radius: nationalityCount[node_counter].size*1.5,
-// //          radius: nationalityCount.count[node_counter].size*1.5,
-// //         text: nationalityCount[node_counter].text,
-// //         x: Math.cos(i / m * 2 * Math.PI) * 200 + width / 2 + Math.random(),
-// //         y: Math.sin(i / m * 2 * Math.PI) * 200 + height / 2 + Math.random()
-// //       };
-// //   if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
-// //   return d;
-// // }
-
-
-
-// // function tick(e) {
-// //     node.each(cluster(10 * e.alpha * e.alpha))
-// //         .each(collide(.5))
-// //     .attr("transform", function (d) {
-// //         var k = "translate(" + d.x + "," + d.y + ")";
-// //         return k;
-// //     })
-
-// // }
-
-// // // Move d to be adjacent to the cluster node.
-// // function cluster(alpha) {
-// //     return function (d) {
-// //         var cluster = clusters[d.cluster];
-// //         if (cluster === d) return;
-// //         var x = d.x - cluster.x,
-// //             y = d.y - cluster.y,
-// //             l = Math.sqrt(x * x + y * y),
-// //             r = d.radius + cluster.radius;
-// //         if (l != r) {
-// //             l = (l - r) / l * alpha;
-// //             d.x -= x *= l;
-// //             d.y -= y *= l;
-// //             cluster.x += x;
-// //             cluster.y += y;
-// //         }
-// //     };
-// // }
-
-// // // Resolves collisions between d and all other circles.
-// // function collide(alpha) {
-// //     var quadtree = d3.geom.quadtree(nodes);
-// //     return function (d) {
-// //         // var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
-// //         var r = d.radius + maxRadius + Math.max(padding),
-// //             nx1 = d.x - r,
-// //             nx2 = d.x + r,
-// //             ny1 = d.y - r,
-// //             ny2 = d.y + r;
-// //         quadtree.visit(function (quad, x1, y1, x2, y2) {
-// //             if (quad.point && (quad.point !== d)) {
-// //                 var x = d.x - quad.point.x,
-// //                     y = d.y - quad.point.y,
-// //                     l = Math.sqrt(x * x + y * y),
-// //                     // r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster ? padding : clusterPadding);
-// //                     r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster );
-// //                 if (l < r) {
-// //                     l = (l - r) / l * alpha;
-// //                     d.x -= x *= l;
-// //                     d.y -= y *= l;
-// //                     quad.point.x += x;
-// //                     quad.point.y += y;
-// //                 }
-// //             }
-// //             return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
-// //         });
-// //     };
-// // }
-
-
-// // Array.prototype.contains = function(v) {
-// //     for(var i = 0; i < this.length; i++) {
-// //         if(this[i] === v) return true;
-// //     }
-// //     return false;
-// // };
-
-
- 
-            
-// ///////////=====================   
-// ////callout
-//     //   let heading = g.append('text')  //// append text to global
-//     //                 .text('artworks Brooklyn Museum contemporary collection')
-//     //                 .attr('x', 50)
-//     //                 .attr('y', 50)
-//     //                 .attr('font-size', '100%'); 
-                
-//     //////THIS Appends text to #svg1 - to the browser    
-//         //   let svg1 = data.forEach((d, i) => { ///////
-//         //             d3.select('#svg1')
-//         //                 // .append('text') ////this writes text in the browser
-//         //                 // .text(d.artists)
-//         //                 // .text(d.artists.name + '   |   ' + d.artists[0].nationality + ' | ' + d.artists[0].dates + '------ ')
-//         //                 // .text(d.artists[0].nationality + ' | ' + '--')
-//         //                 // .text(d.artists[0].name + '--')
-//         //                 // .text(d.artists[0].id)
-//         //                 .attr("x", 30)
-//         //                 .attr("y", 30)
-//         //                 // .attr('fill', 'red')
-//         //                 .attr('font-size', '14px')
-//         //                 // console.log(d.artists[0].name + ' | ' + d.artists[0].nationality + ' | ' + d.artists[0].dates) /////works to list each name with nationality
-//         //                 // console.log(d.artists[0])  ////works to return array 
-//         //                 // console.log(d.artists[0].dates) ////works to return just the info within dates
-//         //                 // console.log(d.artists[0].nationality); ////WORKS to return nationality within artist array
-//         //                 // console.log(d.length)
-//         //         });
-             
-// //// preprocess the data with array.filter to NOT include empty artists arrays
-//                             // const filtered = data.filter((d)=>{
-//                             //     return d.artists[0] !== "[]";
-//                             // });
-//                             // console.log(filtered);
-
-// //////not needed here with exported NationalityCount                     
-//                 //  const filtered = data.filter((d)=>{
-//                 //         return d.artists[0] //////THIS WORKS TO FILTER
-//                 //         })
-//                 //         console.log(filtered.length);
-
-                            
-   
-//             //   	var newData = filtered;  ////arrays that contain artist data
-            
-// //////not needed here with exported NationalityCount    
-//                 // let nested_data = d3.nest()
-//                 //         .key(function(newData) { 
-//                 //             return newData.artists[0].nationality; 
-//                 //         })
-//                 //         .entries(newData);
-//                 //         console.log(nested_data); //// THIS WORKS TO RETURN NATIONALITY DATA and COUNTS
-                    
-//       //// map is a very useful method in JavaScript to re-arrange arrays
-//                 // it takes a bit to get used to it, but then it’s really helpful for tasks like this
-//                 // https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
-                
-//                 // The new variable nationalityCount is the result of the map method
-//                 // I’m applying the map method on the nested_data array
-//                 // I can define a arrow function that is applied to every element in the array
-//                 // In parentheses I define the parameters (e,i) which are arbitrary, but work like (d,i) in d3
-//                 // Every element in the array is replace by what I *return* in the function
-//                 // In this case a new object, with the nationality name and the length of the nested array
-
-// //////not needed here with exported NationalityCount 
-//                 // var nationalityCount = nested_data.map((e,i) => { 
-//                 //     return {nationality: e.key, count: e.values.length};
-//                 // });
-//                 // // console.log(nationalityCount[0].count)
-//                 // // console.log(nationalityCount)  
-//                 // console.log(nationalityCount.length);
-// /////then sort to order by number
-//               // Sort works similar, but the sorting logic is a bit unintuitive
-//                 // You have to define to parameters, and a comparison like '>' that returns a boolean
-//                 // the ? -1 : 1 is just a very concise ways to write an if else statement
-//                 // It’s not necessary to remember this syntax, I look it up, when I need it, too
-                
-//             // let nationalityCount = data;
-//             //     nationalityCount = nationalityCount.sort((a, b) => (a.count > b.count) ? -1 : 1); // This is to sort the array large to small
-//             // //   nationalityCount = nationalityCount.sort((a, b) => (a.count > b.count) ? 1 : -1); // small to large
-
-                
-//             //   console.log(nationalityCount);   /////returns the count of each group in order      
-  
-
-  
-//   ////to get max number
-//             // let nat = nested_data.map((e,i) => { 
-// //             let nat = data.map((e,i) => { 
-// //                     // return {count: e.values.length}; /////returns count: value
-// //                     return {count: e.count};
-// //                 });
-// //             console.log(nat);  //////just the counts
-               
-               
-// //               var maxnatctun = nat.map(function (art) {
-// //                   return art.count;   ////returns just the values
-// //                     });
-            
-// //             // console.log(maxnatctun);
-// //             // d3.max(nat);
-            
-// //             let maxnatct = maxnatctun.sort((a, b) => (a > b) ? -1 : 1);
-            
-// //             console.log(maxnatct)
-            
-// //              let maxnatcount = d3.max(maxnatct);
-// //             console.log(maxnatcount);   //////max number
-            
-            
-// //           //////dataset too large for AWS
-          
-// // /////circles, use square root to get the area 
-// //             let radarea = d3.scaleSqrt()    ////to get area of circles need square root 
-// //                                 .domain([0, (maxnatcount)])  
-// //                                 .range([0, 300]);
-// //                             console.log(radarea(maxnatcount))
-                            
-// // ////// CALCULATE DIAMETER HERE or radius of circle plus radius of circle next to it???
-// //circles, use r x 2 to get diameter 
-//         // let diameter = d3.radius(d,i) 
-//         // var diameter = nationalityCount.map((e,i) => { 
-//         //             return {nationality: e.key, count: e.values.radius};
-//         //         });                        
-
-// //         let diameter = d3.nest(nationalityCount)
-// //                         .key(function(radius) { 
-// //                             return (i*(nationalityCount.count)); 
-// //                         })
-// //                         .entries(nationalityCount);
-                        
-//             // let diameter = function(d,i)  {   //////for radius use relative area of circles pass sqrt scale function
-//             //                 /////TRYING TO RETURN radius x 2 for each number
-//             //                     return ("r"(i(d.count)));  ////pass in radius x 2
-//             //                 };
-//             //                 console.log(diameter)
-                
-//                 ///////need to get radius of one circle and radius of circle next to it
-//                 // let diameter = d3.scaleLinear()  ////HOW TO GET DIAMETER - radius of circle x 2
-//                 //                 .domain([0, (maxnatcount)])  
-//                 //                 .range([0, 600]);
-//                 //             // console.log(diameter)
-      
-// //             let circles = graph.selectAll("g") ///// selectAll selects every child in the selection
-// //                                 .data(nationalityCount)
-// //                                 .enter()
-// //                                 .append("g")
-// // ///////////////HOW TO SELECT JUST ONE FOR NATIONALITY?                                
-// //                         //         .on('mouseover', (d) =>  {       ///// get text on hover  
-// //   	                    //                   text                         
-// //                 			     //   .text(d.nationality + ' - ' + d.count + '------ ')
-// //                 			 //    .on('mouseenter', (d,i,j) =>  {       ///// get text on hover 
-// //                 			 //    console.log('hover');
-// //   	                //                       text                         
-// //                 			 //    // .text(d.nationality + ' - ' + d.count + '------ ')
-                                   
-// //                 				// // d3.select(j[i]).select('text')
-// //                 				// // d3.select(j[i])
-// //                 				//     .text(d.nationality + ' - ' + d.count + '------ ')
-// //                 				//     d3.select(j[i])
-// //                     //  			// 	.text((d) => { return d.nationality + ' | ' + d.count + '------ '; })
-// // 	                   //            // d3.select('circle')      //////makes hover bar a diff color
-// //                     // 				.style('fill', 'blue');
-// //                     //             	})
-// // ///////////////HOW TO SELECT JUST ONE FOR NATIONALITY?                                 	
-// //                             .on('mouseover', function(d) {
-// //                     			   text
-// //                     			        .text(d.nationality + d.count);
-            
-// //                     				d3.select(this).select('text')
-// //                         				.text((d) => { return d.nationality + ' - ' + d.count + '------ '; });
-                        				
-// //                         			d3.select(this).select('circle')
-// //                         				.style('fill', 'gray');
-// //                             	})    	
-// //                             	.on('mouseout', function(d) {
-// //                             	   // text
-// //                             // 	    .text(d.nationality + ' - ' + d.count + '------ ')
-// //                             // 	   // .text(d.nationality + ' - ' + d.count + '------ ')
-// //                             // // 	    .text(function (d) { 
-// //                             		d3.select(this)
-// //                             		    .select('text')
-// //                                         .remove()
-// //                             // 		    .text((d)=> { return ""})
-// //                             		  //  .text((d) => { return (d.nationality + ' - ' + d.count + '------ ')
-                            		   
-// //                             		d3.select(this)
-// //                             		    .select('circle')
-// //                         				.style('fill', 'none')
-// //                         				.select("text").remove()
-                        				
-// //                         				// .text((d)=> { return "none"})
-// //                             	})
-                            
-// //                 //             	.on('mouseout', function(d) {
-// //                 // 		d3.select(this).select('text')
-// //                 // 		    .text((d) => { return d.name; })
-
-// //                 // 		d3.select(this).select('rect')
-// //             				// .style('fill', 'black');
-// //                 //     });
-   
-   
-// //   ////text for circles
-// //     let text = graph.append("text")
-// //                     .data(nationalityCount)
-// //                     .enter()
-// //                     .append("g"); /////THIS MAKES IT APPEAR ON THE BROWSER
-// //         /////BUT also makes a set of global under the circles not with each circle
-// //                     //   .attr("cx", (d, i) => { 
-// //                     //                 // return d[1].count/20;
-// //                     //                 // return(d.nationality + ' | ' + d.count + '------ ')
-// //                     //                 return (i);
-// //                     //                 // return (i + 1) + 100;  
-// //                     //                 // return (i * 50 + 200);
-// //                     //             })
-// //                     //   .attr("cy", height/2.5)  /////this is for below the circle or do i do this to area radius?
-// //                     //   .text(d.nationality + ' | ' + d.count + '------ ');
-// //                     //   .text((d, i) => i)
-// //                 //       .text(function (d, i) { 
-// //                 //                     return(d.nationality + ' - ' + d.count + '------ ')
-// //                 // });                                                                     
- 
-// //   //////draw circles
-// //                 circles.append("circle")
-// //                     .attr("cx", (d, i) => { // for horizontal use diameter for spacing circles 
-// //                                     // return ((i + (radarea(d.count))*8) + 150);
-// //                                     return ((i + (radarea(d.count)*6)));  ///////for SPACING circles
-// //                                     // return (i + ("r"(d.count)));  //////space by diameter of circle
-// //                                     // d3.radius
-// //                                     // return diameter(d.count)*2;   //////?????
-// //                          })
-// //                     .attr("cy", 300)
-// //                     .attr("r", (d, i) => {   //////for radius use relative area of circles pass sqrt scale function
-// //                                 return radarea(d.count);  //////for DRAWING this works to return circle area
-// //                             })
-// //                     .attr("value", (d) => {
-// //                         return d.count;
-// //                     })
-// //                     .text(function(d) {
-// //                     return d.key; 
-// //                     })
-// //                     .attr('fill', 'none')
-// //                     .attr('stroke', 'green')
-// //                     // .attr('fill', 'orange')
-// //                     ;        
-             
-    
-// //         // name label
-// //     ///////HOW TO GET THIS TEXT TO READ BY EACH CIRCLE?????
-// //     //////ON MOUSEOUT HOW TO GET NO TEXT
-// //                     circles.append("text")
-// //                             .attr('font-size', "30px")
-// //                             .style('fill', 'green')
-// //                     //          .attr("cx", (d, i) => { 
-// //                     // //                 return (d.count);  /////this gives the count for each 
-// //                     // //                 //////but count is probably not correct for the x and y
-// //                     //                 return ((i * 8) + 5000);
-// //                     //                 // return ((i / 5) );
-// //                     //          })
-// //                     //         // .attr("cy", (d, i) => { 
-// //                     //         // //                 return (d.count);  /////this gives the count for each 
-// //                     //         // //                 //////but count is probably not correct for the x and y
-// //                     //         //                 return (100);
-// //                     //         //      })   
-// //                     //         .attr("cy", 5000)
-// //                     // 		.text((d) => { 
-// //                     // 		    return d.nationality + ' | ' + d.count + '------ ' 
-// //                     // 		}
-// //                     		.attr("transform", (d, i)=> { 
-// //                     // 		 let r = radarea(d.count);
-// //                     // 		 let x = (i * 8) + 5000;
-// //                     		 let x = (i + (radarea(d.count)*6)); 
-// //                     		 let y = 300;
-// //                     // 		 return "translate(" + r + ',' + x + ',' + y +')'
-// //                     		  return "translate(" + x + ',' + y +')'
-// //                                 })
-// //                             .text((d) => { 
-// //                     		    return d.nationality + ' | ' + d.count + '------ ' 
-// //                     		});
-// //                     // 		});
-// //                     // 		.attr('transform', (d) => { return "translate(" + this.margin.left + "," + this.margin.top + ")"; }); // concatinating strings
-
-// };
-
-// ////===============
- 
