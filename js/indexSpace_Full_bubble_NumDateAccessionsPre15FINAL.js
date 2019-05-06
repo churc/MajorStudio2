@@ -276,10 +276,10 @@ d3.json("data/before15groupsortcontinent.json").then((before15groupCount) => {
 
 // ////use same max number as in all artwork circles 
 let radareadate = d3.scaleSqrt()    ////to get area of circles need square root 
-                      .domain([0, 6930])  
+                      .domain([0, 6811])  
                       // .domain([0, 116]) 
                       .range([0, 270]);
-            console.log(radareadate(6930))
+            console.log(radareadate(6811))
 
 // //Initialize a simple force layout, using the nodes and edges in dataset
 
@@ -298,10 +298,7 @@ let force = d3.forceSimulation(before15groupCount)
 // var colors = d3.scaleSequential().domain([1,13]).interpolator(d3.interpolateViridis);
 // var colors = d3.scaleLinear().domain([1,13]).range(["yellow", "blue"])
 
-var colors = d3.scaleLinear().domain([1,13]).range([ "#c5e3f9","#ffd6c9","#ffa14f","#633906","#663a07","#c9d3d6", "#ffe114","#c9d3d6", "#e0f75d","#683c07","#6a3d07","#6c3e08","#6e4008"])
-
-// var colors = d3.scaleLinear().domain([1,13]).range(["#c9d3d6", "#ffe114","#c9d3d6", "#e0f75d", "#c5e3f9","#ffd6c9","#ffa14f"])
-// "#563105","#583305","#5b3406","#5d3506","#5f3606","#613806","#633906","#663a07","#683c07","#6a3d07","#6c3e08","#6e4008")
+// var colors = d3.scaleLinear().domain([1,13]).range([ "#c5e3f9","#ffd6c9","#ffa14f","#633906","#663a07","#c9d3d6", "#ffe114","#c9d3d6", "#e0f75d","#683c07","#6a3d07","#6c3e08","#6e4008"])
 
 
 // // var colors = d3.scale.threshold()
@@ -411,10 +408,54 @@ console.log(nationalityCount2)
           	})
               	.style("opacity", 0.6)
               	.style("fill", (d,i) => { 
-              	   console.log(before15groupCount[i].continentnum)
+              	  console.log(before15groupCount[i].continentnum)
               	  console.log(before15groupCount[i].continent)
-              	  return colors(before15groupCount[i].continentnum);
-              	})	
+//               	  return colors(before15groupCount[i].continentnum);
+              		  
+              	 if(d.continentnum == 1){
+								var color = "KHAKI";
+								return color; 
+							} else if(d.continentnum == 2) {
+								var color1 = "DARKKHAKI";
+								return color1; 							
+							} else if(d.continentnum == 3){
+								var color2 = "PALEGOLDENROD";
+								return color2;							
+							} else if (d.continentnum == 4){
+								var color3 = "gold";
+								return color3;	
+							} else if(d.continentnum == 6) {
+								var color4 = "WHITESMOKE";
+								return color4; 							
+							} else if(d.continentnum == 7){
+								var color5 = "TAN";
+								return color5;							
+							} else if (d.continentnum == 8){
+								var color6 = "gray";
+								return color6;		
+							} else if(d.continentnum == 9) {
+								var color7 = "DARKGOLDENROD";
+								return color7; 							
+							} else if(d.continentnumm == 10){
+								var color8 = "lightgray";
+								return color8;							
+							} else if (d.continentnum == 11){
+								var color9 = "sienna";
+								return color9;	
+							} else if (d.continentnum == 12){
+								var color10 = "wheat";
+								return color10;	
+							} else if (d.continentnum == 13){
+								var color11 = "BURLYWOOD";
+								return color11;	
+							} else if (d.continentnum == 14){
+								var color12 = "THISTLE";
+								return color12;	
+							} else {
+								  var color13 = "ROSYBROWN";
+								  return color13;
+								  }
+              })		
           	 
   // for (int i = 0; i < width-circleW/2; i = i+(circleW+theSpace)) {
   //   fill(redColor,greenColor,blueColor);
@@ -455,7 +496,7 @@ console.log(nationalityCount2)
       // //         });
       //   });
           	
-//   	 //Add a simple tooltip
+// //Add a simple tooltip
   nodes.append("title")
   	 .text(function(d) {
   		return d.name;
@@ -480,7 +521,7 @@ console.log(nationalityCount2)
           .attr("translate", "transform(0,10)")
        
 
-//   //Every time the simulation "ticks", this will be called
+// //Every time the simulation "ticks", this will be called
   force.on("tick", function() {
     /*for lines
   	edges.attr("x1", function(d) { return d.source.x; })
