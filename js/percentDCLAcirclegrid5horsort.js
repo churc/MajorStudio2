@@ -172,7 +172,7 @@ let svgPlot21 = (datapercent) => {
         .append('svg')
         .attr("width", width)
         .attr("height", height)
-        .style("background", "#877c74")
+        .style("background", "#726a64")
         
 let g21 = svg21.append('g') 
     // let g21 = svg21.append('g') ////then append to global g 
