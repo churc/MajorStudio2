@@ -597,7 +597,6 @@ p {
 
 #container8{
   max-width: 1250px;
-  margin-bottom: 18em;
 }
 
 .container9{
@@ -1483,6 +1482,7 @@ max-width: 1250px;
   font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
   font-size: 1em;
   margin-top: 2.5em;
+  margin: 0 auto;
 }
 .tiptext{
         text-anchor: middle;
