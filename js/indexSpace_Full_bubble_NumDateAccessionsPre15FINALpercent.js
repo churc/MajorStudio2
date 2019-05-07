@@ -44,7 +44,7 @@ d3.json("data/before15groupsortcontinent.json").then((before15groupCount) => {
 // console.log(test_data)
    var margin = {top: 40, right: 40, bottom: 30, left: 40}; ////this works outside the svgPlot
 	
-	var width = 735 - margin.left - margin.right; // specify the width and give space around the chart
+	var width = 700 - margin.left - margin.right; // specify the width and give space around the chart
 	var height = 670 - margin.top - margin.bottom; // specify the width and give space around the chart
 // 	console.log(margin.top)
 
