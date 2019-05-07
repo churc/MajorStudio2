@@ -947,18 +947,19 @@ max-width: 1250px;
 
        .gridy,
       .gridx {
-        opacity: 0.5;
+        opacity: 1;
         stroke-dasharray: "2,4";
         stroke: grey;
-        stroke-width: 0.2;
+        stroke-width: 0.3;
       }
 
       .xaxis1, .yaxis1 {
+        font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
         opacity: 1;
         stroke-width: 0.08;
         stroke: darkslategrey;
         fill: currentColor;
-        font-size: 70%;
+        font-size: 90%;
       }
       
       .NEAtitle {
