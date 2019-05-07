@@ -643,9 +643,9 @@ console.log(sortcontinent)
 
 let heading15 = g.append('text')  //// append text to global
                 .text('2015-March 2019 - percentages')
-                .attr('x', width/6)
+                .attr('x', width/3.3)
                 .attr('y', height+margin.bottom/1.4)
                 .attr("fill", "#f5fcf7")
-                .attr('font-size', '1.5em') 
+                .attr('font-size', '1.4em') 
 
 }
