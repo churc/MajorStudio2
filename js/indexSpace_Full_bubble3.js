@@ -240,13 +240,13 @@ console.log(data)
         
         
 let heading = g.append('text')  //// append text to global
-                .text('Brooklyn Museum Contemporary Collection')
+//                 .text('Brooklyn Museum Contemporary Collection')
                 .attr('x', -margin.left*1.5)
                 .attr('y', margin.bottom/4.2)
                 .attr('font-size', '1.15em'); 
                 
 let heading2 = g.append('text')  //// append text to global
-                .text('10,253 artworks grouped by artist nationality')
+//                 .text('10,253 artworks grouped by artist nationality')
                 .attr('x', -margin.left*1.53)
                 .attr('y', margin.bottom/1.4)
                 .attr('font-size', '1.45em'); 
