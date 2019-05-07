@@ -53,7 +53,7 @@ let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 
     .append('svg') ////then append an svg 
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
-      .style("background", "#877c74");
+      .style("background", "#726a64");
 
 
 
