@@ -1582,9 +1582,9 @@ max-width: 1250px;
 
 .endnotes {
   /*margin-top: 2em;*/
-  font-size: 0.9em;
+  font-size: 0.95em;
   color: #f5fcf7;
-  line-height: 0.7em;
+  line-height: 1.4em;
 }
 
 /*thanks to NYT style*/
