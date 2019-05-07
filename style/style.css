@@ -1,3 +1,5 @@
+/* look around on https://fonts.google.com to find other typefaces… */
+
 @import url('https://fonts.googleapis.com/css?family=Alegreya');
 /*bebas neue, aktiv-grotesk, aktiv-grotesk-thin */
 
@@ -104,6 +106,12 @@ nav {
   display: block;
 }
 
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }*/
+
+/*article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav {display: block; }*/
+
+/*section {display: block; }*/
+
 body {
   line-height: 1;
 }
@@ -133,6 +141,7 @@ table {
 
 /* end reset */
 
+/* use the sensible version of the box model */
 
 html {
   box-sizing: border-box;
@@ -145,6 +154,7 @@ html {
 }
 
 
+
 /* set default font for body text */
 
 body {
@@ -153,9 +163,10 @@ body {
   margin: 3em auto;
   font-size: 1em;
   line-height: 1.3em;
-  background: #877c74;
-  background-color: #877c74; 
-  color: #877c74;
+  /*background: #877c74;*/
+  background: #726a64;
+  background-color: #726a64; 
+  color: #726a64;
 }
 
 wrapper{
@@ -260,6 +271,8 @@ h2 {
   padding: 0.2em;
 }
 
+/*h1{ font-size:36px; }*/
+
 h2 {
   font-size: 1.25em;
 }
@@ -350,16 +363,18 @@ h6 {
   /*brown*/
     color: #4c4037;
     font-family: aktiv-grotesk-regular, sans-serif, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-style: italic;
 }
 
 #intro {
   max-width: 1000px;
   margin-bottom: 1em;
-  background:#877c73;
+  /*background:#877c73;*/
+  background: #726a64;
   display: inline-block;
 }
+
 
 /* spacing & borders at the top and bottom of the page */
 
@@ -375,7 +390,8 @@ main {
   padding: 3em auto;
   padding-bottom: 0;
   padding-left: 3em;
-  background: #877c74;
+  /*background: #877c74;*/
+  background: #726a64;
   margin-top: -10px;
 }
 
@@ -384,7 +400,8 @@ main {
   max-width: 1000px;
   margin: 3em auto;
   margin-top: 0px;
-  background: #877c74;
+  /*background: #877c74;*/
+  background: #726a64;
 }
 
 .charts{
@@ -399,8 +416,9 @@ main {
     background: pink;
     background-color: pink; 
     color: pink;
-    /*background-color: #9e826b; */
-    /*color: #9e826b;*/
+    background-color: #9e826b; 
+    color: #9e826b;
+    /*background: #726a64;*/
   }
 /*main container for 2 column text blocks*/
 .main2col{
@@ -429,6 +447,7 @@ main {
   width: auto;
   display: flex;
   padding-top: 0;
+  /*border-bottom: 1px dashed #f4c6bd;*/
 }
 #chartsbubblemain{
   margin-top: 0;
@@ -465,6 +484,26 @@ main {
   margin: 0 auto;
 }
 
+/* spacing & borders at the top and bottom of the page */
+
+/*#mainhuge, #mainhuge1  {*/
+/*  background: url(../images/DP319028_met3.jpg) no-repeat center center fixed;*/
+/*  -webkit-background-size: cover;*/
+/*  -moz-background-size: cover;*/
+/*  -o-background-size: cover;*/
+/*  background-size: cover;*/
+  /*overflow: hidden;*/
+  /*width: 100%;*/
+  /*height: auto;*/
+  /*margin: 0;*/
+/*  width: 100vw;*/
+/*  height: auto;*/
+/*  position: relative;*/
+/*  left: 50%;*/
+/*  right: 50%;*/
+/*  margin-left: -50vw;*/
+/*  margin-right: -50vw;*/
+/*}*/
 
 /*images spanning full width*/
 
@@ -615,6 +654,7 @@ max-width: 1250px;
   padding-top: 2.5em;
 }
 
+
 .section {    /*delete this line to disable the multi-column layout*/
    display: flex;   
   margin-top: 1em;
@@ -624,6 +664,7 @@ max-width: 1250px;
 #step4{
   padding-bottom:  3em;
 }
+
 
 .who {
   font-family: bebas-neue, sans-serif;
@@ -640,8 +681,28 @@ max-width: 1250px;
   
 }
 
+/*.each_content1,*/
+/*.each_content2,*/
+/*.each_content3,*/
+/*.each_content4,*/
+/*.each_content5,*/
+/*.each_content6,*/
+/*.eachcontent7,*/
+/*.eachcontent8 {*/
+/*  padding: 0.2em;*/
+/*  color: #4c4037;*/
+/*}*/
+
+/*article #graph {*/
+
+/*  margin-right:1em;  add some horizontal breathing room b/t the image and the text */
+
+/*}*/
+
 .text {
   color: #4c4037;
+  /* customize the typography for the descriptive text */
+  /*font-style:italic;*/
 }
 
 /*on the left whiter ground*/
@@ -718,7 +779,10 @@ max-width: 1250px;
   margin-bottom: 40px;
 }
 
+/*/////adding*/
+
 /*adding*/
+
 
 /*STICKY containerfor each dv*/
 
@@ -736,8 +800,10 @@ max-width: 1250px;
 
 .sectback {
   max-width: 1250px;
-  background: #877c73;
-  background-color: #877c74;
+  /*background: #877c73;*/
+  /*background-color: #877c74;*/
+  background: #726a64;
+  /*background: #665950;*/
 }
 
 /*section block ground*/
@@ -824,6 +890,9 @@ max-width: 1250px;
   margin-left: 0;
 }
 
+#graph10{
+  /*margin-top: 2.5em;*/
+}
 
 /*////space*/
 
@@ -858,8 +927,9 @@ max-width: 1250px;
   font-family: aktiv-grotesk-regular, sans-serif, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.3em;
   /*brown*/
-  color: #4c4037;
-  background-color: #877c74;
+  /*color: #4c4037;*/
+  /*background-color: #877c74;*/
+  background: #726a64;
   padding: 0.2em;
   padding-top: 3em;
   font-weight: regular;
@@ -872,6 +942,7 @@ max-width: 1250px;
       #svg1 {
         font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
         padding-left:1em;
+        background: #726a64;
       }
 
        .gridy,
@@ -952,11 +1023,13 @@ max-width: 1250px;
       #tooltipNEA p {
         margin: 0;
       }
-    
+
+      
 /*NEA 2012-2017 audience greyblue area*/
 #svg0{  
                 font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
-                 background: #877c74;
+                 /*background: #877c74;*/
+                 background: #726a64;
                  stroke-width: 0.02;
                  padding-top: 2em;
                  padding-left: 1em;
@@ -996,7 +1069,7 @@ max-width: 1250px;
                 opacity: 0.9;
             }
             .audsubhead{
-                font-size: 1.43em;
+                font-size: 1.5em;
                 color: #f5f4f9;
                 fill: currentColor;
                 opacity: 0.9;
@@ -1005,7 +1078,8 @@ max-width: 1250px;
 /*NEA race and ethnicity 2012-2017*/
 #svg24{  
                 font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
-                 background: #877c74;
+                 /*background: #877c74;*/
+                 background: #726a64;
                  stroke-width: 0.02;
                  padding-top: 2em;
                  padding-left: 2.2em;
@@ -1118,14 +1192,18 @@ max-width: 1250px;
         transition: all .5s ease-out 7s;
 }
      
+          
+
 /*DCLA horizontal job types yellow percent circle grid*/
 /* whole screen width */
+/*https://css-tricks.com/full-width-containers-limited-width-parents/*/
 
 #svg21{
   font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
   font-size: 1em;
   float: left;
   margin-top: -5em;
+  background: #726a64;
   padding-left: 1.5em;
 }
 .linegrid {
@@ -1218,10 +1296,12 @@ max-width: 1250px;
   opacity: 0.5;
 }
 
+
 /*DCLA small multiple charts*/
 .svgheading {
                 float: left;
-                background: #877c74;
+                /*background: #877c74;*/
+                background: #726a64;
                 height: auto;
                 text-align: left;
                 padding-bottom: 0.8em;
@@ -1229,7 +1309,8 @@ max-width: 1250px;
             }
 .svgheading2 {
                 float: left;
-                background: #877c74;
+                /*background: #877c74;*/
+                background: #726a64;
                 color: #f5f4f9;
                 fill: currentColor;
                 height: auto;
@@ -1260,7 +1341,8 @@ max-width: 1250px;
           padding-top: 0;
           padding-left: 25px;
           stroke-width: 0.02;
-          background: #877c74;
+          /*background: #877c74;*/
+          background: #726a64;
         }
 
             .titlemult {
@@ -1341,34 +1423,35 @@ max-width: 1250px;
         padding-top: 0;
         padding-left: 0;
         /*stroke-width: 0.02;*/
-        background: #877c74;             
+        /*background: #877c74; */
+        background: #726a64;
         padding-top: 0;
         padding-left: 1.5em;
-	}
-						
-.barchange:hover{
-	fill: pink;
-	}
+			}
 			
-.axisside3{
-	stroke: darkslategrey;
-	color: darkslategrey;
-	stroke-width: 0.3;
-	fill: currentColor;
-	}
+			.barchange:hover{
+				fill: pink;
+			}
+			
+			.axisside3{
+				stroke: darkslategrey;
+				color: darkslategrey;
+				stroke-width: 0.3;
+				fill: currentColor;
+			}
 			
 /*national art museum staff 2015 and 2018 percent*/
 
 #svg27{  
         font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
-        background: #877c74;
+        /*background: #877c74;*/
+        background: #726a64;
         stroke-width: 0.02;
         padding-top: 2em;
-	margin-left:  -9em;
+        margin-left:  -8em;
        }
-
-.gridy,
-.gridx {
+			.gridy,
+      .gridx {
        font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
         opacity: 0.7;
         color: darkslategrey;
@@ -1402,7 +1485,8 @@ max-width: 1250px;
 /*museum artworks bubble svg15*/
 
 #svg15{
-  background: #877c74;
+  /*background: #877c74;*/
+  background: #726a64;
   font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
   font-size: 1em;
   margin-top: 2.5em;
@@ -1420,10 +1504,12 @@ max-width: 1250px;
        text-anchor: middle;
     }
  
+
 /*museum artworks bubble before 2015 and 2015 and after   */
 
   #svg25, #svg26{  
-              background: #877c74;
+              /*background: #877c74;*/
+              background: #726a64;
               font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
               font-size: 20px;
               float:left;
@@ -1432,16 +1518,18 @@ max-width: 1250px;
      margin-left: -3em;
    }   
 
+
 /*percent museum artworks pre and post 2015*/
 #svg28, #svg29{  
-              background: #877c74;
+              /*background: #877c74;*/
+              background: #726a64;
               font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
               font-size: 20px;
               float:left;
-   }
-
+            }
  #svg28{
      margin-left: -4.5em;
+     
    }   
 
 .tiptextperc{
@@ -1458,9 +1546,11 @@ max-width: 1250px;
     }
 .bubblenames{
    font-family: aktiv-grotesk-regular, sans-serif, "Helvetica", 'Saira', sans-serif;
-}   
-
+}
+    
 /*next vis*/
+
+
 
 .numberBox {
   margin-top: 0.15em;
@@ -1494,6 +1584,48 @@ max-width: 1250px;
   font-size: 0.9em;
   color: #f5fcf7;
   line-height: 0.7em;
+}
+
+/*thanks to NYT style*/
+
+.graph-circle {
+  width: 10px;
+  height: 10px;
+  background: green;
+  border-radius: 50%;
+}
+
+.graph-sequence-indicator {
+  cursor: pointer;
+  pointer-events: all;
+  position: absolute;
+  top: 50%;
+  right: 27px;
+  /*fill: none;*/
+  fill: 'red';
+  z-index: -1;
+}
+
+.graph-sequence-indicator circle {
+  stroke: #000;
+  stroke-width: 1.25px;
+}
+
+.graph-sequence-indicator :hover circle,
+.graph-sequence-indicator--active {
+  fill: #000;
+}
+
+.graph--head-dark .graph-sequence-indicator circle,
+.graph--dark .graph-sequence-indicator circle {
+  stroke: #fff;
+}
+
+.graph--head-dark .graph-sequence-indicator :hover circle,
+.graph--head-dark .graph-sequence-indicator--active,
+.graph--dark .graph-sequence-indicator :hover circle,
+.graph--dark .graph-sequence-indicator--active {
+  fill: #fff;
 }
 
 /* 
@@ -1602,6 +1734,8 @@ max-width: 1250px;
     margin-right: 60px;
     margin-left: 60px;
   }
+
+
 
   sections {
     display: inline;
@@ -1743,5 +1877,4 @@ max-width: 1250px;
     -webkit-text-fill-color: white;
   }
 }
-
 
