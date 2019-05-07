@@ -1,14 +1,11 @@
-// percent
+// PERCENT 2015 - March 2019
 // // <!--clean full Brooklyn Museum contemporary collection dataset full 10,253 with accession_number with accession date, and artist information-->
 // // <!--force circle BUBBLE chart_Bkyn museum artworks by nationality - artworks acquired before 2015-->
-// <!--//////full Brooklyn Museum contemporary collection artworks dataset with accession information-->
-// <!--//////accession number and accession dates of artworks with artist name and nationality -->
 // <!--/////count nationality for artwork bubbles grouped by artist nationality by before 2015 and 2015 and after-->
 // <!--/////3 with no accession number / corresponding accession date-->
 
 // <!--/////here artworks acquired 2015 and after: 289 artworks-->
-// <!-- 15 nationalities, 7 continents (some artists born one continent, live another place)-->
-// <!--data from full Brooklyn Museum contemporary collection, artist, accession date and accession number - see cloud9-->
+
 // <!--see indexSpace_Full_bubble_NumDateAccessions15.js for data wrangling-->
 
 
@@ -17,7 +14,7 @@
 //   svgPlot25(data); // called later in the dateWrangling function
 // });
 
-d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
+d3.json("data/after15groupsortcontinent.json").then((after15groupCount) => {
   // dataWrangling(data);
   svgPlot29(after15groupCount); // called later in the dateWrangling function
 });
@@ -49,10 +46,11 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 //               })
 // //              
 // console.log(test_data)
-   var margin = {top: 2, right: 120, bottom: 60, left: 120}; ////this works outside the svgPlot
+  // var margin = {top: 5, right: 120, bottom: 60, left: 120}; ////this works outside the svgPlot
+	var margin = {top: 40, right: 40, bottom: 30, left: 40};
 	
-	var width = 380 - margin.left - margin.right; // specify the width and give space around the chart
-	var height = 400 - margin.top - margin.bottom; // specify the width and give space around the chart
+	var width = 735 - margin.left - margin.right; // specify the width and give space around the chart
+	var height = 670 - margin.top - margin.bottom; // specify the width and give space around the chart
 // 	console.log(margin.top)
 
 
@@ -64,15 +62,18 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
             
         var g = svg.append('g')    ////then append to global g - so now the div svg is appended
              ///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
-                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-            // 	.attr("transform", "translate(" + margin.left*4 + "," -300 + ")");
+                // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
         ////the above transform moves the whole chart away from the left and top of the browser
                 
        var modal4 = svg.append('g').attr("id", "modal4")        
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-            // 	.attr("transform", "translate(" + margin.left*4 + "," -300 + ")");
+            // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
                 
-                
+ ////============ data wrangling === leave  ==============
+ 
   // select accession year - first 4 numbers
    
     // let data2 = reformattedData.slice(0, 3);
@@ -83,17 +84,7 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 //       return {dateNum: e[0], nationality: e[1]};
 //     })
 
- //////not needed here with exported NationalityCount                     
-                //  const filtered = data.filter((d)=>{
-                //         return d.artists[0] //////THIS WORKS TO FILTER
-                //         })
-                //         console.log(filtered.length);
 
-                            
-   
-            //   	var newData = filtered;  ////arrays that contain artist data
-            
- //////not needed here with exported NationalityCount    
                 // let nested_data = d3.nest()
                 //         .key(function(newData) { 
                 //             return newData.artists[0].nationality; 
@@ -102,14 +93,14 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
                 //         console.log(nested_data); 
                     
 
- //////not needed here with exported NationalityCount 
                 // var nationalityCount = nested_data.map((e,i) => { 
                 //     return {nationality: e.key, count: e.values.length};
                 // });
                 // // console.log(nationalityCount[0].count)
                 // // console.log(nationalityCount)  
                 // console.log(nationalityCount.length);
- /////then sort to order by number
+                
+ /////sort to order by number
                // Sort works similar, but the sorting logic is a bit unintuitive
                 // You have to define to parameters, and a comparison like '>' that returns a boolean
                 // the ? -1 : 1 is just a very concise ways to write an if else statement
@@ -123,7 +114,8 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
             //   console.log(nationalityCount);   /////returns the count of each group in order      
   
 
-////=======to clean up accession_date, not using here, note here using accession_number see below
+////clean up accession_date,  note here using accession_number see below
+
 ////slice date to return just the year (not months etc) & the nationality
 
 // let datenodes = []; 
@@ -139,10 +131,11 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 // }
 // console.log(datenodes.length);
 // console.log(datenodes[1250]);
+
 //////=======
 
-/////returns data with accession number 4 digits, artist name and artist nationality for each artwork
-// data wrangling
+/////return accession number 4 digits, artist name and artist nationality for each artwork
+
 //       var return_data = [];
             
 //               let test_data = data.forEach((d, i) => {
@@ -182,7 +175,6 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 //             console.log(accessionNum);
 //             console.log(accessionNum.length);
             
-// ////======array of objects - so need to loop to get each item within the count
 // // //return data by year grouped into before and after  
 
 // // //group the accession date years into before 2010 and after 2010
@@ -196,7 +188,6 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 // let dateafter15 = [];
 
 
-// // ////====console.log test
 
 // // // for(let i = 0; i < datenodes.length; i++){
 // // //   if(datenodes[i][0] == "null"){
@@ -269,7 +260,7 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 // console.log(dateafter15);
 
 
-// // //////===== return keys for date and nationality
+// // ===== return keys for date and nationality
 // let null15 = [];
 //         null15 = datenull15.map((e,i) => { 
 //                     return {date: e[0], artist: e[1], nationality: e[2]};
@@ -294,11 +285,10 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 //         console.log(after15.length);
 //         console.log(after15)
      
-// // /////====== then for each group count by nationality
+// //====== then for each group count by nationality
 
-// // // ===example http://learnjsdata.com/group_data.html
 
-// // //////====== after15 group by nationality and keep date == 
+// // ====== after15 group by nationality and keep date == 
 
 // let after15group = d3.nest()
 //                     // .key(function(d) { return d.nationality; })
@@ -307,9 +297,6 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 //                     .entries(after15);
 //             console.log(after15group)
 //             console.log(after15group.length)
-
-// // //// =====map is a very useful method in JavaScript to re-arrange arrays
-// // //// https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d
 
 // // ////====count by nationality and keep date
 
@@ -322,13 +309,12 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 //       console.log(after15groupCount)  
 //       console.log(after15groupCount.length);
       
-// // ////====sort by nationality length after 2015
+// // ====sort by nationality length after 2015
 
 // after15groupsort = after15groupCount.sort((a, b) => (a.count > b.count) ? -1 : 1); // This is to sort the array large to small
 // console.log(after15groupsort)
 
-  
-// // ////to get max number
+// // get max number
 // //             let nat = after15group.map((e,i) => { 
 // //                     return {count: e.values.length}; /////returns count: value
 // //                 });
@@ -344,7 +330,9 @@ d3.json("../data/after15groupsortcontinent.json").then((after15groupCount) => {
 // //                  console.log(maxnatct)
             
 // //             let maxnatcount = d3.max(maxnatct);
-// //                  console.log(maxnatcount);   //////max number
+// //                  console.log(maxnatcount);  
+
+/////// ===================== end of data wrangling ======================
 
 console.log(after15groupCount)
 console.log(after15groupCount.length);
@@ -365,7 +353,7 @@ for (var i = 0; i<numbers.length; i++) {
 }
 console.log(sum)
 
-////get the percentages
+//// percentages on limited numbers
 // for (var i = 0; i<numbers.length; i++) {
 //   var percentage = before15groupCount[i].count*100/sum;
 //   if(i==2){
@@ -374,20 +362,9 @@ console.log(sum)
 //   console.log(percentage+"%")
 // }
 
-////do this on the whole dataset
 
+////to get percentages 
 
-// for (var i = 0; i<before15groupCount.length; i++){
-//   var percentage = before15groupCount[i].count*100/sum;
-//           // return {percent: percentage}
-//           console.log(percentage)
-//     //       before15groupCountperc.push(percentage)
-//     // console.log(percentage+"%");
-  
-// }
-// console.log(percentage)
-
-////to get percentages
 return_data = [];
 
 var after15groupCountpercent 
@@ -412,56 +389,38 @@ let after15grouppercent = [];
                     return {percent: e[0], artist: e[1], continent: e[2], continentnum: e[3], nationality: e[4], count: e[5]};
                 })
 
-  
-// console.log("hi")
+
 console.log(after15grouppercent)
 
 
-// ////use same max number as in all artwork circles 
-//////percentages use max percentage and range is relative of range - 2.82% - from number (270)
-// let radareadate = d3.scaleSqrt()    ////to get area of circles need square root 
-//                       .domain([0, 68.37666900913563])  
-//                       // .domain([0, 40.13840830449827]) 
-//                       // .range([0, 270]); change range to 1.72% / 98.28% 
-//                       .range([0, 7.61]);
-//                       // .range([0, 41.75257732]);
-//                       // .range([0, 15]);
-//             console.log(radareadate(40.13840830449827))
 
-let radareadate = d3.scaleSqrt()    ////to get area of circles need square root 
-                      // .domain([0, 68.37666900913563])  
-                      .domain([0, 68.37666900913563]) 
-                      // .range([0, 270]); change range to 97.18%
-                      .range([0, 7.61]);
-                      // .range([0, 97]);
-            console.log(radareadate(68.37666900913563))
+let radareadate = d3.scaleSqrt()     
+                      .domain([0, 6811])   ////same domain as pre 2015 bubble 
+                      .range([0, 1800]);   ////same range as pre 2015 bubble
+            console.log(radareadate(289))
 
 // //Initialize a simple force layout, using the nodes and edges in dataset
 
 let force = d3.forceSimulation(after15grouppercent)  /////gets concentric circles
-  			  .force("charge", d3.forceManyBody().strength(15))
+  			  .force("charge", d3.forceManyBody().strength(70))
   				// .force("link", d3.forceLink(dataset.edges).distance(30))  
-  			  .force("center", d3.forceCenter().x(width/2).y(height/2))
+  			  .force("center", d3.forceCenter().x(width/2.3).y(height/1.8))
   				.force("collision", d3.forceCollide().radius(function(d, i) {
   				    return radareadate(d.percent) + 1;
   				}));
 
 // // var colors = d3.scaleOrdinal(d3.schemeCategory10);
-// // var colors = d3.scaleSequential(d3.interpolateYlOrRd).domain([1, 10])
 
 // var colors = d3.scaleSequential(d3.interpolateOrRd).domain([1, 6])
 
 // var colors = d3.scaleLinear().domain([1,13]).range(["#c9d3d6", "#ffe114","#c9d3d6", "#e0f75d", "#c5e3f9","#ffd6c9","#ffa14f"])
 
 
-// // var colors = d3.scale.threshold()
-// //   .domain([1, 14])  
-// //   .range(["blue","yellow","green","orange"]); 
  
-// //Create nodes as circles
+// //create nodes as circles
 console.log(after15grouppercent.length)
 
-// //tooltip for information
+// //tooltip for information (changed to modal)
 //         ////tooltip
   // let div = d3.select("g").append("div")
   //       .attr("class", "tooltipcircles15") ////best to use #tooltip div for styling
@@ -471,8 +430,7 @@ console.log(after15grouppercent.length)
   // function mouseover() {
   //   div.style("display", "inline");
   // }
-  
-// //enter
+
 
 var nodes = g.selectAll("g")
             .data(after15grouppercent)
@@ -490,7 +448,6 @@ var nodes = g.selectAll("g")
           		  });
           		  
 
-    
 /////create tooltip for each circle - percent
  var newtooltips4 = modal4.selectAll("g")
                 .data(after15grouppercent)
@@ -629,7 +586,7 @@ console.log(sortcontinent)
       // //         });
       //   });
           	
-//   	 //Add a simple tooltip
+////simple tooltip
   nodes.append("title")
       .data(after15grouppercent)
   	 .text(function(d) {
@@ -647,10 +604,13 @@ console.log(sortcontinent)
             }
         })
           .style("fill", "white")
+          // .style("fill", "black")
+          .attr("class", "bubblenames")
           .style("text-anchor", "middle")
           .style("font-size", function (d) {
             // console.log(d.count)
-            return radareadate(d.percent) * 0.3 + 2 + "px"
+             return radareadate(d.percent) * 0.275 + 2 + "px"
+            // return radareadate(d.percent) * 0.3 + 2 + "px"
           })
           .attr("translate", "transform(0,10)")
        
@@ -683,11 +643,9 @@ console.log(sortcontinent)
 
 let heading15 = g.append('text')  //// append text to global
                 .text('2015-March 2019 - percentages')
-                .attr('x', -margin.left/1.95)
-                .attr('y', margin.top*10)
+                .attr('x', width/6)
+                .attr('y', height+margin.bottom/1.4)
                 .attr("fill", "#f5fcf7")
                 .attr('font-size', '1.5em') 
 
-
 }
-
