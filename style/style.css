@@ -924,7 +924,7 @@ max-width: 1250px;
   height: auto;
 }
 .textnoground{
-  font-family: aktiv-grotesk-regular, sans-serif, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: aktiv-grotesk-thin, sans-serif, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.3em;
   /*brown*/
   /*color: #4c4037;*/
@@ -932,7 +932,7 @@ max-width: 1250px;
   background: #726a64;
   padding: 0.2em;
   padding-top: 3em;
-  font-weight: regular;
+  font-weight: 400;
   font-size: 1.1em;
 }
 
