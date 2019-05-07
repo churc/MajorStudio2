@@ -128,7 +128,7 @@ let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 
 
 
   var yScale = d3.scaleLinear()
-    .domain([0, (26.7) + 73.3]) /////add height to axis
+    .domain([0, (26.7) + 13.3]) /////add height to axis
     // .range([0, height]);
     .range([height, 0]);
 
