@@ -1455,7 +1455,10 @@ max-width: 1250px;
 .newtooltips15perc p {
        text-anchor: middle;
     }
-    
+.bubblenames{
+   font-family: aktiv-grotesk-regular, sans-serif, "Helvetica", 'Saira', sans-serif;
+}   
+
 /*next vis*/
 
 .numberBox {
