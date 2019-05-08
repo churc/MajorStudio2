@@ -249,7 +249,8 @@ var numlabel =		bars1.append('text')
 					.attr("transform", `translate(${margin.left/2.1}, 2)`)
 					// .style("font-family", "sans-serif")
 					.style("font-size", "80%")
-					.style('fill', 'dark grey') 
+					.style("fill", "white")
+// 					.style('fill', 'dark grey') 
 				
 
 
