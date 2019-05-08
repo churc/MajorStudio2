@@ -1279,7 +1279,8 @@ max-width: 1250px;
   fill: currentColor;
 }
 .textpink {
-  color: #fdd2f5;
+/*   color: #fdd2f5; */
+  color: #f5f4f9; 
   fill: currentColor;
   opacity: 0.8;
   /*font-size: 0.8em;*/
