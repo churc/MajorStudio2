@@ -292,6 +292,7 @@ var numlabel =		bars1.append('text')
 			let title = g.append('text')
 					.text('Intellectual Leadership Positions, National Art Museum Staff')
 					.attr('x', 0)
+					.style("fill", "white")
 					// .attr('y', height+margin.top+margin.top/0.5)
 					.attr('y', -margin.bottom)
 					.attr('font-size', '1.4em');
