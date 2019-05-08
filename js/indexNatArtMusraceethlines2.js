@@ -299,6 +299,7 @@ var numlabel =		bars1.append('text')
 					
 		 let titleend = g.append('text')
 					.text('2015')
+		 			.style("fill", "white")
 					.attr('x', -margin.left/3.9)
 					.attr('y', -margin.bottom/2.5)
 					.attr('font-size', '1.9em');
