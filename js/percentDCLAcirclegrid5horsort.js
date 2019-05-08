@@ -310,7 +310,8 @@ let datanumcircles = [];
     let subheading3 = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textsubhead")
-            .style("color", "#fdd2f5")
+//             .style("color", "#fdd2f5")
+            .style("color", "#f5f4f9")
             .text('22 job types ordered by seniority level, left: highest')
             .attr('x', margin.left*3.1)
             .attr('y', margin.top /1.55)
