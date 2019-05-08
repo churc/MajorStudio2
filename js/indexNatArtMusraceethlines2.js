@@ -458,7 +458,7 @@ var n = 6;
 
 
 				////number each bar 
-var numlabel = bars3.append('text')
+		var numlabel = bars3.append('text')
 					.text((d,i) => {
 						return d.year18;
 					})
@@ -476,7 +476,7 @@ var numlabel = bars3.append('text')
 	        	
 
 				//////label text for each bar
-	bars3.append('text')
+			bars3.append('text')
 					.data(data)
 					.attr("class", "numlabel")
 					.attr("text-anchor", "bottom")
@@ -492,7 +492,8 @@ var numlabel = bars3.append('text')
 					.attr("transform", `translate(${margin.left/2.1}, 2)`)
 					// .style("font-family", "sans-serif")
 					.style("font-size", "80%")
-					.style('fill', 'dark grey') 
+					.style("fill", "white")
+// 					.style('fill', 'dark grey') 
 				
 
 // 				////  numbers on the axis 
@@ -529,12 +530,14 @@ var numlabel = bars3.append('text')
 					// .text('National Art Museum Staff Survey Intellectual Leadership Positions, Total Hires')
 					.text('National Art Museum Staff Survey Intellectual Leadership Positions')
 					.attr('x', -margin.left)
+					.style("fill", "white")
 					// .attr('y', height+margin.top+margin.top/0.5)
 					.attr('y', height+margin.top+margin.top/0.35)
 					.attr('font-size', '100%');
 
 			let title3 = g2.append('text')
 					.text('2018')
+					.style("fill", "white")
 					.attr('x', -margin.left/3.9)
 					.attr('y', -margin.bottom/2.5)
 					.attr('font-size', '1.9em');
@@ -542,13 +545,14 @@ var numlabel = bars3.append('text')
 					
 			let heading23 = g2.append('text')
 					.text('Number of total hires, excluding white, non-Hispanic. Repeat survey participants')
-					// .style("fill", "#f5f9f4")
+					.style("fill", "white")
 					.attr('x', 0)
 					.attr('y', height+margin.bottom/3.2)
 					.attr('font-size', '1em');
 
 			let title23 = g2.append('text')
 					// .text('excluding white, non-Hispanic')
+					.style("fill", "white")
 					.attr('x', -margin.left/1.44)
 					.attr('y', height+margin.top/0.5)
 					.attr('font-size', '0.9em');
