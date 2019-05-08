@@ -337,6 +337,7 @@ let raceethnicity = bars1.append('text')
 						.tickFormat("") ////empty no text
 					)
 					.selectAll("text")
+					.style("fill", "white")
 					.attr("transform", "rotate(-65)")
 					.attr("text-anchor", "end");
 
@@ -400,12 +401,14 @@ let xlabel = g.append('text')
             .attr("transform", "translate(" + (width/3.22) + " ," + (height*2.2) + ")")
             .style("font-size", "0.85em")
             .style("opacity", 0.88)
+	    .style("fill", "white")
               .text("percent")
                 
 			let headingpercent = g.append('text')
 					.text('New Hiring Since 2014: Percent Comparison Among Repeat 2015 & 2018 Survey Participants')
 					.attr('x', -margin.left/20)
 					.attr('y', -margin.top/1.2)
+					.style("fill", "white")
 					.attr('font-size', '1.3em');
 					
 			let headingpercent2 = g.append('text')
@@ -428,6 +431,7 @@ let xlabel = g.append('text')
 					.text('Data from Art Museum Staff Demographic Survey 2018, Westermann, M., Sweeney, L., & Schonfeld, R. C. (January 2019)')
 					.attr('x', -margin.left/25)
 					.attr('y', -margin.top/1.61)
+					.style("fill", "white")
 					.attr('font-size', '0.95em');
 					
 };
