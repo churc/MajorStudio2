@@ -739,6 +739,9 @@ max-width: 1250px;
   border-top: 0;
   padding-bottom: 0.4em;
 }
+#textBkinfo{
+  margin-left: 5em;
+}
 .museumheadingtext2{
   font-family: aktiv-grotesk-thin, sans-serif;
   color: #f5fcf7;
@@ -748,7 +751,7 @@ max-width: 1250px;
   /*text spacing*/
   font-kerning: normal;
   letter-spacing: 0.04rem;
-  text-align: center;
+/*   text-align: center; */
   display: block;
   margin-top: 0;
   margin-bottom: 0;
@@ -762,7 +765,7 @@ max-width: 1250px;
   /*text spacing*/
   font-kerning: normal;
   letter-spacing: 0.04rem;
-  text-align: center;
+/*   text-align: center; */
   display: block;
   margin-top: 0;
   margin-bottom: 0;
