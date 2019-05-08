@@ -384,8 +384,7 @@ let yAxispercentline = g.append('g') // just append axis to global space
   //           .ticks("10")
   //           .tickFormat("")
   //       )
-          
-          
+                  
           
 // // add top line
 //   let gridy = g.append("path")
