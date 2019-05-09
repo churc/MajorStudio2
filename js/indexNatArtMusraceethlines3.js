@@ -1,6 +1,6 @@
 ////National Art Museum Staff Survey Intellectual Leadership Positions 
 ////by number 2015 and 2018 from 2018 report survey
-////numbers and percent, race and ethnicity increased hiring 
+////numbers, race and ethnicity increased hiring 
 
 
     d3.json("data/2018artmus_intLeadershiprace_reord.json").then((data)=>{
@@ -209,7 +209,7 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 							    // .attr("orient", "auto")
 							    .attr("orient", function(data,i){    ///arrows on every second bar
 										console.log(data)
-										if(i == 3){
+										if(i == 1){
 												var direction = "auto" 
 												return direction
 										} else{
@@ -220,7 +220,7 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 							  .append("svg:path")
 							    .attr("d", "M0,-5L10,0L0,5")
 							    .attr("fill", function(d,i){    ///////color negative arrow differently
-											if(i == 3){
+											if(i == 1){
 												var arrowneg = "red"
 												return arrowneg
 										} else{
@@ -566,11 +566,12 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 						}
 			  })
 			  .attr("fill", function(d,i) { 
-						if (i === 3){
+						if (i === 1){
 							var color = "red";
 							return color; 
 						}  else {
-							var color = "#11593b"
+							// var color = "#11593b"
+							var color = "DARKSEAGREEN"
 							return color;
 						}
 			  })
@@ -680,7 +681,7 @@ var numlabel =	bars1.append('text')
 						// return d.yearline;
 							if(i % 2 == 0){
 								return d.yearline;
-							} else if (i === 3){
+							} else if (i === 1){
 								return (d.yearline  + " ..... " + d.percentdifference + "% ");
 							} else{
 									return (d.yearline  + " ..... +" + d.percentdifference + "% ");
@@ -695,7 +696,7 @@ var numlabel =	bars1.append('text')
 							})
 					.attr('x', function(d,i) { 
 							// return xScale5(d.yearline);
-							if(i=== 3){
+							if(i=== 1){
 								return xScale5(d.yearline)+12;
 							} else if(i % 2 == 0) {
 										return xScale5(d.yearline)-12;
