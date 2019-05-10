@@ -82,7 +82,7 @@ console.log(data)
           .append("g")
             .on('mouseover', function(d,i) {
                 console.log(i)
-        			   d3.select(`#tooltip${i}`).style("display", "block").style("opacity", 0.9)
+        d3.select(`#tooltip${i}`).style("display", "block").style("opacity", 0.9)
                   // d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
                   })
 //         			.on('mouseleave', function(d,i) {
@@ -90,11 +90,11 @@ console.log(data)
 //             		d3.select(`#tooltip${i}`).style("display", "none").style("opacity", 0)
 //           			   //d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
 //           		  });
-		   .on('mouseover', function(d,i) {
-               			 console.log(i)
-        	     d3.select(`#tooltip${i}`).style("display", "block").style("opacity", 0.9)
+// 		   .on('mouseover', function(d,i) {
+//                			 console.log(i)
+//         	     d3.select(`#tooltip${i}`).style("display", "block").style("opacity", 0.9)
                   // d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
-                  })
+//                   })
         			.on('mouseleave', function(d,i) {
             		d3.select(`#tooltip${i}`)
             		       .transition()	
