@@ -95,18 +95,18 @@ console.log(data)
 //         	     d3.select(`#tooltip${i}`).style("display", "block").style("opacity", 0.9)
                   // d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
 //                   })
-        			.on('mouseleave', function(d,i) {
+        	.on('mouseleave', function(d,i) {
             		d3.select(`#tooltip${i}`)
             		       .transition()	
                         .delay(50)
-                        .duration(500)
+                        .duration(200)
                         .style("opacity", 0)
                         .transition()	
                         .delay(50)
-                        .duration(500)
+                        .duration(200)
                         .style("display", "none")
             		
-          			   //d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
+           //d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
           	 });
  
  /////create tooltip for each circle
