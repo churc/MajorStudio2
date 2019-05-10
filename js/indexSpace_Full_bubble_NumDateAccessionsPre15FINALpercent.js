@@ -576,12 +576,27 @@ console.log(sortcontinent)
 
 })
 
+// let heading15 = g.append('text')  //// append text to global
+//                 .text('1943-2015')
+//                 .attr('x', width/2.8)
+//                 .attr('y', height+margin.bottom/1.4)
+//                 .attr("fill", "#f5fcf7")
+//                 .attr('font-size', '1.4em')
+		    
 let heading15 = g.append('text')  //// append text to global
                 .text('1943-2015')
                 .attr('x', width/2.8)
                 .attr('y', height+margin.bottom/1.4)
-                .attr("fill", "#f5fcf7")
-                .attr('font-size', '1.4em') 
+                .attr('y', height+margin.bottom/28)
+                .style("fill", "#f5fcf7")
+                .style('font-size', '0.95em')
 
+let heading16 = g.append('text')  //// append text to global
+                .text('6811 Artworks')
+                .attr('x', width/2.8)
+                .attr('y', height+margin.bottom/1.1)
+                .style("fill", "#f5fcf7")
+                .style('font-weight', 'bolder') 
+                .style('font-size', '1.1em')
   
 }
