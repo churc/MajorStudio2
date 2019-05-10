@@ -87,7 +87,20 @@ console.log(data)
                   })
         			.on('mouseleave', function(d,i) {
             		    console.log(i)
-            		d3.select(`#tooltip${i}`).style("display", "none").style("opacity", 0)
+//             		d3.select(`#tooltip${i}`).style("display", "none").style("opacity", 0)
+//           			   //d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
+//           		  });
+		.on('mouseleave', function(d,i) {
+            		d3.select(`#tooltip${i}`)
+            		       .transition()	
+                        .delay(50)
+                        .duration(500)
+                        .style("opacity", 0)
+                        .transition()	
+                        .delay(50)
+                        .duration(500)
+                        .style("display", "none")
+            		
           			   //d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
           		  });
           	
