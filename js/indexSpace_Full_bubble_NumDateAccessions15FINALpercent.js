@@ -438,13 +438,22 @@ var nodes = g.selectAll("g")
           .append("g")
             .on('mouseover', function(d,i) {
                 console.log(i)
-        			   d3.select(`#tooltip15perc${i}`).style("display", "block").style("opacity", 0.9)
+        		d3.select(`#tooltip15perc${i}`).style("display", "block").style("opacity", 0.9)
                   // d3.select("#modal1").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
                   })
-        			.on('mouseleave', function(d,i) {
+        		.on('mouseleave', function(d,i) {
             		    console.log(i)
-            		d3.select(`#tooltip15perc${i}`).style("display", "none").style("opacity", 0)
-          			   //d3.select("#modal1").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
+            		d3.select(`#tooltip15perc${i}`)
+			     .transition()	
+				.delay(50)
+				.duration(200)
+				.style("opacity", 0) /////has to be above display none
+				.transition()	
+				.delay(50)
+				.duration(200)
+				.style("display", "none")  ////note this is binary
+
+              //d3.select("#modal1").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
           		  });
           		  
 
