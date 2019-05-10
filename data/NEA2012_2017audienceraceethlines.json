@@ -22,5 +22,10 @@
         "id": 4,
         "raceEthnicity": "Other",
         "percent":  [16.9, 22.1]
+     },
+        {
+        "id": 5,
+        "raceEthnicity": "All",
+        "percent":  [21, 23.7]
      }
 ]
