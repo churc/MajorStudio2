@@ -925,6 +925,7 @@ max-width: 1250px;
 
 #graph10{
   /*margin-top: 2.5em;*/
+  float: left;
 }
 
 /*////space*/
