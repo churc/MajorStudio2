@@ -85,12 +85,17 @@ console.log(data)
         			   d3.select(`#tooltip${i}`).style("display", "block").style("opacity", 0.9)
                   // d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
                   })
-        			.on('mouseleave', function(d,i) {
-            		    console.log(i)
+//         			.on('mouseleave', function(d,i) {
+//             		    console.log(i)
 //             		d3.select(`#tooltip${i}`).style("display", "none").style("opacity", 0)
 //           			   //d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
 //           		  });
-		.on('mouseleave', function(d,i) {
+		   .on('mouseover', function(d,i) {
+               			 console.log(i)
+        	     d3.select(`#tooltip${i}`).style("display", "block").style("opacity", 0.9)
+                  // d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
+                  })
+        			.on('mouseleave', function(d,i) {
             		d3.select(`#tooltip${i}`)
             		       .transition()	
                         .delay(50)
@@ -102,8 +107,7 @@ console.log(data)
                         .style("display", "none")
             		
           			   //d3.select("#modal").select(`#tooltip${i}`).select("rect").style("fill", "#fff")
-          		  });
-          	
+          	 });
  
  /////create tooltip for each circle
  var newtooltips = modal.selectAll("g")
