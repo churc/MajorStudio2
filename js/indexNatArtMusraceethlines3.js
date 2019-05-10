@@ -248,8 +248,8 @@ var n = 12;
 					})
 					.attr("stroke-width", function(d,i){    ///////set up different attributes to select bars before calling the lines
 							if(i % 2 == 0){
-								var strokewidth = 0.1
-								return strokewidth
+// 								var strokewidth = 0.1
+// 								return strokewidth
 					} else{
 								var strokewidth = 2.5
 								return strokewidth
