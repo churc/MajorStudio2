@@ -370,14 +370,20 @@ var nodes = g.selectAll("g")
           .append("g")
              .on('mouseover', function(d,i) {
                 console.log(i)
-        			   d3.select(`#tooltippre15perc${i}`).style("display", "block").style("opacity", 0.9)
+        	 d3.select(`#tooltippre15perc${i}`).style("display", "block").style("opacity", 0.9)
                   // d3.select("#modal3").select(`#tooltippre15${i}`).select("rect").style("fill", "#fff")
                   })
-        			.on('mouseleave', function(d,i) {
+        	.on('mouseleave', function(d,i) {
             		    console.log(i)
-  
-            		d3.select(`#tooltippre15perc${i}`).style("display", "none").style("opacity", 0)
-            		
+            		d3.select(`#tooltippre15perc${i}`)
+            		      .transition()	
+				.delay(50)
+				.duration(200)
+				.style("opacity", 0) /////has to be above display none
+				.transition()	
+				.delay(50)
+				.duration(200)
+				.style("display", "none")  ////note this is binary
           			   //d3.select("#modal3").select(`#tooltippre15perc${i}`).select("rect").style("fill", "#fff")
           		  });
     
@@ -564,7 +570,9 @@ console.log(sortcontinent)
   			.attr("y", function(d) {  
   			  return d.y + radareadate(d.percent) * 0.07; })
   			  
-   newtooltips3.attr("transform", d =>`translate(${d.x}, ${d.y-radareadate(d.percent)/3 -15} )`) 
+//    newtooltips3.attr("transform", d =>`translate(${d.x}, ${d.y-radareadate(d.percent)/3 -15} )`) 
+      newtooltips3.attr("transform", d =>`translate(${d.x}, ${d.y-radareadate(d.percent)/1.5 -15} )`) 
+
 
 })
 
