@@ -233,9 +233,9 @@ console.log(data)
   			 .attr("y", function(d) { return d.y + radarea(d.count) * 0.07; });
   			
 
-    newtooltips.attr("transform", d =>`translate(${d.x}, ${d.y-radarea(d.count)/3 -15} )`) 
+//     newtooltips.attr("transform", d =>`translate(${d.x}, ${d.y-radarea(d.count)/3 -15} )`) 
 
-    // newtooltips.attr("transform", d =>`translate(${d.x}, ${d.y-radarea(d.count) -15} )`) 
+    newtooltips.attr("transform", d =>`translate(${d.x}, ${d.y-radarea(d.count)/1.5 -15} )`) 
   });
         
         
