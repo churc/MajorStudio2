@@ -1484,10 +1484,9 @@ max-width: 1250px;
         background: #726a64;
         stroke-width: 0.02;
         padding-top: 2em;
-        margin-left:  -8em;
        }
-			.gridy,
-      .gridx {
+
+.gridy, .gridx {
        font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
         opacity: 0.7;
         color: darkslategrey;
