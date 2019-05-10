@@ -61,12 +61,174 @@ var n = 12;
 				console.log(data);
 
 
-	bars1.append("line")
-					.attr("fill", "none")
-					// 	.attr('x1', function(d,i) { 
-					// 	// return xScale5(d.yearline);  ////change start for showing change  // x1 ////look at svg element line x1 y1 x2 y2
-					// 	return 0;												/////start at 0 for regular bars this works
+	// bars1.append("line")
+	// 				.attr("fill", "none")
+	// 				// 	.attr('x1', function(d,i) { 
+	// 				// 	// return xScale5(d.yearline);  ////change start for showing change  // x1 ////look at svg element line x1 y1 x2 y2
+	// 				// 	return 0;												/////start at 0 for regular bars this works
+	// 				// })
+	// 				.attr("stroke", function(d,i){    ///////set up different attributes to select bars before calling the lines
+	// 						if(i % 2 == 0){
+	// 							var color = "lightgreen"
+	// 								return color
+	// 				} else {
+	// 						var color = "purple"
+	// 								return color
+	// 				}
+	// 				})
+	// 				.style("stroke-dasharray", function(d,i){
+	// 							if(i % 2 == 0){
+	// 							var dash = ("3, 3")
+	// 								return dash
+	// 				} else{
+	// 				}
+	// 				})
+	// 				.attr("stroke-width", function(d,i){    ///////set up different attributes to select bars before calling the lines
+	// 						if(i % 2 == 0){
+	// 							var strokewidth = 0.1
+	// 							return strokewidth
+	// 				} else{
+	// 							var strokewidth = 2.5
+	// 							return strokewidth
+	// 				}
+	// 				})
+	// 				// .attr('width', function(d,i) {
+	// 				// 			if(i % 2 == 0){
+	// 				// 					var width = xScale5(d.yearline)
+	// 				// 					return width
+	// 				// 		} else{
+	// 				// 					var width = xScale5(d.year18-d.year15)
+	// 				// 					return width
+	// 				// 		}
+	// 				// 		})
+	// 					// return xScale5(d.yearline); 	// x1 2015 x2 2018  /// color positive negative
+						
+	// 					// return xScale5(d.year18-d.year15); //////difference between years 15 and 18
+	// 				// })
+	// 				// .attr("marker-end", "url(#end)")
+	// 				.attr("marker-end", function(d,i){    ///arrows on every second bar
+	// 						if(i % 2 == 0){
+	// 							var marker = 0
+	// 				} else{
+	// 							var marker = "url(#arrow)"
+	// 							return marker   
+	// 				}
+	// 				})
+					
+	// 				// .attr('x1', function(d,i) {       
+	// 				// 	// return xScale5(d.yearline);  ////change start for showing change  // x1 ////look at svg element line x1 y1 x2 y2
+	// 				// 	return 0;												/////start at 0 for regular bars this works
+	// 				// })
+					
+	// 				.attr('x1', function(d,i) {
+	// 							if(i % 2 == 0){
+	// 									var start = 0
+	// 									return start
+	// 						} else{
+	// 									// var width = xScale5(d.year18-d.year15)
+	// 									var start = xScale5(d.year15)
+	// 									return start
+	// 						}
+	// 						})
+					
+	// 					.attr('y1', (d, i) => {   /////change line spacing
+	// 						if(i % 2 == 0){ 				/////group bars into twos
+	// 							return i *35;
+	// 				} else{
+	// 							return i *35-12;
+	// 				}
+	// 				})
+					
+				 //.attr('x2', function(d,i) { 
+					// 	return xScale5(d.yearline);  //// svg element line x1 y1 x2 y2
 					// })
+					
+	////////=======
+	
+	
+	//////
+	
+		bars1.append("line")    /////first
+					.attr("fill", "none")
+					.attr("stroke", function(d,i){    ///////set up different attributes to select bars before calling the lines
+							if(i % 2 == 0){
+								// var color = "lightgreen"
+								// 	return color
+					} else if (i % 2 !== 0){
+							var color = "lightgreen"
+									return color
+					}
+					})
+					.style("stroke-dasharray", function(d,i){
+								if(i % 2 == 0){
+								var dash = ("3, 3")
+									return dash
+					} else{
+									var dash = ("3, 3")  
+									return dash
+					}
+					})
+					.attr("stroke-width", function(d,i){    ///////set up different attributes to select bars before calling the lines
+							if(i % 2 == 0){
+								var strokewidth = 0.2
+								return strokewidth
+					} else{
+								var strokewidth = 0.2
+								return strokewidth
+					}
+					})
+				
+					// .attr("marker-end", function(d,i){    ///arrows on every second bar
+					// 		if(i % 2 == 0){
+					// 			var marker = 0
+					// } else{
+					// 			var marker = "url(#arrow)"
+					// 			return marker   
+					// }
+					// })
+					
+					.attr('x1', function(d,i) {
+								if(i % 2 == 0){
+										var start = 0
+										return start
+							} else{
+										// var start = xScale5(d.year18-d.year15)
+										var start = 0    ////////\\\\\\\\\  second green line
+										return start
+							}
+							})
+					
+						.attr('y1', (d, i) => {   /////change line spacing
+							if(i % 2 == 0){ 				/////group bars into twos
+								return i *35;
+					} else{
+								return i *35-12;
+					}
+					})
+						.attr('x2', function(d,i) { 
+						var linestart = xScale5(d.year15)
+						var lineend = xScale5(d.year18)
+							if(i % 2 == 0){
+								var linedouble = linestart
+								return linedouble 
+						} else  {
+						    var linedouble = linestart  /////second green line goes to 2015 amount
+						    return linedouble
+					}
+					})
+					
+					.attr('y2', (d, i) => {  ////change spacing of lines
+							if(i % 2 == 0){
+								return i *35;
+					} else{
+								return i *35-12;
+					}
+					})
+			
+		/////////
+		
+			bars1.append("line")   //////second set returns increase purple
+					.attr("fill", "none")
 					.attr("stroke", function(d,i){    ///////set up different attributes to select bars before calling the lines
 							if(i % 2 == 0){
 								var color = "lightgreen"
@@ -81,6 +243,7 @@ var n = 12;
 								var dash = ("3, 3")
 									return dash
 					} else{
+				
 					}
 					})
 					.attr("stroke-width", function(d,i){    ///////set up different attributes to select bars before calling the lines
@@ -92,20 +255,7 @@ var n = 12;
 								return strokewidth
 					}
 					})
-					// .attr('width', function(d,i) {
-					// 			if(i % 2 == 0){
-					// 					var width = xScale5(d.yearline)
-					// 					return width
-					// 		} else{
-					// 					var width = xScale5(d.year18-d.year15)
-					// 					return width
-					// 		}
-					// 		})
-						// return xScale5(d.yearline); 	// x1 2015 x2 2018  /// color positive negative
-						
-						// return xScale5(d.year18-d.year15); //////difference between years 15 and 18
-					// })
-					// .attr("marker-end", "url(#end)")
+				
 					.attr("marker-end", function(d,i){    ///arrows on every second bar
 							if(i % 2 == 0){
 								var marker = 0
@@ -115,18 +265,14 @@ var n = 12;
 					}
 					})
 					
-					// .attr('x1', function(d,i) {       
-					// 	// return xScale5(d.yearline);  ////change start for showing change  // x1 ////look at svg element line x1 y1 x2 y2
-					// 	return 0;												/////start at 0 for regular bars this works
-					// })
-					
+		
 					.attr('x1', function(d,i) {
 								if(i % 2 == 0){
 										var start = 0
 										return start
 							} else{
 										// var width = xScale5(d.year18-d.year15)
-										var start = xScale5(d.year15)
+										var start = xScale5(d.year15)    ////////\\\\\\\\\
 										return start
 							}
 							})
@@ -138,28 +284,7 @@ var n = 12;
 								return i *35-12;
 					}
 					})
-					
-				 //.attr('x2', function(d,i) { 
-					// 	return xScale5(d.yearline);  //// svg element line x1 y1 x2 y2
-					// })
-					
-		////////THIS WORKS TO RETURN DIFFERENCE IN LINE LENGTHS BUT STARTS AT 0 not at the end of d.year15
-		//////need different start - see width attribute below
-		
-					// .attr('x2', function(d,i) { 
-					// 	var linestart = xScale5(d.year15)
-					
-					// 	var lineend = xScale5(d.yearline-d.year15)
-					// 		if(i % 2 == 0){
-					// 			var linedouble = linestart
-					// 			return linedouble 
-					// 	} else  {
-					// 	    var linedouble = lineend 
-					// 	    return linedouble
-					// }
-					// })
-					
-					.attr('x2', function(d,i) { 
+						.attr('x2', function(d,i) { 
 						var linestart = xScale5(d.year15)
 						var lineend = xScale5(d.year18)
 							if(i % 2 == 0){
@@ -178,6 +303,26 @@ var n = 12;
 								return i *35-12;
 					}
 					})
+					
+					
+					
+		////////THIS WORKS TO RETURN DIFFERENCE IN LINE LENGTHS BUT STARTS AT 0 not at the end of d.year15
+		//////need different start - see width attribute below
+		
+					// .attr('x2', function(d,i) { 
+					// 	var linestart = xScale5(d.year15)
+					
+					// 	var lineend = xScale5(d.yearline-d.year15)
+					// 		if(i % 2 == 0){
+					// 			var linedouble = linestart
+					// 			return linedouble 
+					// 	} else  {
+					// 	    var linedouble = lineend 
+					// 	    return linedouble
+					// }
+					// })
+					
+				
 					
 					
 				
@@ -538,7 +683,7 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 			
 ////////============ circles at end of lines
 		
-	 bars1.append("circle")
+	 bars1.append("circle")  ////first circles
   			.data(data)
 			  // .attr("r", 5)
 			  .attr("r", function(d,i) {
@@ -564,60 +709,17 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 							var size = 7
 							return size;
 						}
-			  })
-			  .attr("fill", function(d,i) { 
-						if (i === 1){
-							var color = "red";
-							return color; 
-						}  else {
-							// var color = "#11593b"
-							var color = "DARKSEAGREEN"
-							return color;
-						}
-			  })
-			  // .style("opacity", function(d,i) { 
-					// 	if (i == 0){
-					// 		var opacity = 1;
-					// 		return opacity; 
-					// 	}  if (i == 2){
-					// 		var opacity = 1;
-					// 		return opacity; 
-			  // 		}  if (i == 4){
-					// 		var opacity = 1;
-					// 		return opacity; 
-					// 	}  if (i == 6){
-					// 			var opacity = 1;
-					// 			return opacity; 
-					// 	} else {
-					// 		var opacity = 1
-					// 		return opacity;
-					// 	}
-			  // })
-					// 		var color = "darkcyan";
-					// 		return color; 							
-					// 	} else if(i == 2){
-					// 		var color = "pink";
-					// 		return color;							
-					// 	} else if (i == 3){
-					// 		var color = "purple";
-					// 		return color;								
-					// 	} else if (i == 4){
-					// 		var color = "turquoise";
-					// 		return color;								
-					// 	} else {
-					// 		var color = "gold";
-					// 		return color;								
-					// 	}
-					// })
-					
-			  // position the circles right where the path elements end
-			  // .attr('cy', (d, i) => { //// d is shorthand for element in the data and i is index
-					// 	return i * 33;
-					// })
-			  // .attr('cx', (d,i) => { 
-			  // 	return  xScale5(d.yearline); 
-			  // })
-			 
+					  })
+					  .attr("fill", function(d,i) { 
+								if (i === 1){
+									var color = "red";
+									return color; 
+								}  else {
+									// var color = "#11593b"
+									var color = "DARKSEAGREEN"
+									return color;
+								}
+					  })
 						.attr('cy', (d, i) => {   /////changeline spacing
 							if(i % 2 == 0){
 								return i *35;
@@ -628,6 +730,59 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 						.attr('cx', function(d,i) { 
 								return xScale5(d.yearline);  ////change start  // x1 ////look at svg element line x1 y1 x2 y2
 							})
+				
+				
+	////////////
+	
+	 bars1.append("circle")  ////second circles at end of second 2015
+  			.data(data)
+			  // .attr("r", 5)
+			  .attr("r", function(d,i) {
+			  		if (i === 1){
+							var size = 0;
+							return size; 
+						}  if (i === 3){
+							var size = 2;
+							return size; 
+			  		}  if (i == 5){
+							var size = 2;
+							return size; 
+						}  if (i == 7){
+								var size = 0;
+								return size; 
+						} if (i == 9){
+								var size = 2;
+								return size;
+						} if (i == 11){
+								var size = 2;
+								return size;
+						} else {
+							var size = 0
+							return size;
+						}
+					  })
+					  .attr("fill", function(d,i) { 
+								// if (i === 1){
+								// 	// var color = "red";
+								// 	// return color; 
+								// }  else {
+								// 	// var color = "#11593b"
+									var color = "DARKSEAGREEN"
+									return color;
+								// }
+					  })
+						.attr('cy', (d, i) => {   /////changeline spacing
+							if(i % 2 == 0){
+								return i *35;
+							} else{
+										return i *35-12;
+							}
+							})
+						.attr('cx', function(d,i) { 
+								// return xScale5(d.yearline);  ////change start  // x1 ////look at svg element line x1 y1 x2 y2
+								return xScale5(d.year15)
+							})
+				
 				
 			  // .on('mouseenter', (d,i,j) => {
 					// 			console.log("hover")
@@ -825,6 +980,49 @@ var numlabel =	bars1.append('text')
 					.style("fill", "#f5f9f4");
 
 /////==================
+
+ // .style("opacity", function(d,i) { 
+					// 	if (i == 0){
+					// 		var opacity = 1;
+					// 		return opacity; 
+					// 	}  if (i == 2){
+					// 		var opacity = 1;
+					// 		return opacity; 
+			  // 		}  if (i == 4){
+					// 		var opacity = 1;
+					// 		return opacity; 
+					// 	}  if (i == 6){
+					// 			var opacity = 1;
+					// 			return opacity; 
+					// 	} else {
+					// 		var opacity = 1
+					// 		return opacity;
+					// 	}
+			  // })
+					// 		var color = "darkcyan";
+					// 		return color; 							
+					// 	} else if(i == 2){
+					// 		var color = "pink";
+					// 		return color;							
+					// 	} else if (i == 3){
+					// 		var color = "purple";
+					// 		return color;								
+					// 	} else if (i == 4){
+					// 		var color = "turquoise";
+					// 		return color;								
+					// 	} else {
+					// 		var color = "gold";
+					// 		return color;								
+					// 	}
+					// })
+					
+			  // position the circles right where the path elements end
+			  // .attr('cy', (d, i) => { //// d is shorthand for element in the data and i is index
+					// 	return i * 33;
+					// })
+			  // .attr('cx', (d,i) => { 
+			  // 	return  xScale5(d.yearline); 
+			  // })
 ///////////taken THIS OFF FOR THE MOMENT
 ///////2018 parallel lines 
 ////National Art Museum Staff Survey Intellectual Leadership Positions 
