@@ -1258,6 +1258,13 @@ max-width: 1250px;
    height: 30px;
    padding: 1em;
 }
+.stylepercent{
+  background-color: "lightgreen";
+   opacity: 0.6;
+   width: 50px;
+   height: 30px;
+   padding: 1em;
+}
 #percent-btn:active {
     transform: scale(0.995);
 }
@@ -1265,6 +1272,14 @@ max-width: 1250px;
     outline: 0.5px solid #9ea5aa;
     outline-offset: 1px;
      transform: scale(0.995);
+}
+#jobpercent-btn:active {
+    transform: scale(0.995);
+}
+#jobpercent-btn:hover {
+    outline: 0.5px solid #9ea5aa;
+    outline-offset: 1px;
+    transform: scale(0.995);
 }
 #numbers-btn:active {
     transform: scale(0.995);
@@ -1274,35 +1289,60 @@ max-width: 1250px;
     outline-offset: 1px;
     transform: scale(0.995);
 }
-.percenttext, .numberstext{
+.percenttext, .jobpercenttext, .numberstext{
   font-size: 0.7em;
   color: #f5f4f9;
+  fill: #f5f4f9;
   fill: currentColor;
+  /*opacity: 0.9;*/
+  opacity: 1;
 }
 .textpink {
-/*   color: #fdd2f5; */
-  color: #f5f4f9; 
+  color: #f5f4f9;
   fill: currentColor;
-  opacity: 0.8;
+  /*opacity: 0.9;*/
+  opacity: 1;
   /*font-size: 0.8em;*/
 }
 .textsubhead {
   color: #f5f4f9;
   fill: #f5f4f9;
   fill: currentColor;
-  opacity: 0.8;
+  /*opacity: 0.9;*/
+  opacity: 1;
+}
+.raceethnicitynote{
+  color: #f5f4f9;
+  fill: #f5f4f9;
+  fill: currentColor;
+  /*opacity: 0.9;*/
+  opacity: 1;
 }
 .percent7{
+  /*visibility: "hidden";*/
+  /*  */
   color: #f5f4f9;
   fill: currentColor;
-  opacity: 0.8;
+  /*opacity: 0.8;*/
+  opacity: 1;
+  font-size: 75%;
+}
+.jobpercent7{
+  /*visibility: "hidden"; */
+  /*  */
+  color: #f5f4f9;
+  fill: #f5f4f9;
+  fill: currentColor;
+  /*opacity: 0.8;*/
+  opacity: 1;
   font-size: 75%;
 }
 .number7{
   visibility: "hidden";
   color: #f5f4f9;
   fill: currentColor;
-  opacity: 0.8;
+  /*opacity: 0.8;*/
+  opacity: 1;
   font-size: 75%;
 }
 .circlepink {
