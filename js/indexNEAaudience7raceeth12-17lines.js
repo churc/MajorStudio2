@@ -416,7 +416,7 @@ let line5 = g.append("path")
     				return line(d,i)
     			})
     			.style('stroke', 'silver')
-    		  // .style("stroke-dasharray", "5,5,5")
+    		  .style("stroke-dasharray", "5,5,5")
     		  .attr("opacity", 0.9)
     			.attr('stroke-width', 1.5)
     				 .on("mouseover", function(d,i) {	    
