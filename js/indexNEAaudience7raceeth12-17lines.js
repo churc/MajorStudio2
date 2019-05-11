@@ -179,7 +179,7 @@ let line1 = g.append("path")
           .style("left", (_x + margin.right*1.3 ) + "px")
           .style("top", (_y + margin.top/1.1 ) + "px")
             
-          .text(`Hispanic: 2012: 14.3%, 2017: 16.2%`)
+          .text(`Hispanic: 14.3% 2012, 16.2% 2017`)
           
           d3.select("#tooltipline1").classed("hidden", false);  //Show the tooltip
           // d3.select("#tooltipline1").style("opacity", 1);
@@ -188,8 +188,8 @@ let line1 = g.append("path")
                       
             d3.select(this)
                     .transition()
-                    .delay(5000)
-                    .duration(5000)
+                    .delay(50)
+                    .duration(70)
                       .style("fill", "")
             d3.select("#tooltipline1").classed("hidden", true)
                   // d3.select("#tooltipline1").style("opacity", 0) 
@@ -257,7 +257,7 @@ let line1 = g.append("path")
 //                         // .attr("class", "line"); 
 //                     });
    
-  // "White",  [24.1, 26.7]
+  // "white",  [24.1, 26.7]
 let line2 = g.append("path")
     			.datum(lines2)
     			// .attr("class", "line") // Assign a class for styling
@@ -266,7 +266,7 @@ let line2 = g.append("path")
     				// console.log(d,i)
     				return line(d,i)
     			})
-    			.attr('stroke', 'blue')
+    			.attr('stroke', '#a5e2ff')
     			.attr('stroke-width', 1)
     				 .on("mouseover", function(d,i) {
           d3.select(this) 
@@ -284,15 +284,15 @@ let line2 = g.append("path")
         .style("left", (_x2 + margin.right*1.3 ) + "px")
         .style("top", (_y2 + margin.top/1.1 ) + "px")
         // .select("#value")
-        .text(`White: 24.1% 2012, 26.7% 2017`)
+        .text(`white: 24.1% 2012, 26.7% 2017`)
         
       d3.select("#tooltipline2").classed("hidden", false);  //Show the tooltip
     })
     .on("mouseout", function () {
       d3.select(this)
                 .transition()	
-                .delay(500)
-                .duration(200)
+                .delay(50)
+                .duration(70)
                   .style("fill", "")
       d3.select("#tooltipline2").classed("hidden", true)
               
@@ -307,10 +307,10 @@ let line3 = g.append("path")
     				// console.log(d,i)
     				return line(d,i)
     			})
-    			.attr('stroke', 'purple')
+    			.attr('stroke', '#dfbded')
     			.attr('stroke-width', 1)
-    					 .on("mouseover", function(d,i) {
-          d3.select(this) 
+    		.on("mouseover", function(d,i) {
+          		d3.select(this) 
         
          
             line3.append('text')
@@ -337,7 +337,7 @@ let line3 = g.append("path")
     
 // "Asian" [23, 26.2]                
 let line4 = g.append("path")
-    			.datum(lines4)
+    		.datum(lines4)
     			// .attr("class", "line") // Assign a class for styling
     			.attr('d', (d,i)=> {
     				// return line(d,i)    ////\\here add function in the line generator 
@@ -380,7 +380,7 @@ let line5 = g.append("path")
     				// console.log(d,i)
     				return line(d,i)
     			})
-    			.attr('stroke', 'red')
+    			.attr('stroke', 'palegoldenrod')
     			.attr('stroke-width', 1)
             .on("mouseover", function(d,i) {
           d3.select(this) 
@@ -398,7 +398,7 @@ let line5 = g.append("path")
             .style("left", (_x5 + margin.right*1.3 ) + "px")
             .style("top", (_y5 + margin.top/1.1 ) + "px")
             // .select("#value")
-            .text(`Other: 16.9% 2012, 22.1% 2017`)
+            .text(`other: 16.9% 2012, 22.1% 2017`)
               
             d3.select("#tooltipline5").classed("hidden", false);  //Show the tooltip
           })
@@ -406,18 +406,53 @@ let line5 = g.append("path")
             d3.select(this).style("fill", "");
             d3.select("#tooltipline5").classed("hidden", true);
           });
-                    
+  
+	let line6 = g.append("path")
+    			.datum(linesall)
+    			// .attr("class", "line") // Assign a class for styling
+    			.attr('d', (d,i)=> {
+    				// return line(d,i)    ////\\here add function in the line generator 
+    				// console.log(d,i)
+    				return line(d,i)
+    			})
+    			.style('stroke', 'silver')
+    		  // .style("stroke-dasharray", "5,5,5")
+    		  .attr("opacity", 0.9)
+    			.attr('stroke-width', 1.5)
+    				 .on("mouseover", function(d,i) {	    
+		    d3.select(this) 
+         
+            line6.append('text')
+                .style("color", "#ffffff")
+                .style('font-size', "100%")
+						 var _x6 = (d3.mouse(this)[0]);
+        		 var _y6 = (d3.mouse(this)[1]);
+        
+          d3.select("#tooltipline6")  //Update the tooltip position and value
+            .style("left", (_x6 + margin.right*1.3 ) + "px")
+            .style("top", (_y6 + margin.top/1.1 ) + "px")
+            // .select("#value")
+            .text(`all: 21% 2012, 23.7% 2017`)
+              
+            d3.select("#tooltipline5").classed("hidden", false);  //Show the tooltip
+          })
+          .on("mouseout", function () {
+            d3.select(this).style("fill", "");
+            d3.select("#tooltipline5").classed("hidden", true);
+          }); 
+		  
     let yAxis = g.append("g")  // just append axis to global space
         .attr("class", "yaxisnea3")
         .style('fill', 'none')
         .style('stroke', 'darkslategrey')
         .style("color",'darkslategrey')
         .style('stroke-width', 0.2)
-        .style('font-size', "70%")
+        .style('font-size', "80%")
+				.style("color", "#f5f4f9")
         .attr("transform", `translate(0.19 , 0 )`) 
         .call(d3.axisLeft(yScale) //call axisLeft to use yScale for axis ticks and scale
         	.tickSize(3)
-            .ticks("5")
+            .ticks(5)
         );
 
     let yaxisRight = g.append("g")
@@ -426,7 +461,8 @@ let line5 = g.append("path")
         .style('stroke', 'darkslategrey')
         .style("color",'darkslategrey')
         .style('stroke-width', 0.2)
-        .style('font-size', "70%")
+        .style('font-size', "80%")
+				.style("color", "#f5f4f9")
          .attr("transform", `translate(${width} , 0 )`)  //////move it to right hand side
         .call(d3.axisRight(yScale)///.above move the axis to place that the chart ends - within the margins
         	.tickSize(3)
@@ -443,7 +479,8 @@ let line5 = g.append("path")
         .style('stroke', 'darkslategrey')
         .style("color",'darkslategrey')
         .style('stroke-width', 0.32)
-        .style('font-size', "70%")
+        .style('font-size', "80%")
+			 .style("color", "#f5f4f9")
          .attr("transform", `translate(0, ${height} )`)  //////move it to right hand side
         .datum(lines1)
         .call(d3.axisBottom(xScale)///.above move the axis to place that the chart ends - within the margins
@@ -464,8 +501,8 @@ let line5 = g.append("path")
                     .text('2017')
                     .attr('x', width-margin.left/4)
                     .attr('y', height*1.06)
-                    .attr('font-size', '70%')
-                    .style("color", "darkslategrey")
+                    .attr('font-size', '80%')
+                    .style("color", "#f5f4f9")
                     .style("fill", "currentColor");
                     
 let chartxaxistick1 = g.append('g')
@@ -474,62 +511,72 @@ let chartxaxistick1 = g.append('g')
                     .text('2012')
                     .attr('x', -margin.left/6)
                     .attr('y', height*1.06)
-                    .attr('font-size', '70%')
-                    .style("color", "darkslategrey")
+                    .attr('font-size', '80%')
+                    .style("color", "#f5f4f9")
                     .style("fill", "currentColor");
                     
 let line1text = g.append('g')
 	.append('text')
              .text('Hispanic')
-              .attr('x', width*1.03)
+              .attr('x', width*1.05)
               .attr('y', height/2)
-              .attr('font-size', '75%')
+              .attr('font-size', '80%')
               .style("color", "turquoise")
               .style("fill", "currentColor");
 
 let line2text = g.append('g')
 	.append('text')
              .text('white')
-              .attr('x', width*1.03)
+              .attr('x', width*1.05)
               .attr('y', height/6.7)
-              .attr('font-size', '75%')
-              .style("color", "blue")
+              .attr('font-size', '80%')
+              .style("color", "#a5e2ff")
               .style("fill", "currentColor");
 
 let line3text = g.append('g')
 	.append('text')
              .text('African American')
-              .attr('x', width*1.03)
+              .attr('x', width*1.05)
               .attr('y', height/2.18)
-              .attr('font-size', '75%')
-              .style("color", "purple")
+              .attr('font-size', '80%')
+              .style("color", "#dfbded")
               .style("fill", "currentColor");
 
 let line4text = g.append('g')
 	.append('text')
              .text('Asian')
-              .attr('x', width*1.03)
+              .attr('x', width*1.05)
               .attr('y', height/5.3)
-              .attr('font-size', '75%')
+              .attr('font-size', '80%')
               .style("color", "pink")
               .style("fill", "currentColor");
               
 let line5text = g.append('g')
 	.append('text')
              .text('other')
-              .attr('x', width*1.03)
+              .attr('x', width*1.05)
               .attr('y', height/3.3)
-              .attr('font-size', '75%')
-              .style("color", "red")
+              .attr('font-size', '80%')
+              .style("color", "PALEGOLDENROD")
+              .style("fill", "currentColor");
+							
+let line6text = g.append('g')
+	.append('text')
+             .text('ALL')
+              .attr('x', width*1.05)
+              .attr('y', height/4)
+              .attr('font-size', '100%')
+              .style("font-weight", "bold")
+              .style("color", "silver")
               .style("fill", "currentColor");
  
  let chart1 = g.append('g')
 		.append('text')
     		    .attr("class", "audtext3")
                     .text('percent')
-                    .attr('x', -margin.left*3)
+                    .attr('x', -margin.left*5.5)
                     // .attr('y', 0-margin.top/15)
-                    .attr('y', width+margin.left/2)
+                    .attr('y', width+margin.left)
                     .attr("transform", "rotate(-90)")
                     .attr('font-size', '90%');
                 
@@ -554,9 +601,10 @@ let line5text = g.append('g')
   let subhead2 = g.append('g')
 		.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhead4")
-                    .text('Hispanic, African American, other, Asian, white')
+                    .text('Hispanic, African American, other, all, Asian, white')
                     .attr('x', margin.left/18)
                     .attr('y', 0-margin.top/5)
+										.style("color", "#f5f4f9")
                     .attr('font-size', '1.1em'); 
   
    let footnote1 = g.append('g')
@@ -564,15 +612,19 @@ let line5text = g.append('g')
                     .attr("class", "audsubhead5")
                     .text('Data: Office of Research & Analysis, National Endowment for the Arts, Sept. 2018')
                     .attr('x', margin.left/18)
-                    .attr('y', height+margin.top/2.4)
-                    .attr('font-size', '74%'); 
+                    .attr('y', height+margin.top/2.1)
+	 									.attr('font-size', '80%')
+                    .style("color", "#f5f4f9")
+                    .style("fill", "currentColor"); 
                     
   let footnote2 = g.append('g')
 		.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhead5")
                     .text('Percent of U.S. adults visiting art museums/galleries by demographic subgroup: 2012, 2017')
                     .attr('x', margin.left/18)
-                    .attr('y', height+margin.top/1.8)
-                    .attr('font-size', '74%');
+                    .attr('y', height+margin.top/1.5)
+                    .attr('font-size', '80%')
+                    .style("color", "#f5f4f9")
+                    .style("fill", "currentColor");
 
    }; 
