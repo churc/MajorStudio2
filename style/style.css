@@ -1166,18 +1166,21 @@ max-width: 1250px;
              fill: currentColor;
             }
             
-#tooltipline1,#tooltipline2,#tooltipline3,#tooltipline4,#tooltipline5  {
+#tooltipline1, #tooltipline2,#tooltipline3,#tooltipline4,#tooltipline5, #tooltipline6  {
         font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
         position: absolute;
         text-align: center;
-        font-size: 0.8em;
         margin: 0 auto;
-        width: 90px;
-        height: 40px;
-        padding: 6px;
+        /*padding-top: 2px;*/
+        background-color: #737997;
+        opacity: 0.9;
+        width: 250px;
+        height: 25px;
+        padding: 3px;
+        font-size: 0.8em;
+        line-height: 1.5em;
         color: white;
         pointer-events: none;
-        transition-delay: all 0.2s;
       }
        #tooltipline1.hidden {
         display: none;
@@ -1194,19 +1197,20 @@ max-width: 1250px;
        #tooltipline5.hidden {
         display: none;
        }
-      #11{
+      #tooltipline6.hidden {
+        display: none;
+       }
+       #2, #4, #6, #8, #11, #16{
         display: table-cell;
       }
-       #2, #4, #6, #8, #15{
-        display: table-cell;
-      }
-      #value, #value1, #value2, #value3, #value4, #3, #35, #7, #12, #14{
+      #value, #value1, #value2, #value3, #value4, #value5, #3, #5, #7, #12, #14, #15{
         display: table-cell; 
         vertical-align: middle; 
         justify-content: center;
         align-items: center;
         transform: translateY(50%);
         text-align: center;
+        padding: 3px 2px 3px 2px;
       }
       #tooltipline1 p {
         margin: 0;
@@ -1221,6 +1225,9 @@ max-width: 1250px;
         margin: 0;
       } 
       #tooltipline5 p {
+        margin: 0;
+      }
+      #tooltipline6 p {
         margin: 0;
       } 
 #tooltipline1:hover { 
