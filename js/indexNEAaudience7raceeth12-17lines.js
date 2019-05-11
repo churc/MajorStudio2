@@ -31,7 +31,7 @@
             let svgPlot24 = (data) => { ////need to call a different svgPlot 
                 console.log(data); ////with each chart for multiple charts
                 
-        	var margin = {top: 105, right: 90, bottom: 80, left: 90}; ////this works outside the svgPlot
+        	var margin = {top: 95, right: 130, bottom: 90, left: 50}; ////this works outside the svgPlot
 	
 	var width = 780 - margin.left - margin.right; // specify the width and give space around the chart
 	var height = 550 - margin.top - margin.bottom; // specify the width and give space around the chart
@@ -86,8 +86,14 @@ let lines4 = [mus12, mus17];
           	console.log(mu17)
 let lines5 = [mu12, mu17];          	
 
+		        const m12 = data[5].percent[0]
+          	console.log(m12)
+          	
+        	  const m17 = data[5].percent[1]
+          	console.log(museum17)
+let linesall = [museum12, m17];
 
-console.log(lines1, lines2, lines3, lines4, lines5);
+console.log(lines1, lines2, lines3, lines4, lines5, linesall);
 
 // // The number of datapoints for paired lines
 	var n = 2;
