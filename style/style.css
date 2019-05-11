@@ -1173,7 +1173,7 @@ max-width: 1250px;
         margin: 0 auto;
         /*padding-top: 2px;*/
         background-color: #737997;
-        opacity: 0.9;
+        opacity: 0;
         width: 250px;
         height: 25px;
         padding: 3px;
@@ -1182,24 +1182,6 @@ max-width: 1250px;
         color: white;
         pointer-events: none;
       }
-       #tooltipline1.hidden {
-        display: none;
-      }
-       #tooltipline2.hidden {
-        display: none;
-      }
-       #tooltipline3.hidden {
-        display: none;
-      }
-       #tooltipline4.hidden {
-        display: none;
-      }
-       #tooltipline5.hidden {
-        display: none;
-       }
-      #tooltipline6.hidden {
-        display: none;
-       }
        #2, #4, #6, #8, #11, #16{
         display: table-cell;
       }
@@ -1229,12 +1211,7 @@ max-width: 1250px;
       }
       #tooltipline6 p {
         margin: 0;
-      } 
-#tooltipline1:hover { 
-        transition-duration: 3s;
-        transition: all .5s ease-out 7s;
-}
-     
+      }  
           
 
 /*DCLA horizontal job types yellow percent circle grid*/
