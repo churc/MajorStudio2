@@ -497,7 +497,7 @@ let line5 = g.append("path")
 
  let chartxaxistick2 = g.append('g')
 		.append('text')
-    		    .attr("class", "xaxisnea3")
+//     		    .attr("class", "xaxisnea3")
                     .text('2017')
                     .attr('x', width-margin.left/4)
                     .attr('y', height*1.06)
@@ -507,7 +507,7 @@ let line5 = g.append("path")
                     
 let chartxaxistick1 = g.append('g')
 		.append('text')
-    		    .attr("class", "xaxisnea3")
+//     		    .attr("class", "xaxisnea3")
                     .text('2012')
                     .attr('x', -margin.left/6)
                     .attr('y', height*1.06)
@@ -604,8 +604,9 @@ let line6text = g.append('g')
                     .text('Hispanic, African American, other, all, Asian, white')
                     .attr('x', margin.left/18)
                     .attr('y', 0-margin.top/5)
-										.style("color", "#f5f4f9")
-                    .attr('font-size', '1.1em'); 
+		    .style('font-size', '1.1em')
+                    .style("color", "#f5f4f9")
+                    .style("fill", "currentColor");
   
    let footnote1 = g.append('g')
 		.append('text')  /////to site text you can always do negative values to be outside the chart
