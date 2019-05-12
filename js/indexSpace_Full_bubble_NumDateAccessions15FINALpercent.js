@@ -47,9 +47,9 @@ d3.json("data/after15groupsortcontinent.json").then((after15groupCount) => {
 // //              
 // console.log(test_data)
   // var margin = {top: 5, right: 120, bottom: 60, left: 120}; ////this works outside the svgPlot
-	var margin = {top: 40, right: 27, bottom: 30, left: 27};
+	var margin = {top: 40, right: 21, bottom: 30, left: 33};
 	
-	var width = 700 - margin.left - margin.right; // specify the width and give space around the chart
+	var width = 690 - margin.left - margin.right; // specify the width and give space around the chart
 	var height = 670 - margin.top - margin.bottom; // specify the width and give space around the chart
 // 	console.log(margin.top)
 
@@ -396,7 +396,7 @@ console.log(after15grouppercent)
 
 let radareadate = d3.scaleSqrt()     
                       .domain([0, 6811])   ////same domain as pre 2015 bubble 
-                      .range([0, 1800]);   ////same range as pre 2015 bubble
+                      .range([0, 1600]);   ////same range as pre 2015 bubble
             console.log(radareadate(289))
 
 // //Initialize a simple force layout, using the nodes and edges in dataset
@@ -471,10 +471,10 @@ var nodes = g.selectAll("g")
                   
               
      newtooltips4.append("rect")  
-                  .attr("width", 285)
+                  .attr("width", 254)
                   .attr("height", 32)
                   .attr("class", "toolrectperc")
-                  .attr("x", -145)
+                  .attr("x", -129)
                   .attr("y", -28)
                   .attr("rx", 3)
                   .attr("ry", 3)
@@ -501,7 +501,7 @@ var nodes = g.selectAll("g")
                           .attr("class", "tiptextperc")
                             .attr("text-anchor", "middle")
                             .style("fill", "#2d2725")
-                            .style("font-size", "0.71em")
+                            .style("font-size", "0.68em")
                      
     
     
