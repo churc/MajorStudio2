@@ -320,9 +320,9 @@ let datanumcircles = [];
     let endnote = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textpink")
-            .text('Data: New York City Department of Cultural Affairs (NYC DCLA)')
+            .text('Data: National Archive of Data on Arts and Culture, ICPSR 36606, Schonfeld, Roger, and Sweeney, Liam. “Diversity Survey of the New York City Department of Cultural Affairs Grantees,” 2015')
             .attr('x', margin.left*2.5)
-            .attr('y', height - margin.bottom / 2.6)
+            .attr('y', height - margin.bottom / 2.2)
             .style('font-size', '0.65em');
 
     let endnote2 = g21.append('g') //// append text to global
@@ -330,7 +330,7 @@ let datanumcircles = [];
             .attr("class", "textpink")
             .text('8,094 staff at museums; 7,647 are at museums with budgets $1,000,000+. Board volunteers + 6,768 non-volunteer staff totals 7,346')
             .attr('x', margin.left*2.5)
-            .attr('y', height - margin.bottom / 3.8)
+            .attr('y', height - margin.bottom / 3.25)
             .style('font-size', '0.65em');
 
     let endnote3 = g21.append('g') //// append text to global
@@ -338,7 +338,7 @@ let datanumcircles = [];
             .attr("class", "textpink")
             .text('Schonfeld, Roger, Sweeney, Liam. Diversity Survey of the NYC DCLA Grantees, 2015. Ann Arbor, MI: Inter-university Consortium')
             .attr('x', margin.left*2.5)
-            .attr('y', height - margin.bottom / 6.9)
+            .attr('y', height - margin.bottom / 6.05)
             .style('font-size', '0.65em');
 
     let endnote4 = g21.append('g') //// append text to global
