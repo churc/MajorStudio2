@@ -357,7 +357,7 @@ let datanumcircles = [];
     let subheading2 = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textsubhead")
-            .text('At museums with budgets $999,999+. Paid staff + board members: 7,346 people')
+            .text('At museums with budgets $1 million+. Paid staff + board members: 7,346 people')
             .attr('x', margin.left*5.8)
             .attr('y', margin.top / 5.5)
             .style('font-size', '1.1em');
@@ -382,37 +382,30 @@ let datanumcircles = [];
                 .style('font-size', '1.05em');
                 
 
-    let endnote = g21.append('g') //// append text to global
-        .append("text")
-            .attr("class", "textpink")
-            .text('Data: New York City Department of Cultural Affairs (NYC DCLA)')
-            .attr('x', margin.left*5.5)
-            .attr('y', height - margin.bottom / 2.35)
-            .style('font-size', '0.70em');
-
     let endnote2 = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textpink")
-            .text('8,094 staff at museums; 7,647 are at museums with budgets $999,999+. Board volunteers + 6,768 non-volunteer staff totals 7,346')
+            .text('8,094 staff at museums; 7,647 are at museums with budgets $1 million+. Non-volunteer staff + 802 board members totals 7,346')
             .attr('x', margin.left*5.5)
-            .attr('y', height - margin.bottom / 3.45)
+            .attr('y', height - margin.bottom / 2.9)
             .style('font-size', '0.70em');
+
+    let endnote = g21.append('g') //// append text to global
+        .append("text")
+            .attr("class", "textpink")
+            .text('Data: National Archive of Data on Arts and Culture, ICPSR 36606, Schonfeld, Roger, and Sweeney, Liam. “Diversity Survey of the New York City')
+            .attr('x', margin.left*5.5)
+            .attr('y', height - margin.bottom / 5.5)
+            .style('font-size', '0.85em');
+
 
     let endnote3 = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textpink")
-            .text('Schonfeld, Roger, Sweeney, Liam. Diversity Survey of the NYC DCLA Grantees, 2015. Ann Arbor, MI: Inter-university Consortium')
+            .text('Department of Cultural Affairs Grantees,” 2015. Ann Arbor, MI: Inter-university Consortium')
             .attr('x', margin.left*5.5)
-            .attr('y', height - margin.bottom / 6.3)
-            .style('font-size', '0.70em');
-
-    let endnote4 = g21.append('g') //// append text to global
-        .append("text")
-            .attr("class", "textpink")
-            .text('for Political and Social Research [distributor], 2017-01-10. https://doi.org/10.3886/ICPSR36606.v2')
-            .attr('x', margin.left*5.5)
-            .attr('y', height - margin.bottom / 30)
-            .style('font-size', '0.70em');
+            .attr('y', height - margin.bottom /30)
+            .style('font-size', '0.85em');
 
     let percent7 = svg21.append('g')
         percent7.selectAll('text')
