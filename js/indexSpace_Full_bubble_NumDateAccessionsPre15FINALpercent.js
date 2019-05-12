@@ -402,10 +402,10 @@ var nodes = g.selectAll("g")
                   
               
      newtooltips3.append("rect")  
-                  .attr("width", 310)
+                  .attr("width", 318)
                   .attr("height", 32)
                   .attr("class", "toolrectperc")
-                  .attr("x", -155) ////sites text in center of tooltip
+                  .attr("x", -159.5) ////sites text in center of tooltip
                   .attr("y", -28)
                   .attr("rx", 3)
                   .attr("ry", 3)
@@ -425,7 +425,7 @@ var nodes = g.selectAll("g")
                           .attr("class", "tiptextperc")
                             .attr("text-anchor", "middle")
                             .style("fill", "#2d2725")
-                            .style("font-size", "0.705em")
+                            .style("font-size", "0.66em")
   
   ////13 continent groupings
   let sortcontinent = [];
