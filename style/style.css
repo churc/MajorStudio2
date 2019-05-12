@@ -602,6 +602,7 @@ p {
 
 #container8{
   max-width: 1250px;
+  margin-bottom: 0;
 }
 
 .container9{
@@ -654,7 +655,7 @@ max-width: 1250px;
 }
 
 #sections8{
-  padding-top: 2.5em;
+  padding-top: 1em;
 }
 
 
@@ -914,7 +915,7 @@ max-width: 1250px;
 
 #graph8{
   margin-left: 0;
-  padding-top: 3em;
+  padding-top: 1em;
 }
 
 #graph10{
