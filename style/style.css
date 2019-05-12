@@ -1376,10 +1376,25 @@ max-width: 1250px;
                 fill: currentColor;
                 height: auto;
                 text-align: left;
-                padding-bottom: 1.3em;
+                padding-bottom: 1em;
                 padding-left: 1.3em;
+                line-height: 1.5em;
             }
-            
+.curatortext {
+                float: left;
+                /*background: #877c74;*/
+                background: #726a64;
+                /*color: #f5f4f9;*/
+                /*fill: currentColor;*/
+                height: auto;
+                text-align: left;
+                padding-bottom: 1.3em;
+                padding-left: 1.6em;
+                line-height: 1.5em;
+                font-style: italic;
+                color: #FFD700;
+                fill: currentColor;
+            } 
 #svgheading {
                 float: left;
                 font-family: aktiv-grotesk-thin, sans-serif, "Helvetica", 'Saira', sans-serif;
@@ -1421,29 +1436,35 @@ max-width: 1250px;
                 /*text-align: left;*/
                 text-align: right;
             }
-
-            .axislabel {
-                font-size: 85%;
+						.titlenumber2010{
+              /*number of curators*/
+                font-size: 0.8em;
                 color: #ffffff;
-                fill: #ffffff;
+                 fill: currentColor;
+                /*text-align: left;*/
+                text-align: right;
+                font-weight: bold;
+                font-style: italic;
+            }
+            .axislabel {
+                font-family: aktiv-grotesk-thin, sans-serif, "Helvetica";
+                font-size: 85%;
+                /*color: #ffffff;*/
+                /*fill: #ffffff;*/
                 stroke-width: 0.02;
             }
-
             .yaxisl {
                 opacity: 0;
                 /*fill: #ffffff;  to toggle left axis off*/
-                /*stroke: #ffffff;*/
-                /*stroke-width: 0.02;*/
             }
-
-            .yaxismult {
-                color: #ffffff;
-                fill: #ffffff;
-                stroke: #ffffff;
-                stroke-width: 0.02;
-                opacity: 0.8;
+						.yaxismult {
+                font-family: aktiv-grotesk-thin, sans-serif, "Helvetica";
+                fill: none;
+                color: #f5f4f9;
+                stroke-width: 0.08;
+                /*opacity: 0; */
+                /*  toggle right axis off */
             }
-
             .linemult {
                 stroke: yellow;
                 stroke-width: 0.02;
@@ -1459,20 +1480,21 @@ max-width: 1250px;
                 transition-timing-function: ease-in;
                 transition: 10s;
             }
-
             .areayellow {
                 fill: yellow;
                 opacity: 0.8;
                 transition-timing-function: ease-in;
                 transition: 2s;
             }
-
             .area1 {
                 fill: #f9da25;
                 opacity: 0.6;
                 transition-timing-function: ease-in;
                 transition: 2s;
             }
+						.areatransparent {
+							opacity: 0;
+						}
 
 
 /*small national art museum staff 2015 and 2018*/
