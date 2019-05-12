@@ -412,14 +412,12 @@ main {
   padding-top: 0;
   padding-bottom: 1em;
 }
-/*for audience section - slightly different background*/
-.audienceband{
-    background: pink;
-    background-color: pink; 
-    color: pink;
-    background-color: #9e826b; 
-    color: #9e826b;
-    /*background: #726a64;*/
+/*for audience section */
+#audienceband{
+    background-color: #726a64; 
+    color: #726a64;
+    margin-top: 4em;
+    padding-top: 3em;
   }
 /*main container for 2 column text blocks*/
 .main2col{
