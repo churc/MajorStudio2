@@ -489,7 +489,8 @@ var nodes = g.selectAll("g")
     newtooltips4.append("text")       	      	
               	   .text(function(d) {
                   	 // if (d.nationality != "") {
-                               return (d.nationality + ': ' + (d3.format(".4g")(d.percent)) + "%  " + d.count + ' artworks')
+//                         return (d.nationality + ': ' + (d3.format(".4g")(d.percent)) + "%  " + d.count + ' artworks')
+	    									return (d.nationality + ': ' + (d3.format("0.2f")(d.percent)) + "%  " + d.count + ' artworks')
                             // }
                             //   else {
                             //   return "not recorded"
