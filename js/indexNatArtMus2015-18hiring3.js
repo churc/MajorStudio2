@@ -629,7 +629,7 @@ let headingpercent = g.append('text')
 				
 
 			let datanote = g.append('text')
-					.text('Data from Art Museum Staff Demographic Survey 2018, Westermann, M., Sweeney, L., & Schonfeld, R. C. (January 2019)')
+					.text('Data: Art Museum Staff Demographic Survey 2018, Westermann, M., Sweeney, L., & Schonfeld, R. C. (January 2019)')
 					.attr('x', -margin.left/25)
 					.attr('y', -margin.top/1.61)
 					.style("fill", "#f5f4f9")
