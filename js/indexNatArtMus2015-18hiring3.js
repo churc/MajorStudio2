@@ -191,7 +191,7 @@ var n = 10;
 					}
 					})
 
-////vertical line to show national percentage
+////vertical line 2015 to show national percentage
 
 let natpercentage = bars1.append("line")
 // let natpercentage = g.append("line")
@@ -201,15 +201,33 @@ let natpercentage = bars1.append("line")
 							// .style("stroke-dasharray", 3,3)
 							.attr("stroke-width", 0.2)
 							.attr('x1', function(d,i) {
-												return xScale(68);
+												return xScale(62);
 									})
 							.attr('x2', function(d,i) {
-												return xScale(68);
+												return xScale(62);
 									})
 							.attr('y1', height/2)
 							.attr('y2', height*1.7)
 							
-////line to label vertical percent
+////vertical line 2018 to show national percentage
+
+let natpercentage2018 = bars1.append("line")
+// let natpercentage = g.append("line")
+							.attr("fill", "none")
+							.attr("stroke", "#f5f4f9")
+							.attr("opacity", 0.9)
+							// .style("stroke-dasharray", 3,3)
+							.attr("stroke-width", 0.2)
+							.attr('x1', function(d,i) {
+												return xScale(60.7);
+									})
+							.attr('x2', function(d,i) {
+												return xScale(60.7);
+									})
+							.attr('y1', height/2)
+							.attr('y2', height*1.7)
+							
+////line to 2015 label vertical percent
 
 let natpercentlabel =	g.append("path")
 						.data(data)
@@ -218,24 +236,34 @@ let natpercentlabel =	g.append("path")
 							.attr("opacity", 0.9)
 							.attr("stroke-width", 0.3)
 							
-							.attr("d", "M "+xScale(68)+ ",100, L 520,50 L 670,50 ")  ////////can I change these to scales? or do I use margin.left etc?
+							.attr("d", "M "+xScale(62)+ ",140, L 500,90 L 670,90 ")  
 							
-							// .attr('M', function(d,i) {
-							// 					return xScale(68);
-							// 		})
-							// .attr('x2', function(d,i) {
-							// 					return xScale(68);
-							// 		})
-							// .attr('y1', height/8)
-							// .attr('y2', height*1.7)
 					
 				g.append("text")   ////text on line label
-						.text('67% white, total U.S. population, 2010 U.S. Census')
+						.text('62% white, total U.S. population 2015')
 						.style("fill", "#f5f4f9")
 						.attr('font-size', '0.8em')
-						.attr('x', 525)
-						.attr('y', 45)
+						.attr('x', 505)
+						.attr('y', 85)
+
+
+////line to 2018 label vertical percent
+
+let natpercentlabel2018 =	g.append("path")
+						.data(data)
+							.attr("fill", "none")
+							.attr("stroke", "#f5f4f9")
+							.attr("opacity", 0.9)
+							.attr("stroke-width", 0.3)
+							
+							.attr("d", "M "+xScale(60.7)+ ",103, L 500,50 L 670,50 ")  
 					
+				g.append("text")   ////text on line label
+						.text('60.7% white, total U.S. population, 2018')
+						.style("fill", "#f5f4f9")
+						.attr('font-size', '0.8em')
+						.attr('x', 505)
+						.attr('y', 45) 					
 						// .on('mouseenter', (d,i,j) => {
 						// 	console.log("hover")
 						// 	console.log(d.jobtype)
@@ -584,7 +612,7 @@ let xlabel = g.append('text')
             .style("font-size", "0.85em")
             .style("opacity", 0.95)
 	    			.style("fill", "#f5f4f9")
-            .text("percent")
+            // .text("percent")
               
 
 let headingpercent = g.append('text')
@@ -631,8 +659,23 @@ let headingpercent4 = g.append('text')
 			let datanote = g.append('text')
 					.text('Data: Westermann, Mariët, Sweeney, Liam, Schonfeld, Roger, C. "Art Museum Staff Demographic Survey 2018." Ithaka S+R')
 					.attr('x', -margin.left*0.0001)
-					.attr('y', height+margin.top*2.39)
+					.attr('y', height+margin.top*2.02)
 					.style("fill", "#f5f4f9")
-					.attr('font-size', '0.89em');
+					.attr('font-size', '0.8em');
+					
+		let datanote3 = g.append('text')
+					.text('2018 U.S. Percent White: United States Census Bureau, Quick Facts, https://www.census.gov/quickfacts/fact/table/US/RHI825217')
+					.attr('x', -margin.left*0.0001)
+					.attr('y', height+margin.top*2.21)
+					.style("fill", "#f5f4f9")
+					.attr('font-size', '0.8em');	
+					
+			let datanote2 = g.append('text')
+					.text('2015 U.S. Percent White: Henry J. Kaiser Family Foundation, Population Distribution by Race/Ethnicity, kff.org')
+					.attr('x', -margin.left*0.0001)
+					.attr('y', height+margin.top*2.4)
+					.style("fill", "#f5f4f9")
+					.attr('font-size', '0.8em');				
+					
 					
 };
