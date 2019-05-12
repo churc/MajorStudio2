@@ -775,38 +775,30 @@ max-width: 1250px;
 .museumheadingtext4{
   font-family: aktiv-grotesk-thin, sans-serif;
   color: #f5fcf7;
-  /*color: #f5fcf7;*/
-  line-height: 0.9em;
+  line-height: 0.2em;
   font-size: 0.8em;
   /*text spacing*/
   font-kerning: normal;
   letter-spacing: 0.04rem;
-/*   text-align:  center; */
   display: block;
-  /*padding: 0.3em;*/
-  /*margin: 4em 4em; */
   margin-top: 0;
   margin-bottom: 0;
   border-top: 0;
-  /*padding-bottom: 0.4em;*/
 }
 .museumheadingtext5{
   font-family: aktiv-grotesk-thin, sans-serif;
   color: #f5fcf7;
-  /*color: #f5fcf7;*/
-  line-height: 0.2em;
+  line-height: 0.15em;
   font-size: 1.3em;
   /*text spacing*/
   font-kerning: normal;
   letter-spacing: 0.04rem;
 /*   text-align:  center; */
   display: block;
-  /*padding: 0.3em;*/
-  /*margin: 4em 4em;*/
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0.35em;
+  margin-bottom: 0.6em;
   border-top: 0;
-  /*padding-bottom: 0.4em;*/
+  padding-bottom: 0.3em;
 }
 .graph {
   margin-bottom: 40px;
