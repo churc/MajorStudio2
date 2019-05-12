@@ -417,7 +417,7 @@ var nodes = g.selectAll("g")
     
     newtooltips3.append("text")       	      	
               	   .text((d)=> {
-                              return (d.nationality + ': ' + (d3.format(".4g")(d.percent)) + "%  " + d.count + ' artworks')
+                              return (d.nationality + ': ' + (d3.format("0.2f")(d.percent)) + "%  " + d.count + ' artworks')
                            
                           })
                           .attr("x", 0)
@@ -425,7 +425,7 @@ var nodes = g.selectAll("g")
                           .attr("class", "tiptextperc")
                             .attr("text-anchor", "middle")
                             .style("fill", "#2d2725")
-                            .style("font-size", "0.71em")
+                            .style("font-size", "0.705em")
   
   ////13 continent groupings
   let sortcontinent = [];
