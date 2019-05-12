@@ -474,9 +474,9 @@ main {
 #imgacross2{
   margin-top: 0; 
   border-bottom:none;
-  /*line-height: 1.5em;*/
   margin: 1em auto;
   padding: 0 3em 0 3em;
+	margin-bottom: 0;
 }
 
 #bubbles2across{
@@ -486,6 +486,7 @@ main {
   margin-bottom: 0;
   padding-bottom: 0;
   margin: 0 auto;
+	padding-top: 0;
 }
 
 /* spacing & borders at the top and bottom of the page */
