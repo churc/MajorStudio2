@@ -185,7 +185,7 @@ let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 
     .attr('fill', 'none')
     .style("opacity", 1)
     .style('stroke', "#3161d8")
-    .attr('stroke-width', 0.5)
+    .attr('stroke-width', 0.8)
     .transition()
     .duration(5000)
     .attrTween('d', pathTween)
@@ -226,8 +226,8 @@ let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 
     .data(data)
     .attr("class", "areaNEA")
     .attr("d", area(data))
-    .style('fill', '#7bb5fc')
-    .attr('opacity', 0.35)
+    .style('fill', '#63a7f9')
+    .attr('opacity', 0.18)
 
 
   ////circles on line
