@@ -471,10 +471,10 @@ var nodes = g.selectAll("g")
                   
               
      newtooltips4.append("rect")  
-                  .attr("width", 310)
+                  .attr("width", 285)
                   .attr("height", 32)
                   .attr("class", "toolrectperc")
-                  .attr("x", -155)
+                  .attr("x", -145)
                   .attr("y", -28)
                   .attr("rx", 3)
                   .attr("ry", 3)
@@ -482,7 +482,7 @@ var nodes = g.selectAll("g")
                   .style("padding", 6)
                   // .style("fill", "#f7f7f7")
                   .style("fill", "#a8aa2e")
-                  .style("opacity", 0.9)
+                  .style("opacity", 1)
                   .attr("text-anchor", "middle")
 
     
@@ -500,7 +500,7 @@ var nodes = g.selectAll("g")
                           .attr("class", "tiptextperc")
                             .attr("text-anchor", "middle")
                             .style("fill", "#2d2725")
-                            .style("font-size", "17px")
+                            .style("font-size", "0.71em")
                      
     
     
