@@ -411,7 +411,7 @@ var nodes = g.selectAll("g")
                   .attr("ry", 3)
                   .style("padding", 6)
                   .style("fill", "#a8aa2e")
-                  .style("opacity", 0.9)
+                  .style("opacity", 1)
                   .attr("text-anchor", "middle")
 
     
@@ -425,7 +425,7 @@ var nodes = g.selectAll("g")
                           .attr("class", "tiptextperc")
                             .attr("text-anchor", "middle")
                             .style("fill", "#2d2725")
-                            .style("font-size", "17px")
+                            .style("font-size", "0.71em")
   
   ////13 continent groupings
   let sortcontinent = [];
