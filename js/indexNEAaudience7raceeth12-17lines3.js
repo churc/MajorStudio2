@@ -826,7 +826,7 @@ let line6text = g.append('g')
   let subhead1 = g.append('g')
 						.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhd3")
-                    .text('Percent trend lines by demographic subgroup during audience uptick')
+                    .text('Breaking Down the Audience Uptick in Museum Attendance by Race and Ethnicity')
                     .attr('x', margin.left/18)
                     .attr('y', 0-margin.top/1.5)
   
