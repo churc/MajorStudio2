@@ -824,7 +824,7 @@ let line6text = g.append('g')
                     
 
   let subhead1 = g.append('g')
-		.append('text')  /////to site text you can always do negative values to be outside the chart
+						.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhd3")
                     .text('Percent trend lines by demographic subgroup during audience uptick')
                     .attr('x', margin.left/18)
@@ -832,31 +832,31 @@ let line6text = g.append('g')
   
         
   let subhead2 = g.append('g')
-		.append('text')  /////to site text you can always do negative values to be outside the chart
+					.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhead4")
                     .text('Hispanic, African American, other, all, Asian, white')
                     .attr('x', margin.left/18)
                     .attr('y', 0-margin.top/5)
-		    .style('font-size', '1.1em')
+		     						.style('font-size', '1.1em')
                     .style("color", "#f5f4f9")
                     .style("fill", "currentColor");
   
    let footnote1 = g.append('g')
-		.append('text')  /////to site text you can always do negative values to be outside the chart
+							.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhead5")
-                    .text('Data: Office of Research & Analysis, National Endowment for the Arts, Sept. 2018')
+                     .text('Data: ADP18-DemographicTables, SPPA 2017, Office of Research & Analysis, National Endowment for the Arts, Sept. 2018')
                     .attr('x', margin.left/18)
-                    .attr('y', height+margin.top/2.1)
+                    .attr('y', height+margin.top/1.5)
 	 									.attr('font-size', '80%')
                     .style("color", "#f5f4f9")
                     .style("fill", "currentColor"); 
                     
   let footnote2 = g.append('g')
-		.append('text')  /////to site text you can always do negative values to be outside the chart
+								.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhead5")
                     .text('Percent of U.S. adults visiting art museums/galleries by demographic subgroup: 2012, 2017')
                     .attr('x', margin.left/18)
-                    .attr('y', height+margin.top/1.5)
+                    .attr('y', height+margin.top/2.1)
                     .attr('font-size', '80%')
                     .style("color", "#f5f4f9")
                     .style("fill", "currentColor");
