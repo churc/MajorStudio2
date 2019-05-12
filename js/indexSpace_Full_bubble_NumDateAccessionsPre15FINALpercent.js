@@ -44,7 +44,7 @@ d3.json("data/before15groupsortcontinent.json").then((before15groupCount) => {
 // console.log(test_data)
    var margin = {top: 40, right: 27, bottom: 30, left: 27}; ////this works outside the svgPlot
 	
-	var width = 700 - margin.left - margin.right; // specify the width and give space around the chart
+	var width = 690 - margin.left - margin.right; // specify the width and give space around the chart
 	var height = 670 - margin.top - margin.bottom; // specify the width and give space around the chart
 // 	console.log(margin.top)
 
@@ -338,7 +338,7 @@ console.log(before15grouppercent)
 let radareadate = d3.scaleSqrt()    ////get area of circles use square root 
                       .domain([0, 6811])  ////max number use this domain size in both
                       // .domain([0, 116]) 
-                      .range([0, 1800]);  /////use same range in both
+                      .range([0, 1600]);  /////use same range in both
             console.log(radareadate(6811))
 
 // //Initialize a simple force layout, using the nodes and edges in dataset
