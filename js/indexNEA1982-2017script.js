@@ -78,7 +78,8 @@ let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 
     .text('% of U.S. Adult Population Who Visited an Art Museum or Gallery')
     .attr('x', margin.left/45)
     .attr('y', -margin.top / 2.2)
-    .attr('font-size', '1.47em');
+    .attr('font-size', '1.38em')
+    .style("font-style", "italic");
 
 
   let ytext1 = g.append('g')
