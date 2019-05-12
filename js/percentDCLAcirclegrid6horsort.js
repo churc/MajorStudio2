@@ -752,7 +752,8 @@ console.log(dataPlaceholder, "update")
                      .on('mouseenter', (d, i, j) => {   
                             console.log('hover');
                             console.log(d);
-                            subheading.text(d + ' staff by job type, by race and ethnicity');
+//                             subheading.text(d + ' staff by job type, by race and ethnicity');
+                               subheading.text(d + ' staff');
                             d3.select(j[i])
                                 .style('fill', color2)
                                 .style('opacity', '0.5');
@@ -835,7 +836,8 @@ let percentbtn = g21.append('g').attr("id", "percent-btn")
                                 })
                                 .on('mouseout', (d, i, j) => {
                                     console.log(d);
-                                    subheading.text((d) => { return "Percent: Staff by race and ethnicity"; });
+//                                     subheading.text((d) => { return "Percent: Staff by race and ethnicity"; });
+                                       subheading.text(d + ' staff');
                                 d3.select(j[i]).attr("class", "circlepercent")
                                         .style('fill', color3)
                                         .style('opacity', '0.5');
@@ -866,7 +868,8 @@ let percentbtn = g21.append('g').attr("id", "percent-btn")
                                 .on('mouseenter', (d, i, j) => {   
                                     console.log('hover');
                                     console.log(d);
-                                subheading.text(d + '% staff by race and ethnicity');
+//                                 subheading.text(d + '% staff by race and ethnicity');
+                                   subheading.text(d + ' staff');
                                
                         // d3.select(j[i]).attr("class", "circlepercent")
                         d3.select(j[i])
@@ -954,7 +957,8 @@ let jobpercentbtn = g21.append('g').attr("id", "jobpercent-btn")
                                 .on('mouseenter', (d, i, j) => {   
                                     console.log('hover');
                                     console.log(d);
-                                subheading.text(d + '% staff by job type');
+//                                 subheading.text(d + '% staff by job type');
+                                    subheading.text(d + ' staff');
                                
                         // d3.select(j[i]).attr("class", "circlepercent")
                         d3.select(j[i])
@@ -998,7 +1002,8 @@ let jobpercentbtn = g21.append('g').attr("id", "jobpercent-btn")
                              .on('mouseenter', (d, i, j) => {   
                                     console.log('hover');
                                     console.log(d);
-                                subheading.text(d + '% staff by job type');
+//                                 subheading.text(d + '% staff by job type');
+                                   subheading.text(d + ' staff');
                                
                         // d3.select(j[i]).attr("class", "circlepercent")
                         d3.select(j[i])
@@ -1087,7 +1092,8 @@ let numbersbtn = g21.append('g').attr("id", "numbers-btn")
                         .on('mouseenter', (d, i, j) => {   
                                 console.log('hover');
                                 console.log(d);
-                                subheading.text(d + ' staff by each job type, by race and ethnicity');
+//                                 subheading.text(d + ' staff by each job type, by race and ethnicity');
+                                   subheading.text(d + ' staff');
                          
                         d3.select(j[i])
                                     .style('fill', color2)
@@ -1128,7 +1134,8 @@ let numbersbtn = g21.append('g').attr("id", "numbers-btn")
                         .on('mouseenter', (d, i, j) => {   
                                 console.log('hover');
                                 console.log(d);
-                                subheading.text(d + ' staff by each job type, by race and ethnicity');
+//                                 subheading.text(d + ' staff by each job type, by race and ethnicity');
+                                    subheading.text(d + ' staff');
                          
                         d3.select(j[i])
                                     .style('fill', color2)
