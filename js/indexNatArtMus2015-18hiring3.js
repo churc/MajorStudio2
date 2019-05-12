@@ -1,4 +1,4 @@
-///National Art Museum 2018 staff data from 2018 staff survey report
+////National Art Museum 2018 staff data from 2018 staff survey report
 // intellectual leadership positions new hiring since 2014 percentages
 ////parallel lines comparing new hiring by curators / educators and by museum leadership incl exec / conservators
 
@@ -17,7 +17,7 @@
 ////Race/Ethnicity 
 
 
-	let margin = {top: 125, right: 95, bottom: 190, left: 190};
+	let margin = {top: 95, right: 95, bottom: 225, left: 190};
 		
 			let width = 990 - margin.left - margin.right; // Use the window's width 
 			let height = 465 - margin.top - margin.bottom; // Use the window's height
@@ -31,7 +31,7 @@
 
 			var g = svg.append('g')
 				////then append to global g - so now the div svg is appended - see further down
-				    .attr("transform", "translate(" + margin.left*1.3 + "," + margin.top*1.15 + ")");
+				    .attr("transform", "translate(" + margin.left*1.3 + "," + margin.top/1.1 + ")");
 			
 
 /////// parallel lines comparing new hiring by curators / educators and by museum leadership incl exec / conservators
@@ -111,18 +111,16 @@ var n = 10;
 					// .attr("stroke", "none")
 					.attr("stroke", function(d,i){
 						if(i % 2 == 0){
-							var color = "yellow"
+								var color = "SILVER"
 								return color
-						// bars1.attr("stroke", "sienna")
 						} else {
-							// bars1.attr("stroke", "gold")
-								var color = "GOLDENROD"
+								var color = "#98af11"
 								return color
 						}
 						})
 					.attr("opacity", function(d,i){
 						if(i === 8){
-							var opacity = 0.9
+							var opacity = 1
 								return opacity
 						} else if (i === 9){
 						// if (i >=5) {
@@ -311,11 +309,11 @@ let natpercentlabel =	g.append("path")
 					 // // .attr("fill", "#513c2f")
 					  .style("opacity", function(d,i){
 							if(i === 8){
-								var opacity = 0.9
+								var opacity = 0.75
 								return opacity
 						} else if (i === 9){
 						// if (i >=5) {
-								var opacity = 0.9
+								var opacity = 0.7
 								return opacity
 						} else  {
 								var opacity = 0  ////////======
@@ -324,70 +322,54 @@ let natpercentlabel =	g.append("path")
 						})
 					  .attr("fill", function(d,i) {
 					  		if(i % 2 == 0){
-							var color = "CHOCOLATE";
+							var color = "darkseagreen";
 							return color; 
 						} else {
-							var color = "CHOCOLATE";
+							var color = "purple";
 							return color; 							
 						}
-						 // 	if(i <= 1){
-							// 	var color = "pink";
-							// 	return color; 
-							// } else if(i <= 3) {
-							// 	var color = "purple";
-							// 	return color; 							
-							// } else if(i <= 5){
-							// 	var color = "turquoise";
-							// 	return color;							
-							// } else if (i <= 7){
-							// 	var color = "gold";
-							// 	return color;								
-							// } else {
-							// 	var color = "blue";
-							// 	return color;								
-							// }
 						})
-					.attr('cy', (d, i) => {   /////change line spacing
-							if(i === 8){
-								return i *21 -1
-						} else if (i === 9) {
-								return i *25 -1;
-						} else if  (i <=7){ 
-									return i * 1;
-						}
-						})
-					.attr('cx', function(d,i) { 
-						var linestart = xScale(d.percent)
-						var lineend = xScale(d.percent)
-							if(i % 2 == 0){
-								var linedouble = linestart
-								return linedouble 
-						} else  {
-						    var linedouble = lineend 
-							    return linedouble
-						}
-						})
-              .attr('transform', 'translate(0,1)')
-								.on('mouseenter', (d,i,j) => {
-									console.log("hover")
-									headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
-								d3.select(j[i])
-									.transition()	
-		                .delay(50)
-		                .duration(400)
-						  			.attr("r", 7.8)
-						  			.style('opacity', '1')
+						.attr('cy', (d, i) => {   /////change line spacing
+								if(i === 8){
+									return i *21 -1
+							} else if (i === 9) {
+									return i *25 -1;
+							} else if  (i <=7){ 
+										return i * 1;
+							}
 							})
-			        .on('mouseout', (d, i,j) => {
-				            // console.log(d);
-				            headingpercent2.text((d) => { return "curators & educators compared to museum leadership, including executive positions, & conservators"; });
-				      	 d3.select(j[i])
-				      		.transition()	
-		                .delay(100)
-		                .duration(400)
-							  		// .attr("r", 7)
-							  	 //.style('opacity', '1');
-								})
+						.attr('cx', function(d,i) { 
+							var linestart = xScale(d.percent)
+							var lineend = xScale(d.percent)
+								if(i % 2 == 0){
+									var linedouble = linestart
+									return linedouble 
+							} else  {
+							    var linedouble = lineend 
+								    return linedouble
+							}
+							})
+              .attr('transform', 'translate(0,1)')
+							// 	.on('mouseenter', (d,i,j) => {
+							// 		console.log("hover")
+							// 		headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
+							// 	d3.select(j[i])
+							// 		.transition()	
+		     //           .delay(50)
+		     //           .duration(400)
+						 // 			.attr("r", 7.8)
+						 // 			.style('opacity', '1')
+							// })
+			    //     .on('mouseout', (d, i,j) => {
+				   //         // console.log(d);
+				   //         headingpercent2.text((d) => { return "curators & educators compared to museum leadership, including executive positions, & conservators"; });
+				   //   	 d3.select(j[i])
+				   //   		.transition()	
+		     //           .delay(100)
+		     //           .duration(400)
+							//   		// .attr("r", 7)
+							//   	 //.style('opacity', '1');
+							// 	})
 
 ////percent label on each bar 
 
@@ -440,7 +422,6 @@ var numlabel = bars1.append('text')
 							.attr("text-anchor", "start")
 							.attr("transform", "translate(15, 6)")
 
-	
 //// label bar axis
 
 let jobtype = bars1.append('text')
@@ -517,9 +498,10 @@ let jobtype = bars1.append('text')
 					.attr("class", "y18axis")
 					.style('color', 'darkslategrey')
 					.attr('stroke-width', 0.6)
-					.attr("opacity", 0.8)
+					.attr("opacity", 0.9)
 				// 	.attr("transform", `translate(0, ${-margin.top} )`)
-					.attr("transform", `translate(0, ${margin.top/155} )`)
+					.attr("transform", `translate(0, ${margin.top*100})`)
+					// .attr("transform", `translate(0, ${margin.top/155} )`)
 					.style("fill", "#f5f4f9")
 					.call(d3.axisLeft(xScale) //call axisLeft to use yScale for axis ticks and scale
 						.tickSize(0)
@@ -533,18 +515,17 @@ let jobtype = bars1.append('text')
 
 // bottom axis percent numbers & line
 	let xAxispercent = g.append("g")
-					// .attr("class", "y18axis")
 					.attr("class", "xaxis1")
 			    .style('fill', 'none')
-			    .style('stroke-width', 0.2)
-			    .style("fill", "darkslategrey")
+			    // .style('stroke-width', 0.2)
+			    .style('color', 'darkslategrey')
 			    .style('font-size', "80%")
-			    .style('color', '#faf9fc')
+			    // .style("fill", "#f5f4f9")
 					.attr('opacity', 1)
 					.attr("transform", `translate(0, ${height+margin.bottom/1.5} )`)
 					.call(d3.axisBottom(xScale)
-						.tickSize(.1)
-			      .ticks("10")
+						.tickSize(.2)
+			      .ticks(10)
 			      .tickPadding(10)
 			      .tickFormat(function(d,i) {
 			          console.log(d)
@@ -552,7 +533,8 @@ let jobtype = bars1.append('text')
 			           return   s + "% ";
 		    				})
 						)
-						
+						.selectAll("text")
+						.style("fill", "#f5f4f9")
 			
 ////bottom line
 // let yAxispercentline = g.append('g') // just append axis to global space
@@ -573,17 +555,17 @@ let jobtype = bars1.append('text')
 					// .attr("text-anchor", "end");
 
  // add the X gridlines
-  // let gridxpercent = g.append("g")
-  //         .attr("class", "gridx")
-  //         .style('stroke', 'darkslategrey')
-		// 			.attr('stroke-width', 0.2)
-  //         // .style('font-size', "80%")
-  //         // .attr("transform", `translate(0, ${height } )`)
-  //         .call(d3.axisBottom(xScale)
-  //           .tickSize(height*2.2)
-  //           .ticks("10")
-  //           .tickFormat("")
-  //       )
+  let gridxpercent = g.append("g")
+          .attr("class", "gridx")
+          .style('stroke', 'darkslategrey')
+					.attr('stroke-width', 0.2)
+          // .style('font-size', "80%")
+          // .attr("transform", `translate(0, ${height } )`)
+          .call(d3.axisBottom(xScale)
+            .tickSize(height*2.2)
+            .ticks("1")
+            .tickFormat("")
+        )
           
           
           
@@ -598,41 +580,59 @@ let jobtype = bars1.append('text')
 
 let xlabel = g.append('text')
             .attr("class", "y18axis")
-            .attr("transform", "translate(" + (width/2.19) + " ," + (height*2.12) + ")")
+            .attr("transform", "translate(" + (width/2.485) + " ," + (height*2.34) + ")")
             .style("font-size", "0.85em")
-            .style("opacity", 0.88)
+            .style("opacity", 0.95)
 	    			.style("fill", "#f5f4f9")
             .text("percent")
               
 
 let headingpercent = g.append('text')
-					.text('New Hiring Since 2014: Percent Comparison Among Repeat 2015 & 2018 Survey Participants')
-					.attr('x', -margin.left/20)
-					.attr('y', -margin.top/1.2)
+					.text('Curators & Educators Compared to Museum Leadership, Including Executive Positions, & Conservators')
+					.attr('x', -margin.left*0.0001)
+					.attr('y', -margin.top/1.4)
 					.style("fill", "#f5f4f9")
-					.attr('font-size', '1.3em');
+					.attr('font-size', '1.047em');
 					
-			let headingpercent2 = g.append('text')
+	let headingpercent2 = g.append('text')
 					// .text('excluding white,')
 					.style("fill", "#f5f4f9")
-					.text('comparing curators & cducators to museum leadership, including executive positions, & conservators')
-					.attr('x',  -margin.left/20)
+					.text('White Non-Hispanic Staff: New Hiring Since 2014')
+					.attr('x',  -margin.left*0.0001)
 					.attr('y', -margin.top/2.8)
-					.attr('font-size', '1.12em');
+					.attr('font-size', '1.42em')
+					.style("font-style", "italic");
 
-			let titlepercent2 = g.append('text')
+let headingpercent3 = g.append('text')
+					// .text('excluding white,')
+					.style("fill", "#f5f4f9")
+					.text('Among Repeat 2015 & 2018 National Art Museum Survey Participants')
+					.attr('x',  -margin.left*0.0001)
+					.attr('y', -margin.top/20)
+					.attr('font-size', '1.06em');
+
+let headingpercent4 = g.append('text')
+					// .text('excluding white,')
+					.style("fill", "#f5f4f9")
+					.text('Data Graph from Art Museum Staff Demographic Survey Report 2018')
+					.attr('x',  -margin.left*0.0001)
+					.attr('y', margin.top*0.26)
+					.attr('font-size', '0.9em');
+					
+					
+	let titlepercent2 = g.append('text')
 				// 	.text('')
-					.attr('x', -margin.left)
-					// .attr('y', height+margin.top+margin.top/0.5)
-					.attr('y', height+margin.top+margin.top/0.7)
-					.attr('font-size', '100%');
-				
-
-			let datanote = g.append('text')
-					.text('Data: Art Museum Staff Demographic Survey 2018, Westermann, M., Sweeney, L., & Schonfeld, R. C. (January 2019)')
-					.attr('x', -margin.left/25)
+					.attr('x', -margin.left*0.0001)
 					.attr('y', -margin.top/1.61)
 					.style("fill", "#f5f4f9")
 					.attr('font-size', '0.95em');
+				
+
+			let datanote = g.append('text')
+					.text('Data: Westermann, Mariët, Sweeney, Liam, Schonfeld, Roger, C. "Art Museum Staff Demographic Survey 2018." Ithaka S+R')
+					.attr('x', -margin.left*0.0001)
+					.attr('y', height+margin.top*2.39)
+					.style("fill", "#f5f4f9")
+					.attr('font-size', '0.89em');
 					
 };
