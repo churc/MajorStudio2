@@ -618,6 +618,11 @@ p {
   display: flex;
 }
 
+#containerspace{
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
 /*pre2015 and 2015+ bubbles on one line*/
 #container22{
   max-width: 1250px;
