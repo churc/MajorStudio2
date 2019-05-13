@@ -844,7 +844,7 @@ let svgPlot3 = (data) => {
 		.attr("y", width + margin.right/1.8)
 		.attr("x", 0 - (height / 1.16))
 		.style("fill", "#FFD700")
-		.text('0 => 2')
+		.text('0 to 2')
 	
 	
 	let ytext1title = g1.append('text')
@@ -957,7 +957,7 @@ let svgPlot3 = (data) => {
 		.attr("y", width + margin.right/1.8)
 		.attr("x", 0 - (height / 1.2))
 		.style("fill", "#FFD700")
-		.text('12 => 23')
+		.text('12 to 23')
 		
 
 	let ytext2title = g2.append('text')
@@ -1070,7 +1070,7 @@ let svgPlot3 = (data) => {
 		.attr("y", width + margin.right/1.8)
 		.attr("x", 0 - (height / 1.16))
 		.style("fill", "#FFD700")
-		.text('3 => 5')
+		.text('3 to 5')
 
 	let ytext3title = g3.append('text')
 		.attr("class", "titlemult")
@@ -1178,7 +1178,7 @@ let svgPlot3 = (data) => {
 		.attr("y", width + margin.right/1.8)
 		.attr("x", 0 - (height / 1.17))
 		.style("fill", "#FFD700")
-		.text('8 => 14')
+		.text('8 to 14')
 
 	let ytext4title = g4.append('text')
 		.attr("class", "titlemult")
@@ -1289,7 +1289,7 @@ let svgPlot3 = (data) => {
 		.attr("y", width + margin.right/1.8)
 		.attr("x", 0 - (height / 1.15))
 		.style("fill", "#FFD700")
-		.text('0 => 4')
+		.text('0 to 4')
 
 	let ytext5title = g5.append('text')
 		.attr("class", "titlemult")
@@ -1392,7 +1392,7 @@ let svgPlot3 = (data) => {
 		.attr("y", width + margin.right/1.8)
 		.attr("x", 0 - (height / 1.25))
 		.style("fill", "#FFD700")
-		.text('163 => 230')
+		.text('163 to 230')
 
 	let ytext6title = g6.append('text')
 		.attr("class", "titlemult")
