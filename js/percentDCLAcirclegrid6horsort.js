@@ -442,7 +442,7 @@ let datanumcircles = [];
                 .enter()
                 .append('text')
                 .style("visibility", "hidden")
-                .text("100%")
+//                 .text("100%")  hidden needs fixing
                 // .attr('x', (d, i) => { 
                 //     return i * colwidth + starth+3;
                 ////     return d.jobtype * colwidth + starth+3;
