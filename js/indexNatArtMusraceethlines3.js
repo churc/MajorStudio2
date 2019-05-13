@@ -227,7 +227,8 @@ var n = 12;
 								var color = "lightgreen"
 									return color
 					} else {
-							var color = "DARKTURQUOISE"
+// 							var color = "DARKTURQUOISE"
+							var color = "khaki"
 									return color
 					}
 					})
@@ -329,7 +330,8 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 												var arrowneg = "red"
 												return arrowneg
 										} else{
-													var arrowneg = "DARKTURQUOISE"
+// 													var arrowneg = "DARKTURQUOISE"
+														var arrowneg = "khaki"
 													return arrowneg
 										}
 									})
