@@ -193,21 +193,21 @@ var n = 10;
 
 ////vertical line 2015 to show national percentage
 
-let natpercentage = bars1.append("line")
-// let natpercentage = g.append("line")
-							.attr("fill", "none")
-							.attr("stroke", "#f5f4f9")
-							.attr("opacity", 0.9)
-							// .style("stroke-dasharray", 3,3)
-							.attr("stroke-width", 0.2)
-							.attr('x1', function(d,i) {
-												return xScale(62);
-									})
-							.attr('x2', function(d,i) {
-												return xScale(62);
-									})
-							.attr('y1', height/2)
-							.attr('y2', height*1.7)
+// let natpercentage = bars1.append("line")
+// // let natpercentage = g.append("line")
+// 							.attr("fill", "none")
+// 							.attr("stroke", "#f5f4f9")
+// 							.attr("opacity", 0.9)
+// 							// .style("stroke-dasharray", 3,3)
+// 							.attr("stroke-width", 0.2)
+// 							.attr('x1', function(d,i) {
+// 												return xScale(62);
+// 									})
+// 							.attr('x2', function(d,i) {
+// 												return xScale(62);
+// 									})
+// 							.attr('y1', height/2)
+// 							.attr('y2', height*1.7)
 							
 ////vertical line 2018 to show national percentage
 
@@ -229,22 +229,22 @@ let natpercentage2018 = bars1.append("line")
 							
 ////line to 2015 label vertical percent
 
-let natpercentlabel =	g.append("path")
-						.data(data)
-							.attr("fill", "none")
-							.attr("stroke", "#f5f4f9")
-							.attr("opacity", 0.9)
-							.attr("stroke-width", 0.3)
+// let natpercentlabel =	g.append("path")
+// 						.data(data)
+// 							.attr("fill", "none")
+// 							.attr("stroke", "#f5f4f9")
+// 							.attr("opacity", 0.9)
+// 							.attr("stroke-width", 0.3)
 							
-							.attr("d", "M "+xScale(62)+ ",140, L 500,90 L 670,90 ")  
+// 							.attr("d", "M "+xScale(62)+ ",140, L 500,90 L 670,90 ")  
 							
 					
-				g.append("text")   ////text on line label
-						.text('62% white, total U.S. population 2015')
-						.style("fill", "#f5f4f9")
-						.attr('font-size', '0.8em')
-						.attr('x', 505)
-						.attr('y', 85)
+// 				g.append("text")   ////text on line label
+// 						.text('62% white, total U.S. population 2015')
+// 						.style("fill", "#f5f4f9")
+// 						.attr('font-size', '0.8em')
+// 						.attr('x', 505)
+// 						.attr('y', 85)
 
 
 ////line to 2018 label vertical percent
