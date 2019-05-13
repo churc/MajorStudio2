@@ -827,8 +827,8 @@ let percentbtn = g21.append('g').attr("id", "percent-btn")
                                 .on('mouseenter', (d, i, j) => {   
                                     console.log('hover');
                                     console.log(d);
-                                subheading.text(d + '% staff by race and ethnicity');
-                               
+//                                 subheading.text(d + '% staff by race and ethnicity');
+                                   subheading.text(d + '% staff');
                         // d3.select(j[i]).attr("class", "circlepercent")
                         d3.select(j[i])
                                 .style("fill", color4)
@@ -869,7 +869,7 @@ let percentbtn = g21.append('g').attr("id", "percent-btn")
                                     console.log('hover');
                                     console.log(d);
 //                                 subheading.text(d + '% staff by race and ethnicity');
-                                   subheading.text(d + ' staff');
+                                    subheading.text(d + '% staff');
                                
                         // d3.select(j[i]).attr("class", "circlepercent")
                         d3.select(j[i])
@@ -957,8 +957,8 @@ let jobpercentbtn = g21.append('g').attr("id", "jobpercent-btn")
                                 .on('mouseenter', (d, i, j) => {   
                                     console.log('hover');
                                     console.log(d);
-//                                 subheading.text(d + '% staff by job type');
-                                    subheading.text(d + ' staff');
+//                                  subheading.text(d + '% staff by job type');
+                                    subheading.text(d + '% staff');
                                
                         // d3.select(j[i]).attr("class", "circlepercent")
                         d3.select(j[i])
@@ -1003,7 +1003,7 @@ let jobpercentbtn = g21.append('g').attr("id", "jobpercent-btn")
                                     console.log('hover');
                                     console.log(d);
 //                                 subheading.text(d + '% staff by job type');
-                                   subheading.text(d + ' staff');
+                                    subheading.text(d + '% staff');
                                
                         // d3.select(j[i]).attr("class", "circlepercent")
                         d3.select(j[i])
