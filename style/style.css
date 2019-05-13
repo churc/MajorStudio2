@@ -238,7 +238,8 @@ h1,
   font-size: 500%;
   text-align: left;
   color: white;
-  background: url(../images/met_outsidel2.jpg) no-repeat;
+/*   background: url(../images/met_outsidel2.jpg) no-repeat; */
+	background: url(../images/New_Museum_7606481064crop2.jpg) no-repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.3px #92bde8;
@@ -333,7 +334,8 @@ h6 {
   text-align: left;
   color: white;
   /* Fallback: assume this color ON TOP of image */
-  background: url(../images/met_outsidel2.jpg) no-repeat;
+/*   background: url(../images/met_outsidel2.jpg) no-repeat; */
+	background: url(../images/New_Museum_7606481064crop2.jpg) no-repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 0.2px #92bde8;
