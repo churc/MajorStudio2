@@ -431,56 +431,32 @@ let datanumcircles = [];
                 .style("text-anchor", "start");
 
 
-
-  
-  /////???????////////how to get all 22 100% at bottom of grid not just 7 =========
   
  let jobpercent7 = svg21.append('g')
     jobpercent7.selectAll('text')
-            .data(datapercent)
+            .data(datapercent[0].jobtypes)
                 .attr("class", "jobpercent7")
                 .enter()
                 .append('text')
                 .style("visibility", "hidden")
-//                 .text("100%")  hidden needs fixing
-                // .attr('x', (d, i) => { 
-                //     return i * colwidth + starth+3;
-                ////     return d.jobtype * colwidth + starth+3;
-                // })
+                .text("100%")  
                 .attr("x", (d, i) => {
-                    return (i % 22) * colwidth + starth;
+                    return i * colwidth + starth-5;
+                    // return (i % 22) * colwidth + starth;
                 })
-                .attr('y', height - margin.bottom*1.35 )
+                .attr('y', height - margin.bottom )
                 .attr('transform', (d, i) => {
-                let a = -90;
-                let x = i * colwidth + starth+3;
-                let y = height - margin.bottom*1.35;
+                let a = -270;
+                
+                let x = i * colwidth + starth-5;
+                let y = height-margin.bottom;
+                
                 return `rotate(${a}, ${x}, ${y})`;
                 })
                 .style('font-size', '78%')
                 .style("fill", "#f5f4f9")
                 .style("text-anchor", "end");
-  
-//   .attr('x', margin.left*2.5)
-//             .attr('y', height - margin.bottom / 3.8)
-  
-  
-//   .attr('x', (d, i) => { // for horizontal use diameter for spacing circles 
-//             return (i % 7) * colwidth + starth; //// MOVE TO NEXT ROW
-//         })
-//         .attr('y', (d, i) => {
-//             return (startv + rowheight * parseInt(i / 7));
-//         })
 
-//         .append("circle")
-//         .attr("cx", (d, i) => { // for horizontal use diameter for spacing circles 
-//             return (i % 7) * colwidth + starth;
-//         })
-
-        // .attr("cy", (d, i) => {
-        //     return (startv + rowheight * parseInt(i / 7)); ///vertical
-
-        // })
   
   
     let number7 = g21.append('g')
