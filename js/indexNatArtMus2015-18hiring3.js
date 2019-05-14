@@ -224,7 +224,7 @@ let natpercentage2018 = bars1.append("line")
 							.attr('x2', function(d,i) {
 												return xScale(60.7);
 									})
-							.attr('y1', height/2)
+							.attr('y1', height)
 							.attr('y2', height*1.7)
 							
 ////line to 2015 label vertical percent
@@ -256,14 +256,14 @@ let natpercentlabel2018 =	g.append("path")
 							.attr("opacity", 0.9)
 							.attr("stroke-width", 0.3)
 							
-							.attr("d", "M "+xScale(60.7)+ ",103, L 500,50 L 670,50 ")  
+							.attr("d", "M "+xScale(60.7)+ ",147, L 450,110 L 670,110 ")   
 					
 				g.append("text")   ////text on line label
 						.text('60.7% white, total U.S. population, 2018')
 						.style("fill", "#f5f4f9")
 						.attr('font-size', '0.8em')
-						.attr('x', 505)
-						.attr('y', 45) 					
+						.attr('x', 451)
+						.attr('y', 103) 					
 						// .on('mouseenter', (d,i,j) => {
 						// 	console.log("hover")
 						// 	console.log(d.jobtype)
@@ -353,7 +353,8 @@ let natpercentlabel2018 =	g.append("path")
 							var color = "darkseagreen";
 							return color; 
 						} else {
-							var color = "purple";
+// 							var color = "purple";
+							var color = "#bf3928";
 							return color; 							
 						}
 						})
