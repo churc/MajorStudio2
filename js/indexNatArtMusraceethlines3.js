@@ -369,7 +369,8 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 					  })
 					  .attr("fill", function(d,i) { 
 								if (i === 1){
-									var color = "purple";
+// 									var color = "purple";
+									var color = "#bf3928";
 									return color; 
 								}  else {
 									// var color = "#11593b"
@@ -476,7 +477,8 @@ var numlabelpercent =	bars1.append('text')
 								color = "#8bdb41"
 								return color
 					} else{
-									color = '#f5f4f9'
+// 									color = '#f5f4f9'
+										color = "#e5db7b"
 								  return color
 							}
 							})
