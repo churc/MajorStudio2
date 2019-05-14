@@ -1,5 +1,5 @@
 //// NYC Department of Cultural Affairs by 22 job types grouped by race and ethnicity data
-//// larger budgets over $999999 - these percents do not include volunteers 
+//// larger budgets over $1 million - these percents do not include volunteers 
 //// except for board job type
 //// grid with circles for numbers and for percent by race and ethnicity and percent by job type
 //// with percentDCLAcirclegridhor5sort.html
@@ -378,7 +378,7 @@ let datanumcircles = [];
                 .style("color", "#f5f4f9")
                 .text("* AIAN and NHPI = American Indian or Alaskan Native and Native Hawaiian or Pacific Islander")
                 .attr('x', margin.left*5.5)
-                .attr('y', height - margin.bottom / 1.3)
+                .attr('y', height - margin.bottom / 1.6)
                 .style('font-size', '1.05em');
                 
 
