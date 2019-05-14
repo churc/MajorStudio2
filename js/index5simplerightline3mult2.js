@@ -1392,7 +1392,7 @@ let svgPlot3 = (data) => {
 		.attr("y", width + margin.right/1.8)
 		.attr("x", 0 - (height / 1.25))
 		.style("fill", "#FFD700")
-		.text('163 to 230')
+		.text('163 to 270')
 
 	let ytext6title = g6.append('text')
 		.attr("class", "titlemult")
