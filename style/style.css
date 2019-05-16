@@ -751,6 +751,7 @@ max-width: 1250px;
 #textBkinfo{
   margin-left: 4em;
   padding: 2.5em;
+	padding-bottom: 0;
 }
 .museumheadingtext1{
   font-family: aktiv-grotesk-thin, sans-serif;
