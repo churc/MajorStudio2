@@ -1714,11 +1714,11 @@ max-width: 1250px;
   line-height: 1.4em;
 }
 
-
-/* 
+/* =====================================
   media queries
   ##Device = Desktops
   ##Large desktop screen
+  ======================================
  */
 
 @media all and (max-width: 1500px) {
@@ -1733,16 +1733,21 @@ max-width: 1250px;
   ##Screen = 1281px to higher resolution desktops
  */
 
-@media all and (min-width: 1281px) and (max-width: 1499px) {
+@media all and (min-width: 1251px) and (max-width: 1499px) {
 
   main {
     max-width: 1200px;
     margin-right: 50px;
     margin-left: 50px;
   }
-  #container21{
-  /*margin-left: 0.5em;*/
+  .section{
+  padding-left: 1.3em;
+  font-size: 95%;
   }
+  #svg16{
+   padding-left: 0;
+  }
+
 }
 
 /* 
@@ -1750,15 +1755,31 @@ max-width: 1250px;
   ##Screen = B/w 1025px to 1280px
 */
 
-@media all and (min-width: 1025px) and (max-width: 1280px) {
+@media all and (min-width: 1025px) and (max-width: 1250px) {
 
   main {
     max-width: 1000px;
     margin-right: 55px;
     margin-left: 55px;
   }
-  #container21{
-  /*margin-left: 0.2em;*/
+.section{
+  padding-left: 1.8em;
+  font-size: 95%;
+}
+  #svg16{
+   padding-left: 0;
+  }
+#svg28 {
+    margin-left: -2.5em;
+}
+#imgacross2 {
+    margin-left: 3em;
+}
+  .main2col {
+    width: 100%;
+}
+#textend {
+    margin-left: 3.5em;
 }
 }
 
@@ -1822,20 +1843,57 @@ max-width: 1250px;
     margin-left: 60px;
   }
 
-
-
   sections {
     display: inline;
   }
-
+  .section{
+  padding-left: 1.8em;
+  font-size: 85%;
+}
+  #svg16{
+   padding-left: 0;
+    }
+  #svg28 {
+      margin-left: -1em;
+  }
+  #imgacross2 {
+      margin-left: 3em;
+  }
+  #textend {
+      margin-left: 3.5em;
+  }
   .graph {
     display: inline;
   }
-
   .who {
     color: #877c74;
     -webkit-text-fill-color: white;
   }
+  .main2col {
+    margin-left: 5em;
+    width: 100%;
+}
+  .paragraph2col {
+    margin-left: 5em;
+}
+.container {
+    margin-left: 3em;
+}
+#container3 {
+    margin-left: 5em;
+}
+#textBkinfo {
+    margin-left: 2em;
+    padding-right: 0;
+}
+#textend {
+    margin-left: 3.5em;
+}
+#textend {
+    margin-left: 3.5em;
+    font-size: 0.6em;
+    width: 130%;
+}
 }
 
 /* 
@@ -1872,7 +1930,44 @@ max-width: 1250px;
     color: #877c74;
     -webkit-text-fill-color: white;
   }
-
+/*    .main2col {*/
+/*    width: 100%;*/
+/*}*/
+/*  .section{*/
+/*  padding-left: 1.8em;*/
+/*  font-size: 95%;*/
+/*}*/
+/*  #svg16{*/
+/*   padding-left: 0;*/
+/*    }*/
+/*  #svg28 {*/
+/*      margin-left: -1em;*/
+/*  }*/
+/*  #imgacross2 {*/
+/*      margin-left: 3em;*/
+/*  }*/
+/*  #textend {*/
+/*      margin-left: 3.5em;*/
+/*  }*/
+/*  .main2col {*/
+/*    margin-left: 5em;*/
+/*}*/
+/*  .paragraph2col {*/
+/*    margin-left: 5em;*/
+/*}*/
+/*.container {*/
+/*    margin-left: 3em;*/
+/*}*/
+/*#container3 {*/
+/*    margin-left: 5em;*/
+/*}*/
+/*#textBkinfo {*/
+/*    margin-left: 2em;*/
+/*    padding-right: 0;*/
+/*}*/
+/*#textend {*/
+/*    margin-left: 3.5em;*/
+/*}*/
 }
 
 /* 
@@ -1916,6 +2011,47 @@ max-width: 1250px;
     color: #877c74;
     -webkit-text-fill-color: white;
   }
+    .section{
+  padding-left: 1.8em;
+  font-size: 95%;
+}
+  #svg16{
+   padding-left: 0;
+    }
+  #svg28 {
+      margin-left: -1em;
+  }
+  #imgacross2 {
+      margin-left: 3em;
+  }
+  .main2col {
+    width: 100%;
+}
+  #textend {
+      margin-left: 3.5em;
+  }
+  .main2col {
+    margin-left: 5em;
+}
+  .paragraph2col {
+    margin-left: 5em;
+}
+.container {
+    margin-left: 3em;
+}
+#container3 {
+    margin-left: 5em;
+}
+#textBkinfo {
+    margin-left: 2em;
+    padding-right: 0;
+}
+  #textend {
+    /*margin-left: 3.5em;*/
+    /*font-size: 0.55em;*/
+    /*width: 130%;*/
+    visibility: hidden;
+}
 }
 
 /* 
@@ -1954,6 +2090,9 @@ max-width: 1250px;
   section.argument {
     display: inline;
   }
+  .section {
+    visibility: hidden;
+}
 
   .graph {
     display: inline-block;
@@ -1963,5 +2102,17 @@ max-width: 1250px;
     color: #877c74;
     -webkit-text-fill-color: white;
   }
+  #container22 {
+    display: block;
+    padding-left: 8em;
 }
+  #textend {
+    /*margin-left: 3.5em;*/
+    /*font-size: 0.55em;*/
+    /*width: 130%;*/
+    visibility: hidden;
+}
+}
+
+
 
