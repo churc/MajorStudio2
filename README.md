@@ -6,14 +6,14 @@
 
 
 ### Data
-#### •	Public use data files accessed on the [National Archive of Data on Arts and Culture](https://www.icpsr.umich.edu/icpsrweb/NADAC/studies/36606), Schonfeld, Roger, and Sweeney, Liam. “Diversity Survey of the New York City Department of Cultural Affairs Grantees,” 2015. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2017-01-10. https://doi.org/10.3886/ICPSR36606.v2
-#### •	Kevin Williams and David Keen. [2008 Survey of Public Participation in the Arts](https://www.arts.gov/sites/default/files/2008-SPPA.pdf), National Endowment for the Arts, Nov. 2009, accessed Mar. 16, 2019, Fig.3-7, P18.
-#### •	Public use data files accessed on the National Endowment for the Arts, [2017 Survey of Public Participation in the Arts (SPPA)](https://www.arts.gov/artistic-fields/research-analysis/arts-data-profiles/arts-data-profile-18), Demographic changes in arts attendance and literary reading: 2012 to 2017, ADP18-DemographicTables. NEA’s Office of Research & Analysis and the U.S. Census Bureau.
-#### •	Westermann, Mariët, Liam Sweeney, and Roger C. Schonfeld. [Art Museum Staff Demographic Survey 2018](https://sr.ithaka.org/wp-content/uploads/2019/01/SR-Mellon-Report-Art-Museum-Staff-Demographic-Survey-01282019.pdf). Ithaka S+R. Last Modified 28 January 2019.
-#### •	Schonfeld, Roger, Westermann, Mariët, Sweeney, Liam. [Art Museum Staff Demographic Survey](https://mellon.org/media/filer_public/ba/99/ba99e53a-48d5-4038-80e1-66f9ba1c020e/awmf_museum_diversity_report_aamd_7-28-15.pdf), The Andrew W. Mellon Foundation, July 28, 2015. 
-#### •	[Brooklyn Museum Contemporary Collection api](https://www.brooklynmuseum.org/opencollection/api), accessed 3.19. 
+#####	Public use data files accessed on the [National Archive of Data on Arts and Culture](https://www.icpsr.umich.edu/icpsrweb/NADAC/studies/36606), Schonfeld, Roger, and Sweeney, Liam. “Diversity Survey of the New York City Department of Cultural Affairs Grantees,” 2015. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2017-01-10. https://doi.org/10.3886/ICPSR36606.v2
+#####	Kevin Williams and David Keen. [2008 Survey of Public Participation in the Arts](https://www.arts.gov/sites/default/files/2008-SPPA.pdf), National Endowment for the Arts, Nov. 2009, accessed Mar. 16, 2019, Fig.3-7, P18.
+#####	Public use data files accessed on the National Endowment for the Arts, [2017 Survey of Public Participation in the Arts (SPPA)](https://www.arts.gov/artistic-fields/research-analysis/arts-data-profiles/arts-data-profile-18), Demographic changes in arts attendance and literary reading: 2012 to 2017, ADP18-DemographicTables. NEA’s Office of Research & Analysis and the U.S. Census Bureau.
+#####	Westermann, Mariët, Liam Sweeney, and Roger C. Schonfeld. [Art Museum Staff Demographic Survey 2018](https://sr.ithaka.org/wp-content/uploads/2019/01/SR-Mellon-Report-Art-Museum-Staff-Demographic-Survey-01282019.pdf). Ithaka S+R. Last Modified 28 January 2019.
+#####	Schonfeld, Roger, Westermann, Mariët, Sweeney, Liam. [Art Museum Staff Demographic Survey](https://mellon.org/media/filer_public/ba/99/ba99e53a-48d5-4038-80e1-66f9ba1c020e/awmf_museum_diversity_report_aamd_7-28-15.pdf), The Andrew W. Mellon Foundation, July 28, 2015. 
+#####	[Brooklyn Museum Contemporary Collection api](https://www.brooklynmuseum.org/opencollection/api), accessed 3.19. 
 
-#### Built with [d3.js](https://d3js.org)
+### Built with [d3.js](https://d3js.org)
 
 ### Acknowledgments
 #### This research and data visualization project relied on information from experts in the field who provided detailed insights into data on museums, as well as into recent discourse on museums. In particular, I want to thank Liam Sweeney, Senior Analyst, Libraries, Scholarly Communication, and Museums program, Ithaka S+R, and Sergio Bessa, Director of Curatorial Programs, The Bronx Museum of the Arts. All interviewees pointed me to additional contextualize background materials and were extremely generous with their time, information and detailed answers.
