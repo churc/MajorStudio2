@@ -1577,6 +1577,7 @@ max-width: 1250px;
         background: #726a64;
         stroke-width: 0.02;
         padding-top: 2em;
+				padding-left: 2.5em;
        }
 
 .gridy, .gridx {
