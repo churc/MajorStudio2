@@ -1553,6 +1553,10 @@ max-width: 1250px;
         padding-top: 0;
         padding-left: 1.5em;
 			}
+
+			#svg16{
+			  padding-bottom: 9em;
+			}
 			
 			.barchange:hover{
 				fill: pink;
