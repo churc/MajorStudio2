@@ -593,7 +593,7 @@ let heading15 = g.append('text')  //// append text to global
 
 let heading16 = g.append('text')  //// append text to global
                 .text('9,961 artworks   ::   97.18%')
-                .attr('x', width/2.8)
+                .attr('x', width/2.78)
                 .attr('y', height+margin.bottom/1.1)
                 .style("fill", "#f5fcf7")
                 .style('font-weight', 'bolder') 
