@@ -675,7 +675,7 @@ let svgPlot3 = (data) => {
 			.text('Curatorial Museum Staff, Grouped by Race and Ethnicity')
 			.attr('x', margin.right*2)
 			.attr('y', 2)
-			.style('font-size', '1.5em');
+			.style('font-size', '1.35em');
 		
 	let headingmult2 = g.append('g') //// append text to global
 		.attr("class", "svgheading2")
@@ -684,16 +684,16 @@ let svgPlot3 = (data) => {
 			.text('New York City Department of Cultural Affairs Grantees, Paid Curators At Larger Budget Museums')
 			.attr('x', margin.right*2.2)
 			.attr('y', 5.5)
-			.style('font-size', '1.1em');
+			.style('font-size', '1.07em');
 		
 	let headingmult3 = g.append('g') //// append text to global
 		.attr("class", "curatortext")
 		.append('text')
 			.style("fill", "yellow")
-			.text('Museum Curators Employed 2015 => Subset of Each Total Shows Those That Were Hired Since 2010')
+			.text('Curators Hired Before and After 2010')
 			.attr('x', margin.right*2.2)
 			.attr('y', 12)
-			.style('font-size', '1.3em');	
+			.style('font-size', '1.9em');	
 		 
 
 	/////////////
