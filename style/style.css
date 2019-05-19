@@ -794,8 +794,9 @@ max-width: 1250px;
 .museumheadingtext2{
   font-family: aktiv-grotesk-thin, sans-serif;
   color: #f5fcf7;
-  line-height: 0.1em;
-  font-size: 1.18em;
+  line-height: 0.02em;
+  font-size: 0.9em;line-height: 0.02em;
+  font-size: 0.9em;
   /*text spacing*/
   font-kerning: normal;
   letter-spacing: 0.04rem;
@@ -838,7 +839,7 @@ max-width: 1250px;
   color: #f5fcf7;
   /*line-height: 0.15em;*/
   line-height: 0.02em;
-  font-size: 1.3em;
+  font-size: 1.2em;
   /*text spacing*/
   font-kerning: normal;
   letter-spacing: 0.04rem;
