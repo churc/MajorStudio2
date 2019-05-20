@@ -341,7 +341,7 @@ let datanumcircles = [];
     let heading = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textpink")
-            .text('NYC Department of Cultural Affairs Grantees: Museum Staff')
+            .text('Who Works in Museums and What Do They Do?')
             .attr('x', margin.left*5.8)
             .attr('y', margin.top / 12)
             .style('font-size', '1.8em');
@@ -349,15 +349,18 @@ let datanumcircles = [];
     let subheading = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textsubhead")
-            .text('Number of staff, grouped by job type and by race and ethnicity')
+            .text('Number of staff, grouped by job type & by race and ethnicity')
             .attr('x', margin.left*5.8)
-            .attr('y', margin.top / 3)
-            .style('font-size', '1.65em');
+            .attr('y', margin.top /1.54)
+            // .attr('x', margin.left*5.8)
+            // .attr('y', margin.top / 3)
+            .style('font-size', '1.15em');
 
     let subheading2 = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textsubhead")
-            .text('At museums with budgets $1 million+. Paid staff + board members: 7,346 people')
+            // .text('At museums with budgets $1 million+. Paid staff + board members: 7,346 people')
+            .text('22 job types ordered by level of seniority, high --> low')
             .attr('x', margin.left*5.8)
             .attr('y', margin.top / 5.5)
             .style('font-size', '1.1em');
@@ -367,9 +370,9 @@ let datanumcircles = [];
             .attr("class", "textsubhead")
             // .style("color", "#fdd2f5")
             .style("color", "#f5f4f9")
-            .text('22 job types ordered by seniority level, left: highest')
-            .attr('x', margin.left*5.8)
-            .attr('y', margin.top /1.42)
+            // .text('22 job types ordered by seniority level, left: highest')
+            // .attr('x', margin.left*5.8)
+            // .attr('y', margin.top /1.42)
             .style('font-size', '1.2em');
 
     let raceethnicitynote = g21.append('g')
@@ -378,7 +381,7 @@ let datanumcircles = [];
                 .style("color", "#f5f4f9")
                 .text("* AIAN and NHPI = American Indian or Alaskan Native and Native Hawaiian or Pacific Islander")
                 .attr('x', margin.left*5.5)
-                .attr('y', height - margin.bottom / 1.6)
+                .attr('y', height - margin.bottom / 2)
                 .style('font-size', '1.05em');
                 
 
@@ -387,22 +390,22 @@ let datanumcircles = [];
             .attr("class", "textpink")
             .text('8,094 staff at museums; 7,647 are at museums with budgets $1 million+. Non-volunteer staff + 802 board members totals 7,346')
             .attr('x', margin.left*5.5)
-            .attr('y', height - margin.bottom / 2.9)
-            .style('font-size', '0.70em');
+            .attr('y', height - margin.bottom / 5.5)
+            .style('font-size', '0.9em');
 
     let endnote = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textpink")
-            .text('Data: National Archive of Data on Arts and Culture, ICPSR 36606, Schonfeld, Roger, and Sweeney, Liam. “Diversity Survey of the New York City')
+            .text('Data: National Archive of Data on Arts and Culture, ICPSR 36606')
             .attr('x', margin.left*5.5)
-            .attr('y', height - margin.bottom / 5.5)
+            .attr('y', height - margin.bottom / 30)
             .style('font-size', '0.85em');
 
 
     let endnote3 = g21.append('g') //// append text to global
         .append("text")
             .attr("class", "textpink")
-            .text('Department of Cultural Affairs Grantees,” 2015. Ann Arbor, MI: Inter-university Consortium')
+            // .text('Department of Cultural Affairs Grantees,” 2015. Ann Arbor, MI: Inter-university Consortium')
             .attr('x', margin.left*5.5)
             .attr('y', height - margin.bottom /30)
             .style('font-size', '0.85em');
@@ -761,7 +764,8 @@ console.log(datacircles)
 let percenttext = g21.append('g').attr("class", "percenttext")
                      .append("text")
                       .attr('x', margin.left*7.5)
-                     .attr('y', margin.top / 1.8)
+                    .attr('y', margin.top / 2.8)
+                    //  .attr('y', margin.top / 1.8)
                       .style("color", "#f5f4f9")
                       .text("for percent")
                 
@@ -772,6 +776,7 @@ let percentbtn = g21.append('g').attr("id", "percent-btn")
                       .attr("height", "40px")
                       .attr('x', margin.left*7.5)
                       .attr('y', margin.top / 2.5)
+                    //   .attr('y', margin.top / 2.5)
                       .style("fill", "pink")
                       .style("opacity", "0.6")
                      
@@ -886,9 +891,10 @@ let percentbtn = g21.append('g').attr("id", "percent-btn")
 let jobpercenttext = g21.append('g').attr("class", "jobpercenttext")
                      .append("text")
                       .attr('x', margin.left*9.2)
-                     .attr('y', margin.top / 1.8)
+                    //  .attr('y', margin.top / 1.8)
+                    //  .attr('y', margin.top / 1.8)
                     //   .attr('x', margin.left*1.386)
-                    //   .attr('y', margin.top/1.36)
+                     .attr('y', margin.top / 2.8)
                       .style("color", "#f5f4f9")
                      .text("for percent by job type")
                 
@@ -901,6 +907,7 @@ let jobpercentbtn = g21.append('g').attr("id", "jobpercent-btn")
                     //   .attr('y', margin.top/1.3)
                       .attr('x', margin.left*9.2)
                       .attr('y', margin.top / 2.5)
+                    //   .attr('y', margin.top / 2.5)
                       .style("fill", "LIGHTGREEN")
                       .style("opacity", "0.6")
                      
@@ -1023,7 +1030,7 @@ let numberstext = g21.append('g').attr("class", "numberstext")
                     //   .attr('x', margin.left*1.386)
                     //   .attr('y', margin.top/0.905)
                       .attr('x', margin.left*5.8)
-                      .attr('y', margin.top / 1.8)
+                      .attr('y', margin.top / 2.8)
                       .style("color", "#f5f4f9")
                       .text("for numbers")
         

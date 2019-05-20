@@ -17,10 +17,10 @@
 ////Race/Ethnicity 
 
 
-	let margin = {top: 95, right: 95, bottom: 225, left: 190};
+	let margin = {top: 90, right: 95, bottom: 255, left: 190};
 		
-			let width = 990 - margin.left - margin.right; // Use the window's width 
-			let height = 465 - margin.top - margin.bottom; // Use the window's height
+			let width = 1100 - margin.left - margin.right; // Use the window's width 
+			let height = 485 - margin.top - margin.bottom; // Use the window's height
 
 	
 
@@ -112,9 +112,12 @@ var n = 10;
 					.attr("stroke", function(d,i){
 						if(i % 2 == 0){
 								var color = "SILVER"
+								 var color = "#c5e216"
 								return color
 						} else {
-								var color = "#98af11"
+								// var color = "#98af11"
+								// var color = "#c5e216"
+								var color="#9bdaf7"
 								return color
 						}
 						})
@@ -133,19 +136,19 @@ var n = 10;
 						})
 					.style("stroke-dasharray", function(d,i){
 							if(i % 2 == 0){
-								var dash = ("3, 3")
+								var dash = ("2,2")
 										return dash
 						} else {
-								var dash = ("3, 3")
+								var dash = ("2,2")
 										return dash
 						}
 						})
 						.attr("stroke-width", function(d,i){    ///////set up different attributes to select bars before calling the lines
 								if(i % 2 == 0){
-									var strokewidth = 1.6
+									var strokewidth = 2.2
 									return strokewidth
 						} else{
-									var strokewidth = 1.6
+									var strokewidth = 2.2
 									return strokewidth
 						}
 						})
@@ -224,7 +227,7 @@ let natpercentage2018 = bars1.append("line")
 							.attr('x2', function(d,i) {
 												return xScale(60.7);
 									})
-							.attr('y1', height)
+							.attr('y1', height*1.08)
 							.attr('y2', height*1.7)
 							
 ////line to 2015 label vertical percent
@@ -256,14 +259,14 @@ let natpercentlabel2018 =	g.append("path")
 							.attr("opacity", 0.9)
 							.attr("stroke-width", 0.3)
 							
-							.attr("d", "M "+xScale(60.7)+ ",147, L 450,110 L 670,110 ")   
+							.attr("d", "M "+xScale(60.7)+ ",147, L 500,80 L 715,80 ")   
 					
 				g.append("text")   ////text on line label
 						.text('60.7% white, total U.S. population, 2018')
 						.style("fill", "#f5f4f9")
 						.attr('font-size', '0.8em')
-						.attr('x', 451)
-						.attr('y', 103) 					
+						.attr('x', 505)
+						.attr('y', 72) 					
 						// .on('mouseenter', (d,i,j) => {
 						// 	console.log("hover")
 						// 	console.log(d.jobtype)
@@ -354,7 +357,8 @@ let natpercentlabel2018 =	g.append("path")
 							return color; 
 						} else {
 // 							var color = "purple";
-							var color = "#bf3928";
+							// var color = "#bf3928";
+							var color ="#d13825";
 							return color; 							
 						}
 						})
@@ -551,11 +555,11 @@ let jobtype = bars1.append('text')
 			    .style('font-size', "80%")
 			    // .style("fill", "#f5f4f9")
 					.attr('opacity', 1)
-					.attr("transform", `translate(0, ${height+margin.bottom/1.5} )`)
+					.attr("transform", `translate(0, ${height+margin.bottom/1.7} )`)
 					.call(d3.axisBottom(xScale)
 						.tickSize(.2)
-			      .ticks(10)
-			      .tickPadding(10)
+			      .ticks(5)
+			      // .tickPadding(10)
 			      .tickFormat(function(d,i) {
 			          console.log(d)
 			          var s = d;
@@ -589,9 +593,10 @@ let jobtype = bars1.append('text')
           .style('stroke', 'darkslategrey')
 					.attr('stroke-width', 0.2)
           // .style('font-size', "80%")
-          // .attr("transform", `translate(0, ${height } )`)
+          .attr("transform", `translate(0, ${+margin.bottom/1.75 } )`)
           .call(d3.axisBottom(xScale)
-            .tickSize(height*2.2)
+            // .tickSize(height*2.2)
+            .tickSize(height/1.4)
             .ticks("1")
             .tickFormat("")
         )
@@ -609,7 +614,8 @@ let jobtype = bars1.append('text')
 
 let xlabel = g.append('text')
             .attr("class", "y18axis")
-            .attr("transform", "translate(" + (width/2.485) + " ," + (height*2.34) + ")")
+            .attr("transform", "translate(" + (width/2.8) + " ," + (height) + ")")
+           //.attr("transform", "translate(" + (width/2.485) + " ," + (height*2.34) + ")")
             .style("font-size", "0.85em")
             .style("opacity", 0.95)
 	    			.style("fill", "#f5f4f9")
@@ -617,36 +623,38 @@ let xlabel = g.append('text')
               
 
 let headingpercent = g.append('text')
-					.text('Curators & Educators Compared to Museum Leadership, Including Executive Positions, & Conservators')
+					.text('How Diversity Lags: Curators & Educators vs. Museum Leadership & Conservators')
 					.attr('x', -margin.left*0.0001)
 					.attr('y', -margin.top/1.4)
 					.style("fill", "#f5f4f9")
-					.attr('font-size', '1.047em');
+					// .style("fill", "#000000")
+					.attr('font-size', '1.5em');
 					
 	let headingpercent2 = g.append('text')
 					// .text('excluding white,')
 					.style("fill", "#f5f4f9")
-					.text('White Non-Hispanic Staff: New Hiring Since 2014')
+					// .style("fill", "#000000")
+					.text('White non-Hispanic Staff Hired Since 2014')
 					.attr('x',  -margin.left*0.0001)
-					.attr('y', -margin.top/2.8)
-					.attr('font-size', '1.42em')
+					.attr('y', -margin.top/3.5)
+					.attr('font-size', '1.25em')
 					.style("font-style", "italic");
 
-let headingpercent3 = g.append('text')
-					// .text('excluding white,')
-					.style("fill", "#f5f4f9")
-					.text('Among Repeat 2015 & 2018 National Art Museum Survey Participants')
-					.attr('x',  -margin.left*0.0001)
-					.attr('y', -margin.top/20)
-					.attr('font-size', '1.06em');
+// let headingpercent3 = g.append('text')
+// 					// .text('excluding white,')
+// 					.style("fill", "#f5f4f9")
+// 					.text('Among Repeat 2015 & 2018 National Art Museum Survey Participants')
+// 					.attr('x',  -margin.left*0.0001)
+// 					.attr('y', -margin.top/20)
+// 					.attr('font-size', '1.06em');
 
-let headingpercent4 = g.append('text')
-					// .text('excluding white,')
-					.style("fill", "#f5f4f9")
-					.text('Data Graph from Art Museum Staff Demographic Survey Report 2018')
-					.attr('x',  -margin.left*0.0001)
-					.attr('y', margin.top*0.26)
-					.attr('font-size', '0.9em');
+// let headingpercent4 = g.append('text')
+// 					// .text('excluding white,')
+// 					.style("fill", "#f5f4f9")
+// 					.text('Data Graph from Art Museum Staff Demographic Survey Report 2018')
+// 					.attr('x',  -margin.left*0.0001)
+// 					.attr('y', margin.top*0.26)
+// 					.attr('font-size', '0.9em');
 					
 					
 	let titlepercent2 = g.append('text')
@@ -657,26 +665,26 @@ let headingpercent4 = g.append('text')
 					.attr('font-size', '0.95em');
 				
 
-			let datanote = g.append('text')
-					.text('Data: Westermann, Mariët, Sweeney, Liam, Schonfeld, Roger, C. "Art Museum Staff Demographic Survey 2018." Ithaka S+R')
-					.attr('x', -margin.left*0.0001)
-					.attr('y', height+margin.top*2.02)
-					.style("fill", "#f5f4f9")
-					.attr('font-size', '0.8em');
+			// let datanote = g.append('text')
+			// 		.text('Data: Westermann, Mariët, Sweeney, Liam, Schonfeld, Roger, C. "Art Museum Staff Demographic Survey 2018." Ithaka S+R')
+			// 		.attr('x', -margin.left*0.0001)
+			// 		.attr('y', height+margin.top*2.695)
+			// 		.style("fill", "#f5f4f9")
+			// 		.attr('font-size', '0.8em');
 					
 		let datanote3 = g.append('text')
-					.text('2018 U.S. Percent White: United States Census Bureau, Quick Facts, https://www.census.gov/quickfacts/fact/table/US/RHI825217')
+					.text('2018 U.S. Percent White: United States Census Bureau, Quick Facts')
 					.attr('x', -margin.left*0.0001)
-					.attr('y', height+margin.top*2.21)
+					.attr('y', height+margin.top*2.62)
 					.style("fill", "#f5f4f9")
-					.attr('font-size', '0.8em');	
+					.attr('font-size', '0.9em');	
 					
 			let datanote2 = g.append('text')
-					.text('2015 U.S. Percent White: Henry J. Kaiser Family Foundation, Population Distribution by Race/Ethnicity, kff.org')
+					.text('Data Graph from Art Museum Staff Demographic Survey Report 2018')
 					.attr('x', -margin.left*0.0001)
-					.attr('y', height+margin.top*2.4)
+					.attr('y', height+margin.top*2.87)
 					.style("fill", "#f5f4f9")
-					.attr('font-size', '0.8em');				
+					.attr('font-size', '0.9em');				
 					
 					
 };

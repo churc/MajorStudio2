@@ -672,8 +672,8 @@ let svgPlot3 = (data) => {
 		.attr("class", "svgheading")
 		.append('text')
 			.style("fill", "#f5f4f9")
-			.text('Curatorial Museum Staff, Grouped by Race and Ethnicity')
-			.attr('x', margin.right*2)
+	// .text('New York City Department of Cultural Affairs Grantees: Paid Curators')
+		 .attr('x', margin.right*2)
 			.attr('y', 2)
 			.style('font-size', '1.35em');
 		
@@ -681,16 +681,17 @@ let svgPlot3 = (data) => {
 		.attr("class", "svgheading2")
 		.append('text')
 			.style("fill", "#f5f4f9")
-			.text('New York City Department of Cultural Affairs Grantees, Paid Curators At Larger Budget Museums')
-			.attr('x', margin.right*2.2)
-			.attr('y', 5.5)
-			.style('font-size', '1.07em');
+			.text('Curators by Race and Ethnicity, Hiring Before and After 2010')
+			.attr('x', margin.right)
+			.attr('y', 4)
+			.style('font-size', '1.6em');
 		
 	let headingmult3 = g.append('g') //// append text to global
 		.attr("class", "curatortext")
 		.append('text')
-			.style("fill", "yellow")
-			.text('Curators Hired Before and After 2010')
+			// .style("fill", "yellow")
+			.style("fill", "#f5f4f9")
+			// .text('Curators Hired Before and After 2010')
 			.attr('x', margin.right*2.2)
 			.attr('y', 12)
 			.style('font-size', '1.9em');	
@@ -1407,6 +1408,17 @@ let svgPlot3 = (data) => {
 		.attr("y", -margin.top / 12)
 		.attr("x", -margin.right/4)
 		.text('curators'); ////mouseenter event on area
+		
+	let ytext6data = g6.append("text")
+		.attr("class", "axislabel")
+		.attr("text-anchor", "middle")
+		.attr("transform", "rotate(-90)")
+		.attr("y", width + margin.right)
+		.attr("x", 0 - (height / 1.69))
+		// .style("fill", "#FFD700")
+		.style("fill", "#f5fcf7")
+		.style("font-size","0.85em")
+		.text('Data: NADAC, ICPSR 36606')
 
 };
 

@@ -672,5 +672,8 @@ let heading16 = g.append('text')  //// append text to global
                 .style("fill", "#f5fcf7")
                 .style('font-weight', 'bolder') 
                 .style('font-size', '1.1em') 
+                
+
+
 
 }

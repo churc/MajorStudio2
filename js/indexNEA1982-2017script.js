@@ -64,22 +64,21 @@ let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 
   // console.log(width);  ////the above transform gives the space around the chart
 
 
-  let heading = g.append('g') //// append text to global
-    .append('text')
-    .attr("class", "NEAtitle")
-    .text('National Art Museum Audiences, by Year, 1982-2017')
-    .attr('x', margin.left/45)
-    .attr('y', -margin.top/1.2)
-    .attr('font-size', '1.2em');
+  // let heading = g.append('g') //// append text to global
+  //   .append('text')
+  //   .attr("class", "NEAtitle")
+  //   .text('National Art Museum Audiences, by Year, 1982-2017')
+  //   .attr('x', margin.left/45)
+  //   .attr('y', -margin.top/1.2)
+  //   .attr('font-size', '1.2em');
 
   let subhead1 = g.append('g') /////to site text you can always do negative values to be outside the chart
     .append('text')
     .attr("class", "NEAsub")
-    .text('% of U.S. Adult Population Who Visited an Art Museum or Gallery')
+    .text('What Percent of Adults Visit Art Museums or Galleries?')
     .attr('x', margin.left/45)
-    .attr('y', -margin.top / 2.2)
-    .attr('font-size', '1.38em')
-    .style("font-style", "italic");
+    .attr('y', -margin.top / 1.8)
+    .attr('font-size', '1.7em')
 
 
   let ytext1 = g.append('g')
@@ -97,9 +96,22 @@ let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 
     .text('percent')
     .attr('x', -310)
     .attr('y', 270)
-    .attr("transform", `translate(${height-margin.left/3}, 0)rotate(-90)`)
-    .attr('font-size', '95%') 
+    .attr("transform", `translate(${height-margin.left/3}, ${margin.left*1.12})rotate(-90)`)
+    .attr('font-size', '100%') 
 
+  let dataset1 = g.append('g')
+                .append("text")
+                		// .attr("class", "axislabel")
+                		.attr("text-anchor", "end")
+                		.text('Data: ADP18-DemographicTables')
+                		.attr("transform", "rotate(-90.3)")
+                		 .attr('x', -margin.top*2.12)
+                    .attr('y', -width/22)
+                    // .attr("transform", `translate(${height*1.7}, ${ margin.right*2.35})rotate(-90)`)
+	 									.attr('font-size', '85%')
+                    .style("color", "#f5f4f9")
+                    .style("fill", "#f5f4f9")
+                    .style("opacity", 0.9);
 
 
   function getSmoothInterpolation() {

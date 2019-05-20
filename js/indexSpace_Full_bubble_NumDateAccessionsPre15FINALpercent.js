@@ -598,5 +598,14 @@ let heading16 = g.append('text')  //// append text to global
                 .style("fill", "#f5fcf7")
                 .style('font-weight', 'bolder') 
                 .style('font-size', '1.1em')
+                
+// let heading17 = g.append('text')  //// append text to global
+//                 .text('97.18%')
+//                 .attr('x', width/2.8)
+//                 .attr('y', height+margin.bottom/1)
+//                 .style("fill", "#f5fcf7")
+//                 .style('font-weight', 'bolder') 
+//                 .style('font-size', '1.1em')
+
   
 }

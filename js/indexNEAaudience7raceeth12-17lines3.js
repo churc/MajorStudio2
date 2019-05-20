@@ -14,7 +14,7 @@
             let svgPlot24 = (data) => { ////need to call a different svgPlot 
                 console.log(data); ////with each chart for multiple charts
                 
-        	var margin = {top: 95, right: 130, bottom: 90, left: 50}; ////this works outside the svgPlot
+        	var margin = {top: 95, right: 110, bottom: 90, left: 70}; ////this works outside the svgPlot
 	
 	var width = 780 - margin.left - margin.right; // specify the width and give space around the chart
 	var height = 550 - margin.top - margin.bottom; // specify the width and give space around the chart
@@ -753,7 +753,7 @@ let line1text = g.append('g')
 	.append('text')
              .text('Hispanic')
               .attr('x', width*1.05)
-              .attr('y', height/2)
+              .attr('y', height/2.05)
               .attr('font-size', '80%')
               .style("color", "turquoise")
               .style("fill", "currentColor");
@@ -771,7 +771,8 @@ let line3text = g.append('g')
 	.append('text')
              .text('African American')
               .attr('x', width*1.05)
-              .attr('y', height/2.18)
+              // .attr('y', height/2.18)
+              .attr('y', height/2.3)
               .attr('font-size', '80%')
               .style("color", "#dfbded")
               .style("fill", "currentColor");
@@ -796,7 +797,7 @@ let line5text = g.append('g')
 							
 let line6text = g.append('g')
 	.append('text')
-             .text('ALL')
+             .text('all')
               .attr('x', width*1.05)
               .attr('y', height/4)
               .attr('font-size', '100%')
@@ -808,60 +809,78 @@ let line6text = g.append('g')
 		.append('text')
     		    .attr("class", "audtext3")
                     .text('percent')
-                    .attr('x', -margin.left*5.5)
-                    // .attr('y', 0-margin.top/15)
-                    .attr('y', width+margin.left)
+                    // .attr('x', -margin.left*11)
+                    .attr('x', 0-margin.right/0.303)
+                    .attr('y', height*1.78)
                     .attr("transform", "rotate(-90)")
-                    .attr('font-size', '90%');
+                    .attr('font-size', '100%');
+                    
+  
                 
                 
- let heading = g.append('g')  //// append text to global
-		.append('text')
-    		    .attr("class", "audheading3")
-                    .text('National Art Museum Audiences: 2012 - 2017')
-                    .attr('x', margin.left/18)
-                    .attr('y', 0-margin.top)
+// let heading = g.append('g')  //// append text to global
+// 		.append('text')
+//     		    .attr("class", "audheading3")
+//                     .text('National Art Museum Audiences: 2012 - 2017')
+//                     .attr('x', margin.left/18)
+//                     .attr('y', 0-margin.top)
                     
 
   let subhead1 = g.append('g')
 		.append('text')  /////to site text you can always do negative values to be outside the chart
                     .attr("class", "audsubhd3")
-                    .text('Breaking Down the Audience Uptick in Museum Attendance by Race and Ethnicity')
-                    .attr('x', margin.left/18)
+                    .text('Breaking Down the Museum Audience Uptick by Race and Ethnicity')
+                    .attr('x', 0)
                     .attr('y', 0-margin.top/1.5)
-										.style("font-size", "1.3em")
-                    .style("font-style", "italic")
+										.style("font-size", "1.55em")
+                    // .style("font-style", "italic")
   
   
         
-  let subhead2 = g.append('g')
-					.append('text')  /////to site text you can always do negative values to be outside the chart
-                    .attr("class", "audsubhead4")
-                    .text('Hispanic, African American, other, all, Asian, white')
-                    .attr('x', margin.left/18)
-                    .attr('y', 0-margin.top/5)
-		     						.style('font-size', '1.1em')
-                    .style("color", "#f5f4f9")
-                    .style("fill", "currentColor");
+  // let subhead2 = g.append('g')
+		// 			.append('text')  /////to site text you can always do negative values to be outside the chart
+  //                   .attr("class", "audsubhead4")
+  //                   .text('Hispanic, African American, other, all, Asian, white')
+  //                   .attr('x', margin.left/18)
+  //                   .attr('y', 0-margin.top/5)
+		//     						.style('font-size', '1.1em')
+  //                   .style("color", "#f5f4f9")
+  //                   .style("fill", "currentColor");
   
-   let footnote1 = g.append('g')
-							.append('text')  /////to site text you can always do negative values to be outside the chart
-                    .attr("class", "audsubhead5")
-                     .text('Data: ADP18-DemographicTables, SPPA 2017, Office of Research & Analysis, National Endowment for the Arts, Sept. 2018')
-                    .attr('x', margin.left/18)
-                    .attr('y', height+margin.top/1.5)
-	 									.attr('font-size', '80%')
-                    .style("color", "#f5f4f9")
-                    .style("fill", "currentColor"); 
-                    
-  let footnote2 = g.append('g')
-								.append('text')  /////to site text you can always do negative values to be outside the chart
-                    .attr("class", "audsubhead5")
-                    .text('Percent of U.S. adults visiting art museums/galleries by demographic subgroup: 2012, 2017')
-                    .attr('x', margin.left/18)
-                    .attr('y', height+margin.top/2.1)
-                    .attr('font-size', '80%')
+         let footnote1 = g.append('g')
+                .append("text")
+                		.attr("class", "axislabel")
+                		.attr("text-anchor", "end")
+                		.text('Data: ADP18-DemographicTables')
+                		.attr("transform", "rotate(-90.3)")
+                		// .attr('x', margin.right/60)
+                		 .attr('x', -margin.top*1.74)
+                    // .attr('y', 0)
+                    .attr('y', -width/15)
+	 									.attr('font-size', '78%')
                     .style("color", "#f5f4f9")
                     .style("fill", "currentColor");
+                    
+        // let footnote1 = g.append('g')
+        //         .append("text")
+        //         		.attr("class", "axislabel")
+        //         		.attr("text-anchor", "end")
+        //         		.text('Data: ADP18-DemographicTables')
+        //         		.attr("transform", "rotate(-90)")
+        //         		 .attr('x', 0-margin.right/0.95)
+        //             .attr('y', height*1.9)
+	 						// 			.attr('font-size', '74%')
+        //             .style("color", "#f5f4f9")
+        //             .style("fill", "currentColor");
+                    
+  // let footnote2 = g.append('g')
+		// 						.append('text')  /////to site text you can always do negative values to be outside the chart
+  //                   .attr("class", "audsubhead5")
+  //                   .text('Percent of U.S. adults visiting art museums/galleries by demographic subgroup: 2012, 2017')
+  //                   .attr('x', margin.left/18)
+  //                   .attr('y', height+margin.top/2.1)
+  //                   .attr('font-size', '80%')
+  //                   .style("color", "#f5f4f9")
+  //                   .style("fill", "currentColor");
 
    }; 
