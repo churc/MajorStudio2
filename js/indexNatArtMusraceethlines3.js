@@ -152,10 +152,10 @@ var n = 12;
 					.attr("fill", "none")
 					.attr("stroke", function(d,i){    ///////set up different attributes to select bars before calling the lines
 							if(i % 2 == 0){
-								// var color = "lightgreen"
-								// 	return color
+								
 					} else if (i % 2 !== 0){
-							var color = "lightgreen"
+							
+							var color = "#222323"
 									return color
 					}
 					})
@@ -173,7 +173,7 @@ var n = 12;
 								var opacity = 1
 									return opacity
 					} else{
-									var opacity = 0  
+									var opacity = 0.45    ////for first part of 2018 line  
 									return opacity
 					}
 					})
@@ -233,17 +233,15 @@ var n = 12;
 					.attr("opacity", 0.85)
 					.attr("stroke", function(d,i){    ///////set up different attributes to select bars before calling the lines
 							if(i % 2 == 0){
-								// var color = "lightgreen"
-								// var color="#f79a2a"
 								var color = "#222323"
 									return color
 									
 					} else {
-							// var color = "DARKTURQUOISE"
+							// var color = "lightgreen"  /////change this for 2018 line
 							// var color = "khaki" 
-								// var color="#f79a2a"
+								var color="#ddd57c"
 							// var color="#fcc38a"
-							var color="#efc737"
+							// var color="#efc737"
 									return color
 					}
 					})
@@ -261,7 +259,7 @@ var n = 12;
 								var strokewidth = 0.9  /////change to lessen opacity
 								return strokewidth
 					} else{
-								var strokewidth = 0.9
+								var strokewidth = 1.4
 								return strokewidth
 					}
 					})
@@ -325,8 +323,8 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 							    .attr("viewBox", "0 -5 10 10")
 							    .attr("refX", 10)
 							    .attr("refY", 0)
-							    .attr("markerWidth", 13)
-							    .attr("markerHeight", 13)
+							    .attr("markerWidth", 10)
+							    .attr("markerHeight", 10)
 							    .attr("opacity", 0.9)
 							    // .attr("orient", "auto")
 							    .attr("orient", function(data,i){    ///arrows on every second bar
@@ -346,9 +344,9 @@ let linearrows = g.append("svg:defs").selectAll("marker")
 												var arrowneg = "red"
 												return arrowneg
 										} else{
-// 													var arrowneg = "DARKTURQUOISE"
-														// var arrowneg = "#f79a2a"
-														var arrowneg = "#fcc38a"
+													var arrowneg = "#ddd57c"
+														// var arrowneg = "lightgreen"
+												
 													return arrowneg
 										}
 									})
@@ -497,14 +495,17 @@ var numlabelpercent =	bars1.append('text')
 									return xScale5(d.yearline)
 							}
 						})
-					.style("font-size", "0.85em")
+					.style("font-size", "0.9em")
 					.attr('fill', (d,i) => {
 						if(i % 2 == 0){
-								color = "#0f0a04"
+								// color = "#0f0a04"
+								color = "#050505"
 								return color
 					} else{
-									color = "#fcc38a"
-										// color = "#f79a2a"
+									color = "#ddd57c"
+										// color = "lightgreen"
+										// color = "#67b705"
+										// color = "#96bed1"
 								  return color
 							}
 							})
@@ -654,7 +655,8 @@ var numlabel2015 =	bars1.append('text')
 
 					
 		let line18 = g.append("line")
-						.style("stroke", "#fcc38a")
+						// .style("stroke", "lightgreen")
+						.style("stroke", "#ddd57c")
 						.style("fill", "none")
 						.attr("stroke-width", 1)
 						// .style("stroke-dasharray", "2,2")
@@ -669,9 +671,9 @@ var numlabel2015 =	bars1.append('text')
 							.attr('x', margin.left/4.2)
 							.attr('y', -margin.top/0.79)
 							.attr('font-size', '95%')
-							// .style("fill", "#f5f4f9")
-							// .style("fill",  "#f79a2a")
-							.style("fill", "#fcc38a")
+							.style("fill", "#ddd57c")
+							// .style("fill",  "lightgreen")
+	
 		
 			let number15 = g.append('text')
 					  .text('2015')
