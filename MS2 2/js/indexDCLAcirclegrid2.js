@@ -34,6 +34,7 @@ let svgPlot1 = (data) => { ////need to call a different svgPlot
         .attr("width", width)
         .attr("height", height)
         .style("background", "#877c74")
+    
 
     let g = svg.append('g') ////then append to global g 
     //////this is how to move the chart to the correct position
