@@ -18,9 +18,9 @@
 
 		console.log(data);
 
-	let margin = { top: 50, right: 22, bottom: 60, left: 213 };
+	let margin = { top: 50, right: 22, bottom: 60, left: 250 };
 		
-			let width = 960 - margin.left - margin.right; // Use the window's width 
+			let width = 990 - margin.left - margin.right; // Use the window's width 
 			let height = 680 - margin.top - margin.bottom; // Use the window's height
 
 
