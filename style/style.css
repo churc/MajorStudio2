@@ -480,6 +480,13 @@ main {
   padding-top: 4em;
 }
 
+.main2colend {
+    max-width: 1250px;
+    margin: 2em auto;
+    display: flex;
+    border: 0;
+}
+
 #chartempty{
   max-height: 0em;
   width: auto;
