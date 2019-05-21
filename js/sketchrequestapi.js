@@ -1,4 +1,4 @@
-// Preview index.html in this directory
+// query Brooklyn Museum api
 // Open preview in a new browser tab and check results returned from API in the browser console
 // Reference: https://www.brooklynmuseum.org/opencollection/api/docs/requests
 
