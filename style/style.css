@@ -182,7 +182,6 @@ article{
   margin-left: auto;
   margin-right: auto;
 }
-
 a {
     color: lightblue;
     text-decoration: none;
@@ -190,17 +189,51 @@ a {
     font-size: 0.9em;
 }
 .aa{
-   color: #000000;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    /*font-style: italic;*/
-    font-weight: 600;
+   color: #f5fcf7;
+    /*text-decoration: none;*/
+    text-transform: capitalize;
+    font-size: 0.95em;
+    font-style: italic;
+    text-decoration: underline;
+    -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+  text-underline-position: under;
 }
 
 /*2 column text*/
 .paragraph2col{
   position: relative;
+  margin: 1em auto;
+  padding: 0 2.6em 0 3em;
+}
+.textblockleft1{
+  float: left;
+  display: block;
+  width: 50%;
+  padding: 0.5em;
+  padding-right: 1.5em;
+  color: #f5fcf7;
+  line-height: 1.4em;
+  font-size: 0.95em;
+  /*text spacing*/
+  font-kerning: normal;
+  letter-spacing: 0.05rem;
+  font-weight: 200;
+  padding-left: 0;
+}
+.textblockright1{
+  float: right;
+  display: block;
+  width: 50%;
+  padding: 0.5em;
+  padding-left: 1.5em;
+  color: #f5fcf7;
+  line-height: 1.4em;
+  font-size: 0.95em;
+  /*text spacing*/
+  font-kerning: normal;
+  letter-spacing: 0.05rem;
+  font-weight: 200;
 }
 .textblockleft{
   float: left;
