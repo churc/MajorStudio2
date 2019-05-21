@@ -340,11 +340,11 @@ let natpercentlabel2018 =	g.append("path")
 					 // // .attr("fill", "#513c2f")
 					  .style("opacity", function(d,i){
 							if(i === 8){
-								var opacity = 0.75
+								var opacity = 0.65
 								return opacity
 						} else if (i === 9){
 						// if (i >=5) {
-								var opacity = 0.7
+								var opacity = 0.65
 								return opacity
 						} else  {
 								var opacity = 0  ////////======
@@ -353,7 +353,8 @@ let natpercentlabel2018 =	g.append("path")
 						})
 					  .attr("fill", function(d,i) {
 					  		if(i % 2 == 0){
-							var color = "darkseagreen";
+// 							var color = "darkseagreen";
+							var color ="#d13825";
 							return color; 
 						} else {
 // 							var color = "purple";
