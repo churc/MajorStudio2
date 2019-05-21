@@ -1,8 +1,7 @@
 //// NYC Department of Cultural Affairs by 22 job types grouped by race and ethnicity data
 //// larger budgets over $1 million - these percents do not include volunteers 
 //// except for board job type
-//// grid with circles for numbers and for percent by race and ethnicity and percent by job type
-//// with percentDCLAcirclegridhor5sort.html
+//// grid with circles for numbers and for percent by race and ethnicity and for percent by job type
 
 
 // this is DCLA numbers:
@@ -21,11 +20,6 @@
 ////larger budgets over $999999 - these percents do not include volunteers 
 ////except for board job type
 
-// d3.json("allracejobtypespercordered.json").then((data) => {
-//     svgPlot21(data);
-// });
-
-//////two datasets
 
 // d3.json("allracejobtypespercordered.json").then((datapercent) => {
 
@@ -38,7 +32,7 @@ d3.json("data/allracejobtypespercorderedtotjobperc.json").then((datapercent) => 
   });
 });
 
-/////try bringing in data and working with it to get volunteers
+/////bring in data and working with it to get volunteers
 // d3.json("racebyjobtype.json").then((data) => {
 //   dataWrangling(data);
 //   // svgPlot21(data); // called later in the dateWrangling function
@@ -176,16 +170,7 @@ let svgPlot21 = (datapercent) => {
         // .style("background", "#877c74")  
         
 let g21 = svg21.append('g') 
-    // let g21 = svg21.append('g') ////then append to global g 
-    //////this is how to move the chart/svg21 to the correct position
-    // 	.attr("transform", `translate( margin.left + "," + "0)`);
 
-
-    // const filtered = data.filter((d) => {
-    //     return d.dat 
-    // })
-    // console.log(filtered.length);
-    // console.log(filtered);
 
 ////===== filter percentages    
     const filtered = datapercent.filter((d) => {
@@ -204,7 +189,7 @@ let g21 = svg21.append('g')
     //     })
     //     .entries(newData);
     // //         console.log(nested_data);
-//\\\\\\\\\
+
 
  //////TO GET THE JOB PERCENTS
  
@@ -320,8 +305,7 @@ let g21 = svg21.append('g')
  
  ///////end of job percent
  
- 
- 
+
 ///////for the separate numbers in the arrays
 let datanumcircles = [];
 
@@ -459,8 +443,7 @@ let datanumcircles = [];
                 .style('font-size', '78%')
                 .style("fill", "#f5f4f9")
                 .style("text-anchor", "end");
-
-  
+ 
   
     let number7 = g21.append('g')
             number7.selectAll('text')
@@ -486,7 +469,6 @@ let datanumcircles = [];
                 .style("fill", "#f5f4f9")
                 .style("text-anchor", "start");
             
-
 
 ////====horizontal lines
  
@@ -534,29 +516,6 @@ let linesv = svg21.append('g')
 
 ////==== labels =======
 
-// let raceethlable = svg21.append('g')
-//     raceethlable.selectAll('text')
-//         .data(datapercent)
-//         .enter()
-//         .append('text')
-//         .attr("class", "textpink")
-//         .text((d, i) => { return datapercent[i].raceethnicity})
-//         .attr('x', starth /1.02)
-//         .attr('y', (d, i) => {
-//             return i * rowheight + startv ;
-//         })
-//         .attr('transform', (d, i) => {
-//             // let a = -45;
-//             let a = -51;
-//             // let x = linevstart/2.15;
-//             let x = linevstart/1.95;
-//             // let y = i * rowheight + startv/0.95;
-//             let y = i * rowheight + startv/0.96;
-//             return `rotate(${a}, ${x}, ${y})`;
-//         })
-//         .style('font-size', '98%')
-//         .style("text-anchor", "end");
-
 let raceethlable = svg21.append('g')
     raceethlable.selectAll('text')
         .data(datapercent)
@@ -588,26 +547,6 @@ let raceethlable = svg21.append('g')
     console.log(datapercent[0].joborderlevel); 
 let datalabel = datapercent[0].joborderlevel /////order job type by seniority highest to lowest
 
-         
-// let jobtype = svg21.append('g')
-//     jobtype.selectAll('text')
-//         .data(datalabel)
-//         .enter()
-//         .append('text')
-//             .attr("class", "textpink")
-//             .text((d,i) =>  { return d})
-//             .attr('y', startv - 30)
-//             .attr('x', (d, i) => {
-//                 return i * colwidth + starth;
-//             })
-//             .attr('transform', (d, i) => {
-//                 // let a = -45;
-//                 let a = -51;
-//                 let x = i * colwidth + starth -5;
-//                 let y = startv -30;
-//                 return `rotate(${a}, ${x}, ${y})`;
-//             })
-//             .style('font-size', '100%');
 
 let jobtype = svg21.append('g')
     jobtype.selectAll('text')
@@ -790,8 +729,6 @@ let percentbtn = g21.append('g').attr("id", "percent-btn")
                 .range([0, 42]);
          
           subheading.text('Percent: Staff by race and ethnicity')
-        //   percent7.selectAll("text").style("visibility", "visible")
-        //   percent7.selectAll("text").style("visibility", "hidden")
             percent7.selectAll("text").style("visibility", "visible")
             number7.selectAll("text").style("visibility", "hidden")
         
@@ -968,7 +905,6 @@ let jobpercentbtn = g21.append('g').attr("id", "jobpercent-btn")
           subheading.text('Percent: Staff by job type')
           jobpercent7.selectAll("text").style("visibility", "visible")
          percent7.selectAll("text").style("visibility", "hidden")
-        //  number7.selectAll("text").style("visibility", "hidden")
         
           
 //// selectAll not needed here
@@ -1060,10 +996,8 @@ let numbersbtn = g21.append('g').attr("id", "numbers-btn")
         subheading.text('Number: Staff by race and ethnicity')
         number7.selectAll("text").style("visibility", "visible")
         percent7.selectAll("text").style("visibility", "hidden")
-        // jobpercent7.selectAll("text").style("visibility", "hidden")
         
-        
-/////selectAll not needed here
+
     // d3.selectAll("circle").attr("class", "circlenumbers")
                         percent7.style("visibility", "hidden")
                         jobpercent7.style("visibility", "hidden")
@@ -1103,9 +1037,7 @@ let numbersbtn = g21.append('g').attr("id", "numbers-btn")
         number7.selectAll("text").style("visibility", "visible")
         jobpercent7.selectAll("text").style("visibility", "hidden")
         
-       
-        
-/////selectAll not needed here
+
     // d3.selectAll("circle").attr("class", "circlenumbers")
                         percent7.style("visibility", "hidden")
                         jobpercent7.style("visibility", "hidden")
@@ -1153,322 +1085,6 @@ let numbersbtn = g21.append('g').attr("id", "numbers-btn")
     
 update(); ///call update function
 }; ////end of svgPlot
-
-
-//////===========================================
-////NUMBERS BUTTON
- 
-//     console.log(datanumcircles)
-    
-//         d3.select("#numbers-btn").on("click", function(e){
-//             datacircles.splice(); /////doesn't remove current data
- 
-//       ///////update with data percent that are in 'datacircles'
-//         // (datacircles, (e, i) => {
-//         //         return e, i;
-//         //     });
-//         // // selection.selectAll(".circlepercent")
-//         // // selection.select(".circlepercent")
-//         (datanumcircles, (e, i) => {  /////this is the button - numbers - that I have the data in that i am trying to get to work
-//                 return e, i;
-//             });
-//          update();
-//     });
-//     console.log(datacircles)
-  
-// let numbersbtn = g21.append('g').attr("id", "numbers-btn")
-//                     .append("rect")
-//                       .attr("class", "stylenumbers")
-//                       .attr("width", "40px")
-//                       .attr("height", "20px")
-//                       .attr('x', margin.left*1.4)
-//                       .attr('y', margin.top/1.05)
-//                       .style("fill", "pink")
-//                       .style("opacity", "0.5")
-    
-//     d3.select("#numbers-btn").on("click", function(e){
-      
-//     if (currentData == 'numbers') {
-        
-//     console.log("in numbers")
-//      dataPlaceholder = datacircles 
-//          radarea = d3.scaleSqrt() ////change radius area too 
-//             .domain([0,d3.max(datacircles)]) ////max datacircles
-//             .range([0, 40]);
-            
-//       currentData = 'percent'
-//      } else if (currentData == 'percent') {
-
-//         console.log(dataPlaceholder, datanumcircles)
-        
-//       dataPlaceholder = datanumcircles
-//       console.log(dataPlaceholder)
-      
-//       radarea = d3.scaleSqrt() ////change radius area of circles  
-//         .domain([0,d3.max(datanumcircles)]) ////max datanumcircles
-//         .range([0, 40]);
-//       currentData = 'numbers'
-//      }
-        
-//       update();
-//     }); 
-
-// ////PERCENT BUTTON _ WORKS - go back to this version if necessary
-//     console.log(datacircles)
-    
-//     d3.select("#percent-btn").on("click", function(e){
-      
-  
-    
-//     if (currentData == 'numbers') {
-        
-//     console.log("in numbers")
-//      dataPlaceholder = datacircles 
-//          radarea = d3.scaleSqrt() ////change radius area too 
-//             .domain([0,d3.max(datacircles)]) ////max datacircles
-//             .range([0, 40]);
-            
-//       currentData = 'percent'
-//      } else if (currentData == 'percent') {
-
-//         console.log(dataPlaceholder, datanumcircles)
-        
-//       dataPlaceholder = datanumcircles
-//       console.log(dataPlaceholder)
-      
-//       radarea = d3.scaleSqrt() ////change radius area of circles  
-//         .domain([0,d3.max(datanumcircles)]) ////max datanumcircles
-//         .range([0, 40]);
-//       currentData = 'numbers'
-//      }
-        
-//       update();
-//     });   
-
-// ======buttons sorting=======
-
-///first sort button adds a sorted layer of data
-
-    // d3.select("#sort-btn").on("click", function(e){
-    //     //  datacircles.splice();  ///DOESN't remove current circles
-         //   dataPlaceholder.shift(); ////moves data one over
-    //   dataPlaceholder.sort(function(a,b) {  ////this test works to sort all (doesn't remove first dataset or make sense, but does work)
-    //     if (a > b) {
-    //       return 1
-    //     } else {
-    //       return -1
-    //     }
-    //   })
-    // 	update();
-    // });
-    
-    // .attr('x', (d, i) => { 
-    //         return (i % 22) * colwidth + starth; ////move to next row
-    //     })
-    //     .attr('y', (d, i) => {
-    //         return (startv + rowheight * parseInt(i / 22));
-    //     })
-    //     // .append("circle")
-    //     .attr("cx", (d, i) => {  
-    //         // return (i % 7) * colwidth + starth;
-    //         return (i % 22) * colwidth + starth;
-    //     })
-    //     .attr("cy", (d, i) => {
-    //         return (startv + rowheight * parseInt(i / 22)); 
-    //     })
-    //     .attr("r", (d, i) => {
-    //         return radarea2(d); //// return circle area for numbers
-    //     })
-    
-    // update()
-    //  .on('mouseenter', (e, i, j) => {
-    //         console.log('hover');
-    //         console.log(e);
-    //         subheading.text(e + 'number of staff by race and ethnicity');
-    //         d3.select(j[i])
-    //             .style('fill', 'green')
-    //             .style('opacity', '0.6');
-    //     })
-    //     .on('mouseout', (e, i, j) => {
-    //         console.log(e);
-    //         subheading.text((e) => { return "Number: Staff by race and ethnicity"; });
-    //         d3.select(j[i])
-    //             .style('fill', 'yellow')
-    //             .style('opacity', '0.9');
-    //     });
-// });
-
-// // Add a new datum to the set
-// d3.select("#add-btn").on("click", function(e){
-    
-// // 	if (dataset.length < 10) dataset.push(Math.round(Math.random() * maxHeight));
-// 	update();
-// });
-
-// update();
-
-// }; ////end of svgPlot
-
-
-
-//====== raw numbers   id="sortbynumber"
-// https://bl.ocks.org/anonymous/bc5a9691a3417b403d4e8ade3297afa3/3a2434c1c2849e476791e581754ec27e055db4d6
-// https://bl.ocks.org/laysent/5739f087ec78e4386a6a
-
-//       console.log(datapercent[0].dat)
-
-// //// ** Update data section (called from the onclick) for datapercent to get numbers
-
-// 	   	d3.select("#byNumber").on("click", function(d) {
-//                 d3.event.preventDefault()
-//                 circles.selectAll(".circlepercent")
-//                     .data(datapercent, (d, i) => {
-//                         console.log(d.dat)
-//                         return d.dat
-//                     })
-//                     .enter()
-//     	            .transition()
-//                      .duration(750)
-//                      .attr('x', (d, i) => { 
-//                         return (i % 22) * colwidth + starth; 
-//                     })
-//                     .attr('y', (d, i) => {
-//                         return (startv + rowheight * parseInt(i / 22));
-//                     })
-//                     .attr("cx", (d, i) => {  
-//                         return (i % 22) * colwidth + starth;
-//                     })
-//                     .attr("cy", (d, i) => {
-//                         return (startv + rowheight * parseInt(i / 22)); 
-//                     })
-//                     .attr("r", (d, i) => {
-//                         return radarea(d.dat); 
-//                     })
-// 			});
-
-// }
-
-// //////svgPlot22 for percent by staff column row is 7 for this
-// //// ** Update data section (Called from the onclick) for datapercent to get numbers
-
-// let svgPlot22 = (datastaff) => { 
-//     console.log(datastaff); 
-    
-
-// 	   	d3.select("#byJobType").on("click", function(d) {
-//                 d3.event.preventDefault()
-//                 circles.selectAll(".circlepink")
-//                     .data(datastaff, (d, i) => {
-//                         console.log(d.dat)
-//                         return d.dat
-//                     })
-//                     .enter()
-//     	            .transition()
-//                      .duration(750)
-//                      .attr('x', (d, i) => { // for horizontal use diameter for spacing circles 
-//                         return (i % 7) * colwidth + starth; //// MOVE TO NEXT ROW
-//                     })
-//                     .attr('y', (d, i) => {
-//                         return (startv + rowheight * parseInt(i / 7));
-//                     })
-            
-//                     .append("circle")
-//                     .attr("cx", (d, i) => { // for horizontal use diameter for spacing circles 
-//                         return (i % 7) * colwidth + starth;
-//                     })
-            
-//                     .attr("cy", (d, i) => {
-//                         return (startv + rowheight * parseInt(i / 7)); ///vertical
-            
-//                     })
-//                     .attr("r", (d, i) => {
-//                         return radarea(d.dat); ////returns circle area
-            
-//                     })
-                    
-//                     //  .attr('x', (d, i) => { 
-//                     //     return (i % 22) * colwidth + starth; 
-//                     // })
-//                     // .attr('y', (d, i) => {
-//                     //     return (startv + rowheight * parseInt(i / 22));
-//                     // })
-//                     // .attr("cx", (d, i) => {  
-//                     //     return (i % 22) * colwidth + starth;
-//                     // })
-//                     // .attr("cy", (d, i) => {
-//                     //     return (startv + rowheight * parseInt(i / 22)); 
-//                     // })
-//                     // .attr("r", (d, i) => {
-//                     //     return radarea(d.dat); 
-//                     // })
-// 			});
-
-
-// let buttonClicked = false;
-
-// const onClick = () => {
-//   if (buttonClicked == true) {
-//     svgPlot22(updateData())
-//     buttonClicked == false
-//   }
-//   else {
-//     // svgPlot21(data[0].dat)
-//     buttonClicked == true
-
-//   }
-// }	
-    
-// ////sorting logic
-// let sortnumbers = svg21.append('g')
-// 		d3.select("#sortbynumber")
-// 			.on("click", function() {
-//                 d3.event.preventDefault()
-//                 .data(data, (d, i) => {
-//                         return d.dat
-//                     })
-//             circles.selectAll("circles")
-//                     .transition()
-// 					.delay(function(d, i) {
-// 						return i * 50;  // gives it a smoother effect
-// 					})
-// 					.duration(1000)
-//                     .attr('x', (d, i) => { 
-//                         return (i % 22) * colwidth + starth; ////move to next row
-//                     })
-//                     .attr('y', (d, i) => {
-//                         return (startv + rowheight * parseInt(i / 22));
-//                     })
-//                     .append("circle")
-//                     .attr("cx", (d, i) => {  
-//                         // return (i % 7) * colwidth + starth;
-//                         return (i % 22) * colwidth + starth;
-            
-//                     })
-//                     .attr("cy", (d, i) => {
-//                         return (startv + rowheight * parseInt(i / 22)); 
-            
-//                     })
-//                     .attr("r", (d, i) => {
-//                         return radarea(d); //// return circle area
-            
-//                     })
-//                     .style("fill", "yellow")
-//                     .style("stroke", "none")
-//                     // .on('mouseenter', (d, i, j) => {
-//                     //     console.log('hover');
-//                     //     console.log(d);
-//                     //     subheading.text(d + 'number of staff by race and ethnicity');
-//                     //     d3.select(j[i])
-//                     //         .style('fill', 'green')
-//                     //         .style('opacity', '0.6');
-//                     // })
-//                     // .on('mouseout', (d, i, j) => {
-//                     //     console.log(d);
-//                     //     subheading.text((d) => { return "Number: Staff by race and ethnicity"; });
-//                     //     d3.select(j[i])
-//                     //         .style('fill', 'yellow')
-//                     //         .style('opacity', '0.9');
-//                     });
                     
 
 
