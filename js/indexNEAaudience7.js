@@ -1,5 +1,4 @@
-
-          
+  
         ////NYC DCLA data select 
         ////look at Has More Recent Hiring at NYC Museums - Curators - Seen an Increase 
         ////in Diversity in Race/Ethnicity?
@@ -7,26 +6,7 @@
             d3.json("data/ADP18-DemographicTables_edpopvisitedmus.json").then((data) => {
                                  svgPlot2(data);
                     });
-                //  console.log(data);
-             
-// 	var margin = {top: 80, right: 70, bottom: 60, left: 70}; ////this works outside the svgPlot
-	
-// 	var width = 750 - margin.left - margin.right; // specify the width and give space around the chart
-// 	var height = 550 - margin.top - margin.bottom; // specify the width and give space around the chart
-// 	console.log(margin.top)
- 
-	
-// 			var svg = d3.select('#svg1')		  
-//                 .append('svg')  ////then append an svg 
-//                 .attr("width", width + margin.left + margin.right) ///attribute width is width(above) with the margins back on
-//     			.attr("height", height + margin.top + margin.bottom)
-            
-//              var g = svg.append('g')    ////then append to global g - so now the div svg is appended
-//              ///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
 
-//             	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-//         ////the above transform moves the whole chart away from the left and top of the browser
-   
             
             let svgPlot2 = (data) => { ////need to call a different svgPlot 
                 console.log(data); ////with each chart for multiple charts
@@ -70,7 +50,7 @@ console.log(max);
 
 // // The number of datapoints for paired lines
 	var n = 2;
-// //////
+
 
 var xScale = d3.scaleLinear()
 				.domain([0, n-1])
@@ -84,8 +64,7 @@ var yScale = d3.scaleLinear()
                 
                 
 var line = d3.line()
-	.x(function(d,i) { // to use “i” in xScale 
-					   // you have to list d first and then i and separate by comma
+	.x(function(d,i) { 
 		console.log(xScale(i));
 		return xScale(i);
 	})
@@ -95,8 +74,7 @@ var line = d3.line()
 	
 	
 var area = d3.area()  //////can use this twice just call in each of the 2 lines
-	.x(function(d,i) { // to use “i” in xScale 
-					   // you have to list d first and then i and separate by comma
+	.x(function(d,i) { 
 		console.log(xScale(i))
 		return xScale(i); 
 	})
@@ -303,11 +281,7 @@ let ytext2 = g.append('g')
                     .text('percent')
                     .attr('x', -width/1.99)
                     .attr('y', margin.top*4.4)
-                    // .attr('x', -310)
-                    // .attr('y', 270)
                       .attr("transform", `translate(${height-margin.left}, 0)rotate(-90)`)
-                    // .attr('y', -margin.left/2)
-                    // .attr("transform", "rotate(-90)")
                     .attr('font-size', '90%');
                   
                 
@@ -329,8 +303,6 @@ let ytext2 = g.append('g')
                     .attr('y', 0-margin.top/1.9)
                     .attr('font-size', '1.5em'); 
 
-
-
 // //     			.on('mouseenter', function(d){
 // //                         console.log('hover');
 // //                         console.log(d)
@@ -346,282 +318,5 @@ let ytext2 = g.append('g')
 // //                         .attr('font-size', '12px')
 // //                         .attr("class", "line");
 // //                     });
-
- 
-// // let line2 = g.append("path")
-// //     			.datum(all2tot2)
-// //     			// .attr("class", "line") // Assign a class for styling
-// //     			.attr('d', function(d,i) {
-// //     				return line(d,i)    ////\\here add function in the line generator taking in the 
-// //     			})
-// //     			.attr('fill', 'none')
-// //     			// .attr('stroke', 'pink')
-// //     			.attr('stroke', "#9cb749")
-// //     			.attr('stroke-width', 1.5)
-// //     			.attr('shape-rendering', 'crispEdges')
-// //     			.on('mouseenter', function(d){
-// //                         console.log('hover');
-// //                         console.log(d)
-// //                         heading.text(d[0]  + ' Asian curators; '+ d[1] + ' were hired 2010-2015')
-// //     					})   
-// //                  .on('mouseout', function(d) {
-// //                 		console.log(d)
-// //                         heading.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-// //                         .attr("class", "line"); 
-// //                     });
-// //  //console.log(line2)
- 
-// // let line3 = g.append("path")
-// //     			.datum(all3tot3)
-// //     			// .attr("class", "line") // Assign a class for styling
-// //     			.attr('d', function(d,i) {
-// //     				return line(d,i)    ////\\here add function in the line generator taking in the 
-// //     			})
-// //     			.attr('fill', 'none')
-// //     			.attr('stroke', '#58f97e')
-// //     			.attr('stroke-width', 1.5)
-// //     			.attr('shape-rendering', 'crispEdges')
-// //     			.on('mouseenter', function(d){
-// //                         console.log('hover');
-// //                         console.log(d)
-// //                         heading.text(d[0]  + ' Black or African American curators; '+ d[1] + ' were hired 2010-2015')
-// //     		     	}) 
-// //                  .on('mouseout', function(d) {
-// //                 		console.log(d)
-// //                         heading.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-// //                         .attr("class", "line"); 
-// //                     });
-// //  //console.log(line3)
-
-// // let line4 = g.append("path")
-// //     			.datum(all4tot4)
-// //     			// .attr("class", "line") // Assign a class for styling
-// //     			.attr('d', function(d,i) {
-// //     				return line(d,i)    ////\\here add function in the line generator taking in the 
-// //     			})
-// //     			.attr('fill', 'none')
-// //     			.attr('stroke', '#2be6fc')
-// //     			.attr('stroke-width', 1.5)
-// //     			.attr('shape-rendering', 'crispEdges')
-// //     			.on('mouseenter', function(d){
-// //                         console.log('hover');
-// //                         console.log(d)
-// //                         heading.text(d[0]  + ' Hispanic curators; '+ d[1] + ' were hired 2010-2015')
-// //     			   }) 
-// //                  .on('mouseout', function(d) {
-// //                 		console.log(d)
-// //                         heading.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-// //                         .attr("class", "line"); 
-// //                     });
-// //  //console.log(line4)
- 
-// // let line5 = g.append("path")
-// //     			.datum(all5tot5)
-// //     			// .attr("class", "line") // Assign a class for styling
-// //     			.attr('d', function(d,i) {
-// //     				return line(d,i)    ////\\here add function in the line generator taking in the 
-// //     			})
-// //     			.attr('fill', 'none')
-// //     			.attr('stroke', '#fcc42b')
-// //     			.attr('stroke-width', 1.5)
-// //     			.attr('shape-rendering', 'crispEdges')
-// //     				.on('mouseenter', function(d){
-// //                         console.log('hover');
-// //                         console.log(d)
-// //                         heading.text(d[0]  + ' curators of two or more races; '+ d[1] + ' were hired 2010-2015')
-// //     				}) 
-// //                  .on('mouseout', function(d) {
-// //                 		console.log(d)
-// //                         heading.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-// //                         .attr("class", "line"); 
-// //                     });
-// //  //console.log(line5)
- 
-// /////////////\\\\\\\\\\\\\\\end of showing one line only
-// // area 
-
-// // 724 above used the line generator
-// // var line = d3.line()
-// // 	.x(function(d,i) { // to use “i” in xScale 
-// // 					   // you have to list d first and then i and separate by comma
-// // 		console.log(xScale(i))
-// // 		return width/3-(xScale(i)); 
-		
-// // 	})
-// // 	.y(function(d, i) { 
-// // 		// console.log(d)
-// // 		// return height-(yScale(d)); 
-// // 		return yScale(d);
-// // 	});
-
-
-// // var area = d3.area()
-// //     .x(function(d) { return x(d.date); })
-// //     .y1(function(d) { return y(d.value); })
-// //     .y0(y(0));
-
-// var area1 = d3.area()  //////can use this twice just call in each of the 2 lines
-// 	.x(function(d,i) { // to use “i” in xScale 
-// 					   // you have to list d first and then i and separate by comma
-// 		// console.log(xScale(i))
-// 		return width/3-(xScale(i)); 
-// 	})
-// 	.y1(function(d, i) { 
-// 		// console.log(d)
-// 		// return height-(yScale(d)); 
-// 		return yScale(d);
-// 	})
-// 	.y0(yScale(0));
-	
-// // var area2 = d3.area()
-// // 	.x(function(d,i) { // to use “i” in xScale 
-// // 					   // you have to list d first and then i and separate by comma
-// // 		// console.log(xScale(i))
-// // 		return width/3-(xScale(i)); 
-// // 	})
-// // 	.y1(function(d,i) {   ///////HOW TO MAKE THIS first data point?????
-// // 		console.log(d)
-// // 		// return height-(yScale(d)); 
-// // 		return yScale(d);      ///////HOW TO MAKE THIS use second data point twice?
-// // 		return yScale(d);  
-// // 	})
-// // 	.y0(yScale(0));
-	
-// ///////race/ethnicity white - 6
-// let line6 = g.append("path")
-//     			.datum(all6tot6not)
-//     			// .attr("class", "line") // Assign a class for styling
-//     			.attr('d', function(d,i) {
-//     				return line(d,i)    ////\\here add function in the line generator taking in the 
-//     			})
-//     			// .attr("transform", "translate(" + margin.left/2 + "," + margin.top + ")")
-//     			.attr('fill', 'purple')
-//     			.attr('stroke', 'yellow')
-//     			.attr('stroke-width', 1)
-//     			.attr('shape-rendering', 'crispEdges')
-//     			// .call(yAxisRight)
-//             	// .call(yAxis)
-//             	.attr('d', area1(all6tot6not))     
-// 				.attr("fill", "yellow")
-// 				// .attr('stroke', 'none')
-//     				.on('mouseenter', function(d){
-//                         console.log('hover');
-//                         console.log(d)
-//                         heading.text(d[0]  + ' white curators; '+ d[1] + ' were hired 2010-2015')
-//     				}) 
-//                  .on('mouseout', function(d) {
-//                 		console.log(d)
-//                         heading.text((d) => { return "NYC DCLA Grantees 2015: Museum Curators"; })
-//                         .attr("class", "line"); 
-//                     });
-                    
-//  //console.log(line6)
- 
-//  let line6_2 = g.append("path")
-//     			.datum(line6v2)  /////use the new array with the same 2 numbers
-// 				.attr('d', function(d,i) {
-//     				return line(d,i)    ////\\here add function in the line generator taking in the 
-//     			})
-//     			// .attr("transform", "translate(" + margin.left/2 + "," + margin.top + ")")
-//     			.attr("fill-opacity","0.5")
-//     			.attr('fill', 'orange')
-//     			.attr('stroke-dasharray', '4')
-//     			// .top ('stroke-dasharray','4')
-//     			.attr('stroke', '#a557fc')
-//     			.attr('stroke-width', 1)
-//     			.attr('shape-rendering', 'crispEdges')
-//     			.attr('d', area1(line6v2))  /////use area 1
-//     			// .attr('stroke', 'none');  
-    			
-//  /////no one declined to state so removing this
-//  //let line7 = g.append("path")
-//  //   			.datum(all7tot7)
-//  //   			// .attr("class", "line") // Assign a class for styling
-//  //   			.attr('d', function(d,i) {
-//  //   				return line(d,i)    ////\\here add function in the line generator taking in the 
-//  //   			})
-//  //   			.attr('fill', 'none')
-//  //   			.attr('stroke', 'red')
-//  //   			.attr('stroke-width', 1.5)
-//  //   			.attr('shape-rendering', 'crispEdges')
-//  //   				.on('mouseenter', function(d){
-//  //                       console.log('hover');
-//  //                       console.log(d)
-//  //                       heading.text(d[0]  + ' curators who declined to state race/ethnicity of which '+ d[1] + ' were hired since 2010'); 
-//  //                   });
-//  //console.log(line7)
- 
-// // let line1 = g.append("line")
-// //     			.attr("x1", 0)     // x position of the first end of the line
-// //     			.attr("y1", 3*100)      // y position of the first end of the line
-// //     			.attr("x2", 1000)     // x position of the second end of the line
-// //     			.attr("y2", 4*100)
-// //     			.attr('fill', 'none')
-// //     			.attr('stroke', 'purple')
-// //     			.attr('stroke-width', 1.5)
-// //     			.attr('shape-rendering', 'crispEdges');
-// //  console.log(line1)
-               
-
-
-
-// let legend = g.append("g");
-// 	svg.append()
-// 	.attr("class","legend")
-// 	.attr("height", 120)
-// 	.attr("width", 100)
-//     .attr('transform', 'translate(20,50)')
-// 	.style("font-size","10px");
-// 	// .call(d3.legend);
-	
-//  legend.selectAll('rect')
-//       //.data(d)
-//       .enter()
-//       .append("rect")
-// 	  .attr("x", width - 65)
-//       .attr("y", function(d, i){ 
-//       		return i *  20;
-//       })
-// 	  .attr("width", 2)
-// 	  .attr("height", 5)
-// 	  .style("fill", function(d) { 
-//         var color = color_legend[dataset.indexOf(d)][1];
-//         return color;
-//       })
-      
-//  legend.selectAll('text')
-//       //.data(d)
-//       .enter()
-//       .append("text")
-// 	  .attr("x", width - 52)
-//       .attr("y", function(d, i){ 
-//       		return i *  20 + 9;
-//       })
-// 	  .text(function(d) {
-//         var text = color_legend[dataset.indexOf(d)][0];
-//         return text;
-//       });
-
-// //////////
-// // 12. Appends a circle for each datapoint 
-
-// // svg.selectAll('circle') ////\\circle
-// //     .data(all1tot1)
-// // 	.enter().append("circle") //Uses the enter().append() method
-// //     .attr("class", "dot") // Assign a class for styling
-// //     .attr('fill', 'pink')
-// //     .attr('stroke', 'pink')
-// //     .attr('stroke-width', 1)
-// //     .attr("cx", function(d,i) { return xScale(i) })////\\same xScale & 
-// //     .attr("cy", function(d,i) { return yScale(i) })////\\same yScale as above
-// //     // .attr("cx", function(d,i) { return xScale(i) })////\\same xScale & 
-// //     // .attr("cy", function(d,i) { return yScale(d) })////\\same yScale as above
-// //     .attr("r", 5)
-// //  	.on('mouseenter', function(d){
-// //             // console.log('hover');
-// //             // console.log(d)
-// //             heading.text('Last five years: number of ' + 'curators at all levels: ' + d); 
-// //          });
-       
 
    }; 
