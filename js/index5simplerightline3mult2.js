@@ -46,7 +46,6 @@ let svgPlot3 = (data) => {
 	// console.log(museum);
 	console.log(museum.length);
 
-	////ADDING
 	////FILTER museum to get budget 3,4,5 over $999,999 annual budget 
 	let museums = museum.filter((e) => { ////this loops through and selects museum only within the discipline column
 		if (e.BUDGET == "3" || e.BUDGET == "4" || e.BUDGET == "5") {
@@ -65,7 +64,6 @@ let svgPlot3 = (data) => {
 	// console.log(curator);
 	console.log(curatorsmus.length);
 
-	////ADDING
 	////FILTER volunteer to get only paid employees
 	let curator = curatorsmus.filter((e) => { ////use the variable museums and loop through to filter just those staff hired since 2010
 		if (e.VOLUNTEER == "2") {
@@ -94,7 +92,7 @@ let svgPlot3 = (data) => {
 	console.log(notfiveyrs);
 
 	////filter last five years & not volunteer to just get curator not volunteer - these are at large museums only
-	let curatorfiveyrs = fiveyrs.filter((e) => { ////use the variable hired in the last five years and loop through fiveyrs to filter by race ethnicity
+	let curatorfiveyrs = fiveyrs.filter((e) => { 
 		if (e.JOBTYPE == "4" && e.VOLUNTEER == "2") {
 			return e;
 		}
@@ -105,7 +103,7 @@ let svgPlot3 = (data) => {
 	console.log(curatorfiveyrs.length);
 
 	/////filter curators NOT HIRED in last 5 years
-	let curatornotfiveyrs = notfiveyrs.filter((e) => { ////use the variable hired in the last five years and loop through fiveyrs to filter by race ethnicity
+	let curatornotfiveyrs = notfiveyrs.filter((e) => { 
 		if (e.JOBTYPE == "4" && e.VOLUNTEER == "2") {
 			return e;
 		}
@@ -697,10 +695,9 @@ let svgPlot3 = (data) => {
 			.style('font-size', '1.9em');	
 		 
 
-	/////////////
 	// The number of datapoints for paired lines
 	var n = 2;
-	//////
+
 
 	var xScale = d3.scaleLinear()
 		.domain([0, n - 1])
@@ -723,7 +720,6 @@ let svgPlot3 = (data) => {
 			// return height-(yScale(d)); 
 			return yScale(d);
 		});
-
 
 
 	var area1 = d3.area() //////can use this twice just call in each of the 2 lines
@@ -1086,13 +1082,7 @@ let svgPlot3 = (data) => {
 		.attr("y", -margin.top / 12)
 		.attr("x", -margin.right/4)
 		.text('curators');
-		
-	// let ytext3titlenumber = g3.append('text')
-	// 	.attr("class", "titlenumber2010")
-	// 	.attr("text-anchor", "right")
-	// 	.attr("y", margin.top/10 )
-	// 	.attr("x", -margin.right/4)
-	// 	.text('5 total, 3 prior to 2010');
+	
 
 
 	// ///////race/ethnicity Hispanic - 4
@@ -1441,42 +1431,4 @@ let svgPlot3 = (data) => {
 	// //                   });
 	// //console.log(line7)
 
-
-
-	// let legend = g.append("g")
-	// 	.append("text")
-	// 	.attr("class", "legend")
-	// 	.attr("height", 120)
-	// 	.attr("width", 100)
-	// 	.attr('transform', 'translate(20,50)')
-	// 	.style("font-size", "10px");
-	// // .call(d3.legend);
-
-	// legend.selectAll('rect')
-	// 	//.data(d)
-	// 	.enter()
-	// 	.append("rect")
-	// 	.attr("x", width - 65)
-	// 	.attr("y", function (d, i) {
-	// 		return i * 20;
-	// 	})
-	// 	.attr("width", 2)
-	// 	.attr("height", 5)
-	// 	.style("fill", function (d) {
-	// 		var color = color_legend[dataset.indexOf(d)][1];
-	// 		return color;
-	// 	})
-
-	// legend.selectAll('text')
-	// 	//.data(d)
-	// 	.enter()
-	// 	.append("text")
-	// 	.attr("x", width - 52)
-	// 	.attr("y", function (d, i) {
-	// 		return i * 20 + 9;
-	// 	})
-	// 	.text(function (d) {
-	// 		var text = color_legend[dataset.indexOf(d)][0];
-	// 		return text;
-	// 	});
 
