@@ -1,8 +1,8 @@
 ###### [Major Studio 2, Parsons](https://churc.github.io/MajorStudio2/index.html)
 ###### Spring 2019
 ### Do museums reflect who we are as a society?
-#### The project investigates NYC museums and national art museums from an overall view of who staffs museums, who visits them and to an extent, what they contain.
-#### Art museums are institutions that collect, curate, and exhibit works of art for the public. In so doing, they interpret, comment on, present, and shape our culture. But who works in museums and who goes to them? Two staff demographic surveys were published in 2015, one of New York City cultural grantees, the other of national art museum staff, followed by a second national survey in 2018. The latter showed changes in art museum demographics over time. These visualizations use the local survey dataset to explore racial and ethnic demographics of staff in NYC-funded museums, and probe a local museum collection dataset. What trends in museum staffing, collection acquisitions, and audience attendance are discernible from the data?
+### The project investigates NYC museums and national art museums from an overall view of who staffs museums, who visits them and to an extent, what they contain.
+### Art museums are institutions that collect, curate, and exhibit works of art for the public. In so doing, they interpret, comment on, present, and shape our culture. But who works in museums and who goes to them? Two staff demographic surveys were published in 2015, one of New York City cultural grantees, the other of national art museum staff, followed by a second national survey in 2018. The latter showed changes in art museum demographics over time. These visualizations use the local survey dataset to explore racial and ethnic demographics of staff in NYC-funded museums, and probe a local museum collection dataset. What trends in museum staffing, collection acquisitions, and audience attendance are discernible from the data?
 
 
 ### Data
