@@ -3,23 +3,7 @@
 
 // //////NEA data art museum audience years 1982, 1992, 2002, 2008, 2012, 2017 
 
-// d3.json("SPPA_NEA_2017USt_2008Perc1982-2017edonlymusaud.json").then((data) => {
-//   console.log(data);
-//   svgPlot(data);
-// });
 
-///try calling 2 datasets
-// d3.json("SPPA_NEA_2017USt_2008Perc1982-2017edonlymusaud.json").then((data) => {
-//   // dataWrangling(data);
-//   svgPlot(data); 
-//   d3.json("SPPA_NEA_2017UStrends_2008Part_1982-17edpopvisitedmusyr.json").then((datadate) => {
-//     // dataWranglingdate(datadate);
-//     svgPlotdate(datadate); // called later
-//   });
-// });
-
-
-///try calling 1 dataset and datawrangling
 d3.json("data/SPPA_NEA_2017UStrends_2008Part_1982-17edpopvisitedmusyr.json").then((dataall) => {
   dataWrangling(dataall);
 });
@@ -37,19 +21,17 @@ const dataWrangling = (dataall) => {
 }
 
 
-let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 datasets
+let svgPlot = (data) => { 
   console.log(data);
 
   var margin = {top: 100, right: 90, bottom: 40, left: 90}; ////this works outside the svgPlot
-  // var margin = { top: 100, right: 50, bottom: 50, left: 100 };
-  // var width = 1100 - margin.left - margin.right; // Use the window's width 
-  // var height = 600 - margin.top - margin.bottom; // Use the window's height
+
   
 	var width = 900 - margin.left - margin.right; // specify the width and give space around the chart
 	var height = 550 - margin.top - margin.bottom; // specify the width and give space around the chart
 	console.log(margin.top)
 
-  var svg = d3.select('#svg1') ////here select named svg and put it into the var svg
+  var svg = d3.select('#svg1') 
     .append('svg') ////then append an svg 
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
@@ -57,20 +39,10 @@ let svgPlot = (data) => { ////need to call a different svgPlot if bringing in 2 
       // .style("background", "#877c74");
 
 
-
   var g = svg.append('g') ////then append to global g - so now the div svg is appended
     ///note for multiple svgs you need a new g variable so you'd have g1, g2, etc
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   // console.log(width);  ////the above transform gives the space around the chart
-
-
-  // let heading = g.append('g') //// append text to global
-  //   .append('text')
-  //   .attr("class", "NEAtitle")
-  //   .text('National Art Museum Audiences, by Year, 1982-2017')
-  //   .attr('x', margin.left/45)
-  //   .attr('y', -margin.top/1.2)
-  //   .attr('font-size', '1.2em');
 
   let subhead1 = g.append('g') /////to site text you can always do negative values to be outside the chart
     .append('text')
@@ -309,9 +281,7 @@ console.log(data)
       .tickSize(3)
       .ticks(5)
     );
-
-    // let years = [1982,1992,2002,2008,2012,2017]
-    // let years = [{"each": [1982,1992,2002,2008,2012,2017]}]
+	
     let years = [{
       "year": 1982,
       "percent": 22.1
@@ -338,10 +308,7 @@ console.log(data)
     }
   ];
     
-    
-        // let years = [{[1982,1992,2002,2008,2012,2017]}]
-  //   let datayears = dataall[0].years;
-  // console.log(dataall)
+
   console.log(years[0].year)
   let data1 = (years)
   console.log(data1)
