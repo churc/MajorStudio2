@@ -5,7 +5,7 @@
 ##### Art museums are institutions that collect, curate, and exhibit works of art for the public. In so doing, they interpret, comment on, present, and shape our culture. But who works in museums and who goes to them? Two staff demographic surveys were published in 2015, one of New York City cultural grantees, the other of national art museum staff, followed by a second national survey in 2018. The latter showed changes in art museum demographics over time. These visualizations use the local survey dataset to explore racial and ethnic demographics of staff in NYC-funded museums, and probe a local museum collection dataset. What trends in museum staffing, collection acquisitions, and audience attendance are discernible from the data?
 
 ![alt text](https://github.com/churc/MajorStudio2/blob/master/images/churchouse_thesis2.png )
-
+###### [Do museums reflect who we are as a society?](https://churc.github.io/MajorStudio2/index.html)
 ### Data
 #####	Public use data files accessed on the [National Archive of Data on Arts and Culture](https://www.icpsr.umich.edu/icpsrweb/NADAC/studies/36606), Schonfeld, Roger, and Sweeney, Liam. “Diversity Survey of the New York City Department of Cultural Affairs Grantees,” 2015. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2017-01-10. https://doi.org/10.3886/ICPSR36606.v2
 #####	Kevin Williams and David Keen. [2008 Survey of Public Participation in the Arts](https://www.arts.gov/sites/default/files/2008-SPPA.pdf), National Endowment for the Arts, Nov. 2009, accessed Mar. 16, 2019, Fig.3-7, P18.
