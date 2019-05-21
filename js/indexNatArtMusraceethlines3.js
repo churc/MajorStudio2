@@ -528,7 +528,7 @@ var numlabel2015 =	bars1.append('text')
 									return d.raceethnicity;
 								}
 							})
-							.attr("x", -margin.left/19)
+							.attr("x", -margin.left/35)
 							.attr('y', (d, i) => {   /////change line spacing
 									if(i % 2 == 0){
 										return i *35;
@@ -536,22 +536,23 @@ var numlabel2015 =	bars1.append('text')
 										return i *35-20;
 									}
 							})
-							
 							.attr("transform", `translate(${margin.left/2.1}, -5)`)
 							// .style("font-family", "sans-serif")
-							.style("font-size", "82%")
-							.style("fill", "#f5f4f9")
+							.style("font-size", "99%")
+							.style("fill", "#ede1ad")
+							// .style("fill", "#e8ce5f")
 							.attr("text-anchor", "end")
 							.attr("transform", (d, i) => { 
-									// let a = -56;
 									let a = 0;
-	                // let x = i *35;
-	                // let x =  -margin.top*2;
-	                let x =  -margin.left/3;  ////height
+									// let a = -35;
+	                
+	                // let x =  -margin.left/20;  ////height
+	                // let y = i *35 - margin.left/6;  ///width
+	                // return `rotate(${a}, ${x}, ${y})`;
+	                let x =  -margin.left/3;  ////height  for horizontal 
 	                let y = i *35 - margin.left/1.75;  ///width
 	                return `rotate(${a}, ${x}, ${y})`;
 							})
-				
 
 /////text on hover on end circles
 
