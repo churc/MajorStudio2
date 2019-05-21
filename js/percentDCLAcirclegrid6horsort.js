@@ -363,7 +363,7 @@ let datanumcircles = [];
             .append("text")
                 .attr("class", "raceethnicitynote")
                 .style("color", "#f5f4f9")
-                .text("* AIAN and NHPI = American Indian or Alaskan Native and Native Hawaiian or Pacific Islander")
+                .text("* AIAN and NHPI = American Indian or Alaskan Native and Native Hawaiian or Other Pacific Islander")
                 .attr('x', margin.left*5.5)
                 .attr('y', height - margin.bottom / 2)
                 .style('font-size', '1.05em');
