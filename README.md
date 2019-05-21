@@ -1,9 +1,10 @@
 ###### [Major Studio 2, Parsons](https://churc.github.io/MajorStudio2/index.html)
-###### Spring 2019
+###### Spring 2019, Thesis project
 ### Do museums reflect who we are as a society?
 ##### The project investigates NYC museums and national art museums from an overall view of who staffs museums, who visits them and to an extent, what they contain.
 ##### Art museums are institutions that collect, curate, and exhibit works of art for the public. In so doing, they interpret, comment on, present, and shape our culture. But who works in museums and who goes to them? Two staff demographic surveys were published in 2015, one of New York City cultural grantees, the other of national art museum staff, followed by a second national survey in 2018. The latter showed changes in art museum demographics over time. These visualizations use the local survey dataset to explore racial and ethnic demographics of staff in NYC-funded museums, and probe a local museum collection dataset. What trends in museum staffing, collection acquisitions, and audience attendance are discernible from the data?
 
+![alt text](https://github.com/churc/MajorStudio2/blob/master/images/churchouse_thesis2.png )
 
 ### Data
 #####	Public use data files accessed on the [National Archive of Data on Arts and Culture](https://www.icpsr.umich.edu/icpsrweb/NADAC/studies/36606), Schonfeld, Roger, and Sweeney, Liam. “Diversity Survey of the New York City Department of Cultural Affairs Grantees,” 2015. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2017-01-10. https://doi.org/10.3886/ICPSR36606.v2
@@ -18,6 +19,5 @@
 ### Acknowledgments
 ##### This research and data visualization project relied on information from experts in the field who provided detailed insights into data on museums, as well as into recent discourse on museums. In particular, I want to thank Liam Sweeney, Senior Analyst, Libraries, Scholarly Communication, and Museums program, Ithaka S+R, and Sergio Bessa, Director of Curatorial Programs, The Bronx Museum of the Arts. All interviewees gave me many ideas for this project, and were extremely generous with their time, information and detailed answers.
 ##### In addition, this work was built on and strongly draws from the instrumental work of Ithaka S+R and The Andrew W. Mellon Foundation: “The Andrew W. Mellon Foundation Art Museum Staff Demographic Survey 2015,” and follow-up 2018 survey, and on Ithaka S+R’s survey, "Diversity in the New York City Department of Cultural Affairs Community."  
-##### And most importantly, this project was guided from concept and approach, through to design and coding by staff at Parsons - I am sincerely grateful for their invaluable feedback. In particular, thank you to Christian Swinehart, Richard The, Daniel Sauter, and Aaron Hill, to my talented colleagues in Major Studio 2, and to Masaki Iwabuchi and especially to Felix Buchholz for expert technical assistance. 
-##### Sincere thanks to Tan Lin and Ahn Lin.
+##### And most importantly, this project was guided from concept and approach, through to design and coding by staff at Parsons - I am sincerely grateful for their invaluable feedback. In particular, thank you to Christian Swinehart, Richard The, Daniel Sauter, and Aaron Hill, to my talented colleagues in Major Studio 2, and to Masaki Iwabuchi and especially to Felix Buchholz for expert technical assistance. And sincere thanks to Tan Lin and Ahn Lin.
 
