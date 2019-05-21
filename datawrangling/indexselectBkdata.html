@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!--for LINE CHART - see indexline-->
-<!--CIRCLES - Bkyln museum reading Cont Collection short dataset, drawing circles for artworks by nationality -->
+<!--data wrangling full data set-->
+<!--Bkyln museum reading Cont Collection -->
 <html>
     <head>
         <title>Bk artworks</title>
@@ -25,17 +25,9 @@
     </head>
      <body onresize='window.location.reload(true)'>
         <script>
-          
-        ////Brooklyn Museum objects data set
 
-//       d3.json("BrooklynContCol10253_short.json").then((data)=>{
-//     // 		svgPlot(data);
-// // 			console.log(data);
-//             //draw svg graph
-//             svg(data);
-//       });
       
-////trying to use full data set			
+//  full data set			
         d3.json("BrooklynContCol10253_Fullclean.json").then((data)=>{
     		svg(data);
 			console.log(data);
@@ -45,7 +37,7 @@
 	var width = 1000 - margin.left - margin.right; // Use the window's width 
 	var height = 450 - margin.top - margin.bottom; // Use the window's height
 
-             //////IS THIS OK TO SELECT A DIV and NOT BODY FOR INSTANCE
+           
             let graph = d3.select('#svg1') ////here select named svg and put it into the var 
                     .append('svg')  ////then append an svg 
                     .attr('width', width)
@@ -76,7 +68,7 @@
                     .attr('y', 50)
                     .attr('font-size', '100%'); 
                 
-     //////THIS Appends text to #svg1 - to the browser    
+     //////Appends text to #svg1 - to the browser    
           let svg = data.forEach((d, i) => { ///////
                     d3.select('#svg1')
                         .append('text') ////this writes text in the browser
@@ -102,7 +94,7 @@
                             });
                             console.log(filtered);
                             
-                            ///////probably take out
+                          
                             // const circles = svg.selectAll('circle').data(filtered)
                             
                             // const circlestages = svg.selectAll('text')
@@ -115,7 +107,7 @@
                             return newData.artists[0].nationality; 
                         })
                         .entries(newData);
-                        // console.log(nested_data); //// It worked for me to return filtered data
+                        // console.log(nested_data); //// return filtered data
                     
       //// map is a very useful method in JavaScript to re-arrange arrays
                 // it takes a bit to get used to it, but then it’s really helpful for tasks like this
@@ -176,14 +168,14 @@
                                 .append("g")
                                 .attr('fill', 'none')
                                 .attr('stroke', 'pink')
-                        ////DO I NEED TO PUT cx cy r here or just when i draw circles????
+                       
                                 // .attr("cx", (d, i) => { 
                                 //     // return (d.count);  /////this gives the count for each 
                                 //     //////but count is probably not correct for the x and y
                                 //     return (i /4000 ) + 100;  //// Q2 why not multiple circles??
                                 //     // return (i * 50 + 200);
                                 // })
-                        // ////IS Y NEEDED HERE - just call when draw circles???
+                      
                                 // .attr("cy", height/2)
                                 // .attr("cy", (d, i) => { 
                                 //     return (i + 10);  //// Q2 why not multiple circles??
@@ -193,7 +185,7 @@
                                 //         return radarea(d)  //////this seems the way to approach this
                                 //         // return radius(d.count);  //////this seems the way to approach this
                                 // })
-                                .on('mouseover', (d) =>  {       ///// get text on hover  
+                                .on('mouseover', (d) =>  {       ///// text on hover  
    	                                      text                         
                 			        .text(d.nationality + ' - ' + d.count + '------ ')
         
@@ -210,12 +202,12 @@
                             		    });
                                 })
                             	})
-    //////HOW TO INCLUDE THIS WITH EACH CIRCLE???/////try using radarea here
+    //////using radarea here
     // let text = graph.append("g")
     let text = graph.append("text")
                     .data(nationalityCount)
                     .enter()
-                    .append("g"); /////THIS MAKES IT APPEAR ON THE BROWSER
+                    .append("g"); 
         /////BUT also makes a set of global under the circles not with each circle
                     //   .attr("cx", (d, i) => { 
                     //                 // return d[1].count/20;
@@ -234,7 +226,7 @@
   //////draw circles
                 circles.append("circle")
                     .attr("cx", (d, i) => { 
-    // NEED TO CHANGE i so spacing accounts for AREA//////but count is probably not correct for the x and y
+   
                                     // return ((i + (radarea(d.count))*8) + 150);
                                     return (i * 350 + radarea(d.count));  ///////for spacing circles
                          })
@@ -248,10 +240,9 @@
                     });
                     // .text(function(d) {
                     // return d.key; });        
-             
-    
+     
                 	// name label
-    ///////HOW TO GET THIS TEXT TO READ BY EACH CIRCLE?????
+   
                     circles.append("text")
                             .attr('font-size', "30px")
                             .style('fill', 'green')
@@ -271,15 +262,13 @@
                 		    return d.nationality + ' | ' + d.count + '------ '; 
                 		})
                 		.attr('transform', (d) => { return "translate(" + this.margin.left + "," + this.margin.top + ")"; }); // concatinating strings
-
-                
+          
                             
 // // 7. d3's line generator - example
 // // var line = d3.line()
 // //     .x(function(d, i) { return xScale(i); }) // set the x values for the line generator
 // //     .y(function(d) { return yScale(d.y); }) // set the y values for the line generator 
     
-
 };
 
 ////===============
