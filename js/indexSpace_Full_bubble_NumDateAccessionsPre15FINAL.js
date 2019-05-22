@@ -462,8 +462,6 @@ console.log(nationalityCount2)
   //   ellipse(i, height/2, circleW, circleH);
   // }
  
-          	
-          	
 
       //     	.on("mouseover", function (d, i) {
       //     	  div.transition()
