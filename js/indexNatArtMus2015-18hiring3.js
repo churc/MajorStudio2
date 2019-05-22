@@ -41,8 +41,7 @@ var n = 10;
 
 	// for horizontal
 				
-				
-				
+			
 				let xScale = d3.scaleLinear()
     					.domain([0, 88+15])
     					.range([0, width]);
@@ -65,44 +64,6 @@ var n = 10;
 			
 				console.log(data);
 
-////color every other bar differently
-
-		// .attr("fill", function(d,i) { 
-						// if(i % 2 == 0){
-						// 	var color = "blue";
-						// 	return color; 
-						// } else {
-						// 	var color = "red";
-						// 	return color; 							
-						// 
-	// 	.attr((d,i)=>{
-				// 		if(data[i].id % 2 == 0){
-					
-				// 	bars1.attr("fill", "blue")
-				// } else {
-				// 		bars1.attr("fill", "red")
-				// }
-				// 	})
-					// .attr("fill", "sienna")
-// multiple bar colors
-// .avar color = "purple";
-			// 				return color; 							
-			// 			} else if(i <= 5){
-			// 				var color = "turquoise";
-			// 				return color;							
-			// 			} else if (i <= 7){
-			// 				vttr("fill", function(d,i) { 
-			// 			if(i <= 1){
-			// 				var color = "pink";
-			// 				return color; 
-			// 			} else if(i <= 3) {
-			// 				ar color = "yellow";
-			// 				return color;								
-			// 			} else {
-			// 				var color = "blue";
-			// 				return color;								
-			// 			}
-			//
 			
 ////draw percentage lines, color every 2 bars differently
 
@@ -152,15 +113,7 @@ var n = 10;
 									return strokewidth
 						}
 						})
-					// .attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
-					// 	// return i *30;
-					// 		if(i > 5){
-					// 		return 
-					// } else if (i >=5) {
-					// 		return i *30;
-					// }
-					// 	// return line(d.percent) 
-					// })
+		
 					.attr('x1', function(d,i) {
 										return 0;
 							})
@@ -267,68 +220,7 @@ let natpercentlabel2018 =	g.append("path")
 						.attr('font-size', '0.8em')
 						.attr('x', 505)
 						.attr('y', 72) 					
-						// .on('mouseenter', (d,i,j) => {
-						// 	console.log("hover")
-						// 	console.log(d.jobtype)
-					  	
-					 // 	headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
-					 // 	d3.select(j[i])
-					 // 		.transition()	
-      //           .delay(50)
-      //           .duration(100)
-					 // 	// .style('fill', 'lightgrey')
-      //         	.style('opacity', '1');
-						// })
-	     //   .on('mouseout', (d, i,j) => {
-		    //         // console.log(d);
-		    //       headingpercent2.text((d) => { return "curators & educators compared to museum leadership, including executive positions, & conservators"; });
-		    //   	 d3.select(j[i])
-		    //   			.transition()	
-      //           .delay(500)
-      //           .duration(2000)
-					 // 	// .style('fill', 'sienna')
-					 // 	 .style('opacity', '1');
-						// })
-	        	
-
-
-			// /////add transparent rect on top so can select bars more easily
-	// bars1.append("line")
-	// 				.enter()
-	// 				.attr('class', 'thinbar')
-	// 				.attr('x', function(d,i) { 
-	// 					return 0; 
-	// 				})
-	// 				.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
-	// 					return i *30;
-	// 					// return line(d.percent) 
-	// 				})
-	// 				.attr('width', function(d,i) { 
-	// 					return xScale(d.percent); 
-	// 				})
-	// 				.attr('height', 12) ///bar width
-	// 				.attr('fill', 'transparent')
-	// 						.on('mouseenter', (d,i,j) => {
-	// 							console.log("hover")
-	// 							headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
-	// 						d3.select(j[i])
-	// 							.transition()	
- //               .delay(50)
- //               .duration(100)
-	// 				  	// .style('fill', 'lightgrey')
- //             // .style('opacity', '1');
-	// 					})
-	//         .on('mouseout', (d, i,j) => {
-	// 	            // console.log(d);
-	// 			         headingpercent2.text((d) => { return "curators & educators compared to museum leadership, including executive positions, & conservators"; });
-	// 	      	 d3.select(j[i])
-	// 	      		.transition()	
- //               .transition()	
- //               .delay(500)
- //               .duration(2000)
-	// 				  	// .style('fill', 'sienna')
-	// 				  	 //.style('opacity', '0.7');
-	// 					})
+		
 
 //////circles at end of lines
 
@@ -384,26 +276,7 @@ let natpercentlabel2018 =	g.append("path")
 							}
 							})
               .attr('transform', 'translate(0,1)')
-							// 	.on('mouseenter', (d,i,j) => {
-							// 		console.log("hover")
-							// 		headingpercent2.text(d.jobtype + ": " + d.percent + "% " + d.raceethnicity)
-							// 	d3.select(j[i])
-							// 		.transition()	
-		     //           .delay(50)
-		     //           .duration(400)
-						 // 			.attr("r", 7.8)
-						 // 			.style('opacity', '1')
-							// })
-			    //     .on('mouseout', (d, i,j) => {
-				   //         // console.log(d);
-				   //         headingpercent2.text((d) => { return "curators & educators compared to museum leadership, including executive positions, & conservators"; });
-				   //   	 d3.select(j[i])
-				   //   		.transition()	
-		     //           .delay(100)
-		     //           .duration(400)
-							//   		// .attr("r", 7)
-							//   	 //.style('opacity', '1');
-							// 	})
+		
 
 ////percent label on each bar 
 
@@ -503,30 +376,7 @@ let jobtype = bars1.append('text')
 						.style("font-size", "0.95em")
 						// .style("opacity", 0) ///////take this out for now
 
-				//////label text for each bar
-// 	bars1.append('text')
-// 					.data(data)
-// 					.attr("class", "numlabel")
-// 					.attr("text-anchor", "bottom")
-// 					.text((d, i) => {
-// 						return d.raceethnicity;
-// 					})
-// 					.attr("x", -margin.left/2)
-// 					.attr('y', (d, i) => { //// d is shorthand for element in the data and i is index
-// 						return i * 33;
-// 					})
-// 					// .attr("x", margin.left/10)
-// 					.attr("transform", "translate(-20, -12)")
-// 					.style("font-family", "sans-serif")
-// 					.style("font-size", "65%")
-// 					.style('fill', 'dark grey') 
-				
-// let curator = g.append('text')
-// 					.text('curators and educators')
-// 					.attr('x', width/2)
-// 					.attr('y', margin.top)
-// 					.attr('font-size', '1em');
-
+	
 //////  left axis 
 	let yAxispercent = g.append('g') // just append axis to global space
 					.attr("class", "y18axis")
@@ -641,22 +491,6 @@ let headingpercent = g.append('text')
 					.attr('font-size', '1.25em')
 					.style("font-style", "italic");
 
-// let headingpercent3 = g.append('text')
-// 					// .text('excluding white,')
-// 					.style("fill", "#f5f4f9")
-// 					.text('Among Repeat 2015 & 2018 National Art Museum Survey Participants')
-// 					.attr('x',  -margin.left*0.0001)
-// 					.attr('y', -margin.top/20)
-// 					.attr('font-size', '1.06em');
-
-// let headingpercent4 = g.append('text')
-// 					// .text('excluding white,')
-// 					.style("fill", "#f5f4f9")
-// 					.text('Data Graph from Art Museum Staff Demographic Survey Report 2018')
-// 					.attr('x',  -margin.left*0.0001)
-// 					.attr('y', margin.top*0.26)
-// 					.attr('font-size', '0.9em');
-					
 					
 	let titlepercent2 = g.append('text')
 				// 	.text('')
@@ -664,14 +498,7 @@ let headingpercent = g.append('text')
 					.attr('y', -margin.top/1.61)
 					.style("fill", "#f5f4f9")
 					.attr('font-size', '0.95em');
-				
-
-			// let datanote = g.append('text')
-			// 		.text('Data: Westermann, Mariët, Sweeney, Liam, Schonfeld, Roger, C. "Art Museum Staff Demographic Survey 2018." Ithaka S+R')
-			// 		.attr('x', -margin.left*0.0001)
-			// 		.attr('y', height+margin.top*2.695)
-			// 		.style("fill", "#f5f4f9")
-			// 		.attr('font-size', '0.8em');
+		
 					
 		let datanote3 = g.append('text')
 					.text('2018 U.S. Percent White: United States Census Bureau, Quick Facts')
@@ -686,6 +513,5 @@ let headingpercent = g.append('text')
 					.attr('y', height+margin.top*2.87)
 					.style("fill", "#f5f4f9")
 					.attr('font-size', '0.9em');				
-					
-					
+									
 };
