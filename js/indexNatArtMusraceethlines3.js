@@ -7,12 +7,6 @@
     		svgPlot16(data);
 			});
   
-			// d3.json("data/2018artmus_intLeadershiprace.json").then((data) => {
-			// 	// console.log(data);
-			// 	svgPlot16(data);
-			// });
-
-		
 
 	let svgPlot16 = (data) => {
 
@@ -58,92 +52,7 @@ var n = 12;
 					.append("g")
 					.attr('class', 'barthin')
 			
-				console.log(data);
-
-
-	// bars1.append("line")
-	// 				.attr("fill", "none")
-	// 				// 	.attr('x1', function(d,i) { 
-	// 				// 	// return xScale5(d.yearline);  ////change start for showing change  // x1 ////look at svg element line x1 y1 x2 y2
-	// 				// 	return 0;												/////start at 0 for regular bars this works
-	// 				// })
-	// 				.attr("stroke", function(d,i){    ///////set up different attributes to select bars before calling the lines
-	// 						if(i % 2 == 0){
-	// 							var color = "lightgreen"
-	// 								return color
-	// 				} else {
-	// 						var color = "purple"
-	// 								return color
-	// 				}
-	// 				})
-	// 				.style("stroke-dasharray", function(d,i){
-	// 							if(i % 2 == 0){
-	// 							var dash = ("3, 3")
-	// 								return dash
-	// 				} else{
-	// 				}
-	// 				})
-	// 				.attr("stroke-width", function(d,i){    ///////set up different attributes to select bars before calling the lines
-	// 						if(i % 2 == 0){
-	// 							var strokewidth = 0.1
-	// 							return strokewidth
-	// 				} else{
-	// 							var strokewidth = 2.5
-	// 							return strokewidth
-	// 				}
-	// 				})
-	// 				// .attr('width', function(d,i) {
-	// 				// 			if(i % 2 == 0){
-	// 				// 					var width = xScale5(d.yearline)
-	// 				// 					return width
-	// 				// 		} else{
-	// 				// 					var width = xScale5(d.year18-d.year15)
-	// 				// 					return width
-	// 				// 		}
-	// 				// 		})
-	// 					// return xScale5(d.yearline); 	// x1 2015 x2 2018  /// color positive negative
-						
-	// 					// return xScale5(d.year18-d.year15); //////difference between years 15 and 18
-	// 				// })
-	// 				// .attr("marker-end", "url(#end)")
-	// 				.attr("marker-end", function(d,i){    ///arrows on every second bar
-	// 						if(i % 2 == 0){
-	// 							var marker = 0
-	// 				} else{
-	// 							var marker = "url(#arrow)"
-	// 							return marker   
-	// 				}
-	// 				})
-					
-	// 				// .attr('x1', function(d,i) {       
-	// 				// 	// return xScale5(d.yearline);  ////change start for showing change  // x1 ////look at svg element line x1 y1 x2 y2
-	// 				// 	return 0;												/////start at 0 for regular bars this works
-	// 				// })
-					
-	// 				.attr('x1', function(d,i) {
-	// 							if(i % 2 == 0){
-	// 									var start = 0
-	// 									return start
-	// 						} else{
-	// 									// var width = xScale5(d.year18-d.year15)
-	// 									var start = xScale5(d.year15)
-	// 									return start
-	// 						}
-	// 						})
-					
-	// 					.attr('y1', (d, i) => {   /////change line spacing
-	// 						if(i % 2 == 0){ 				/////group bars into twos
-	// 							return i *35;
-	// 				} else{
-	// 							return i *35-12;
-	// 				}
-	// 				})
-					
-				 //.attr('x2', function(d,i) { 
-					// 	return xScale5(d.yearline);  //// svg element line x1 y1 x2 y2
-					// })
-					
-	////////=======
+// 				console.log(data);
 	
 	
 	//////
@@ -652,8 +561,6 @@ var numlabel2015 =	bars1.append('text')
 				// 		.ticks(5)
 				// 	);
 	
-
-
 					
 		let line18 = g.append("line")
 						// .style("stroke", "lightgreen")
@@ -731,15 +638,6 @@ var numlabel2015 =	bars1.append('text')
 					.attr('font-size', '0.9em')
 					.style("fill", "#f5f9f4");
 					
-
-	// let heading2 = g.append('text')
-	// 				.attr("class", "intelhead")
-	// 				.text('Intellectual positions: curators, educators, museum leadership, including executive positions, conservators')
-	// 				.attr('x', 5)
-	// 				.attr('y', height/1.29)
-	// 				.attr('font-size', '1.055em')
-	// 				.style("fill", "#f5f4f9")
-	// 				.style('font-style', 'italic');	
 	
 		let titleend2 = g.append('text')
 					.text('* AIAN = American Indian or Alaskan Native.  NHPI = Native Hawaiian or other Pacific Islander')
@@ -747,13 +645,6 @@ var numlabel2015 =	bars1.append('text')
 					.attr('x', 5)
 					.attr('y', height/1.2)
 					.attr('font-size', '0.9em')
-					
-		// let titleend3 = g.append('text')
-		// 			.text('Data: Westermann, Mariët, Sweeney, Liam, Schonfeld, Roger, C. "Art Museum Staff Demographic Survey 2018." Ithaka S+R')
-		// 			.style("fill", "#f5f4f9")
-		// 			.attr('x', 5)
-		// 			.attr('y', height/1.14)
-		// 			.attr('font-size', '0.85em')				
 					
 	};
 	
