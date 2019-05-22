@@ -1,10 +1,6 @@
 ///NEA audience art museum attendance data 2012-17 subgroup by race and ethnicity
 ////tooltips
-             
-            // d3.json("SPPA_NEA_2017UStrends2012-17_edpopmusraceeth.json").then((data) => {
-            //                     svgPlot24(data);
-            //         });
-                    
+
             d3.json("data/NEA2012_2017audienceraceethlines.json").then((data) => {
                                  svgPlot24(data);
                     });
@@ -80,7 +76,7 @@ console.log(lines1, lines2, lines3, lines4, lines5, linesall);
 
 // // The number of datapoints for paired lines
 	var n = 2;
-// //////
+
 
 var xScale = d3.scaleLinear()
 				.domain([0, n-1])
@@ -105,30 +101,10 @@ var line = d3.line()
 	});
 	
 	
-// var area = d3.area()  //////can use this twice just call in each of the 2 lines
-// 	.x(function(d,i) { // to use “i” in xScale 
-// 					   // you have to list d first and then i and separate by comma
-// 		console.log(xScale(i))
-// 		return xScale(i); 
-// 	})
-// 	.y1(function(d, i) { 
-// 		return yScale(d);
-// 	})
-// 	.y0(yScale(0));
-	
-
-// // // 9. Append the path, bind the data, and call the line generator - Example
-// // svg.append("path")
-// //     .datum(dataset) // 10. Binds data to the line 
-// //     .attr("class", "line") // Assign a class for styling 
-// //     .attr("d", line); // 11. Calls the line generator 
-    
 // ///////\\\\\\\\\\\\\\\showing one line only
 
 /////blue line Hispanic
-////tooltip
-// let div = d3.select("#svg24").append("div")
-//     .append('g')
+
 let div1 = d3.select("g").append("div")
     .attr("class", "tooltip") ////best to use #tooltip div for styling
     .style("opacity", 0)
@@ -148,35 +124,7 @@ let line1 = g.append("path")
     			})
     			.attr('stroke', 'turquoise')
     			.attr('stroke-width', 1)
-    			 //  .on("mouseover", function(d,i) {
-        // d3.select(this) 
-        //   line1.append('text')
-        //       .style("color", "turquoise")
-        //       .style('font-size', "100%")
-   
-        //   var _x = (d3.mouse(this)[0]);
-        //   var _y = (d3.mouse(this)[1]);
-       
-        // d3.select("#tooltipline1")  //Update the tooltip position and value
-          
-        //   .style("left", (_x + margin.right*1.3 ) + "px")
-        //   .style("top", (_y + margin.top/1.1 ) + "px")
-            
-        //   .text(`Hispanic: 14.3% 2012, 16.2% 2017`)
-          
-        //   d3.select("#tooltipline1").classed("hidden", false);  //Show the tooltip
-        //   // d3.select("#tooltipline1").style("opacity", 1);
-        // })
-        //   .on("mouseout", function () {
-                      
-        //     d3.select(this)
-        //             .transition()
-        //             .delay(50)
-        //             .duration(70)
-        //               .style("fill", "")
-        //     d3.select("#tooltipline1").classed("hidden", true)
-        //           // d3.select("#tooltipline1").style("opacity", 0) 
-        //   });
+    
  
  let line1transparent = g.append("path")
     			.datum(lines1)
@@ -219,67 +167,7 @@ let line1 = g.append("path")
                   d3.select("#tooltipline1").style("opacity", 0) 
           });
     
-      // line1.append("text")
-      //       .text(`Hispanic: 14.3% 2012, 16.2% 2017`)
-      //       .attr("class", "textline1")
-          //   // .attr("x", lines1 => xScale(d[0]) + 5)
-          //   console.log(d)
-          //   .attr("x", function(d,i) { return xScale(i) + 5})
-          //   .attr("y", function(d,i) {  yScale(d) - 10})
-          //   // .attr("x", d => { 
-          //   //   return xScale(d[0]) + 1;
-          //   // })
-          //   // // .attr("y", d => yScale(d[1]) - 10)
-          //   // .attr("y", d => { 
-          //   //   return yScale(d[1]) + 1; })
-        //   })
-        // .on("mouseout", function(d) {
-        //     d3.select(this)
-        //       .style("cursor", "none")  
-        //       .transition()
-        //       .duration(250)
-        //       .selectAll(".text").remove();
-        //       })
-                    
-    			
-    				// .on('mouseenter', function(d){
-        //                 console.log('hover');
-        //                 console.log(d)
-        //                 d3.select(this)
-        //                     .transition()
-				   	// 	    .duration(100)
-				   	// 	   // NEED TO CHANGE THIS TEXT
-        //                 attr.subhead3.text('art museum audience 2012: '+ d[0] + '% of US adult population; art museum audience 2017: ' + d[1] + '%')
-    				// })
-        //         .on('mouseout', function(d) {
-        //         		console.log(d)
-        //         		d3.select(this)
-        //         		    .transition()
-        //         		    .ease(Math.sqrt)
-        //         		    .delay(1000)
-				   	// 	    .duration(1000)
-        //                 // ytext2.text(d[0]  + ' art museum audience 2012: 21% of US adult population; '+ d[1] + ' art museum audience 2017: 23.7%')
-        //                 .attr.subhead3.text('Percent change for each')
-        //             });
-                     
-			   		
- ////just the area below the line
-// let line1area = g.append("path")
-//     			.datum(data.percent)
-//     			.attr('fill', 'purple')
-//     //         	.attr('d', area(museumaudience))     
-// 				// .attr("fill", "pink")
-// 					.on('mouseenter', function(d){
-//                         console.log('hover');
-//                         console.log(d)
-//                         ytext2.text('art museum audience 2012: '+ d[0] + '% of US adult population; art museum audience 2017: ' + d[1] + '%')
-//     				})
-//                 .on('mouseout', function(d) {
-//                 		console.log(d)
-//                         // ytext2.text(d[0]  + ' art museum audience 2012: 21% of US adult population; '+ d[1] + ' art museum audience 2017: 23.7%')
-//                         ytext2.text('museum audience 2012-2017: 57.5 million adults')
-//                         // .attr("class", "line"); 
-//                     });
+  
    
   // "white",  [24.1, 26.7]
 let line2 = g.append("path")
@@ -292,35 +180,7 @@ let line2 = g.append("path")
     			})
     			.attr('stroke', '#a5e2ff')
     			.attr('stroke-width', 1)
-    // 				 .on("mouseover", function(d,i) {
-    //       d3.select(this) 
-         
-    //     line2.append('text')
-    //         .style("color", "#ffffff")
-    //         .style('font-size', "100%")
-    //   // var xPosition = parseFloat(d3.select(this).attr("xScale"))
-    //   // var yPosition = parseFloat(d3.select(this).attr("yScale"))
-    //     var _x2 = (d3.mouse(this)[0]);
-    //     var _y2 = (d3.mouse(this)[1]);
    
-      
-    //   d3.select("#tooltipline2")  //Update the tooltip position and value
-    //     .style("left", (_x2 + margin.right*1.3 ) + "px")
-    //     .style("top", (_y2 + margin.top/1.1 ) + "px")
-    //     // .select("#value")
-    //     .text(`white: 24.1% 2012, 26.7% 2017`)
-        
-    //   d3.select("#tooltipline2").classed("hidden", false);  //Show the tooltip
-    // })
-    // .on("mouseout", function () {
-    //   d3.select(this)
-    //             .transition()	
-    //             .delay(50)
-    //             .duration(70)
-    //               .style("fill", "")
-    //   d3.select("#tooltipline2").classed("hidden", true)
-              
-    // });
 
  let line2transparent = g.append("path")
     			.datum(lines2)
@@ -375,31 +235,7 @@ let line3 = g.append("path")
     			})
     			.attr('stroke', '#dfbded')
     			.attr('stroke-width', 1)
-    		// .on("mouseover", function(d,i) {
-      //     		d3.select(this) 
-        
-         
-      //       line3.append('text')
-      //           .style("color", "#ffffff")
-      //           .style('font-size', "100%")
-      //     // var xPosition = parseFloat(d3.select(this).attr("xScale"))
-      //     // var yPosition = parseFloat(d3.select(this).attr("yScale"))
-          
-      //   var _x3 = (d3.mouse(this)[0]);
-      //   var _y3 = (d3.mouse(this)[1]);
-          
-      //     d3.select("#tooltipline3")  //Update the tooltip position and value
-      //       .style("left", (_x3 + margin.right*1.3 ) + "px")
-      //       .style("top", (_y3 + margin.top/1.1 ) + "px")
-      //       // .select("#value")
-      //       .text(`African American: 12% 2012, 17.1% 2017`)
-            
-      //     d3.select("#tooltipline3").classed("hidden", false);  //Show the tooltip
-      //   })
-      //   .on("mouseout", function () {
-      //     d3.select(this).style("fill", "");
-      //     d3.select("#tooltipline3").classed("hidden", true);
-      //   });
+   
 
 let line3transparent = g.append("path")
     			.datum(lines3)
@@ -454,30 +290,7 @@ let line4 = g.append("path")
     			})
     			.attr('stroke', 'pink')
     			.attr('stroke-width', 1)
-    				// .on("mouseover", function(d,i) {
-        //   d3.select(this) 
-         
-        //     line4.append('text')
-        //         .style("color", "#ffffff")
-        //         .style('font-size', "100%")
-        //   // var xPosition = parseFloat(d3.select(this).attr("xScale"))
-        //   // var yPosition = parseFloat(d3.select(this).attr("yScale"))
-       
-        // var _x4 = (d3.mouse(this)[0]);
-        // var _y4 = (d3.mouse(this)[1]);
-          
-        //   d3.select("#tooltipline4")  //Update the tooltip position and value
-        //     .style("left", (_x4 + margin.right*1.3 ) + "px")
-        //     .style("top", (_y4 + margin.top/1.1 ) + "px")
-        //     // .select("#value")
-        //     .text(`Asian: 23% 2012, 26.2% 2017`)
-              
-        //     d3.select("#tooltipline4").classed("hidden", false);  //Show the tooltip
-        //   })
-        //   .on("mouseout", function () {
-        //     d3.select(this).style("fill", "");
-        //     d3.select("#tooltipline4").classed("hidden", true);
-        //   });
+
         
 let line4transparent = g.append("path")
     			.datum(lines4)
@@ -532,30 +345,7 @@ let line5 = g.append("path")
     			})
     			.attr('stroke', 'palegoldenrod')
     			.attr('stroke-width', 1)
-        //     .on("mouseover", function(d,i) {
-        //   d3.select(this) 
-         
-        //     line5.append('text')
-        //         .style("color", "#ffffff")
-        //         .style('font-size', "100%")
-        //   // var xPosition = parseFloat(d3.select(this).attr("xScale"))
-        //   // var yPosition = parseFloat(d3.select(this).attr("yScale"))
-      
-        // var _x5 = (d3.mouse(this)[0]);
-        // var _y5 = (d3.mouse(this)[1]);
-        
-        //   d3.select("#tooltipline5")  //Update the tooltip position and value
-        //     .style("left", (_x5 + margin.right*1.3 ) + "px")
-        //     .style("top", (_y5 + margin.top/1.1 ) + "px")
-        //     // .select("#value")
-        //     .text(`other: 16.9% 2012, 22.1% 2017`)
-              
-        //     d3.select("#tooltipline5").classed("hidden", false);  //Show the tooltip
-        //   })
-        //   .on("mouseout", function () {
-        //     d3.select(this).style("fill", "");
-        //     d3.select("#tooltipline5").classed("hidden", true);
-        //   });
+  
   
 let line5transparent = g.append("path")
     			.datum(lines5)
@@ -611,27 +401,7 @@ let line5transparent = g.append("path")
     		  .style("stroke-dasharray", "5,5,5")
     		  .attr("opacity", 0.9)
     			.attr('stroke-width', 1.5)
-    		// 		 .on("mouseover", function(d,i) {	    
-		    // d3.select(this) 
-         
-      //       line6.append('text')
-      //           .style("color", "#ffffff")
-      //           .style('font-size', "100%")
-						// var _x6 = (d3.mouse(this)[0]);
-      //   		 var _y6 = (d3.mouse(this)[1]);
-        
-      //     d3.select("#tooltipline5")  //Update the tooltip position and value
-      //       .style("left", (_x6 + margin.right*1.3 ) + "px")
-      //       .style("top", (_y6 + margin.top/1.1 ) + "px")
-      //       // .select("#value")
-      //       .text(`all: 21% 2012, 23.7% 2017`)
-              
-      //       d3.select("#tooltipline5").classed("hidden", false);  //Show the tooltip
-      //     })
-      //     .on("mouseout", function () {
-      //       d3.select(this).style("fill", "");
-      //       d3.select("#tooltipline5").classed("hidden", true);
-      //     }); 
+   
 
 let line6transparent = g.append("path")
     			.datum(linesall)
@@ -815,16 +585,7 @@ let line6text = g.append('g')
                     .attr("transform", "rotate(-90)")
                     .attr('font-size', '100%');
                     
-  
-                
-                
-// let heading = g.append('g')  //// append text to global
-// 		.append('text')
-//     		    .attr("class", "audheading3")
-//                     .text('National Art Museum Audiences: 2012 - 2017')
-//                     .attr('x', margin.left/18)
-//                     .attr('y', 0-margin.top)
-                    
+
 
   let subhead1 = g.append('g')
 		.append('text')  /////to site text you can always do negative values to be outside the chart
@@ -835,17 +596,7 @@ let line6text = g.append('g')
 										.style("font-size", "1.55em")
                     // .style("font-style", "italic")
   
-  
-        
-  // let subhead2 = g.append('g')
-		// 			.append('text')  /////to site text you can always do negative values to be outside the chart
-  //                   .attr("class", "audsubhead4")
-  //                   .text('Hispanic, African American, other, all, Asian, white')
-  //                   .attr('x', margin.left/18)
-  //                   .attr('y', 0-margin.top/5)
-		//     						.style('font-size', '1.1em')
-  //                   .style("color", "#f5f4f9")
-  //                   .style("fill", "currentColor");
+ 
   
          let footnote1 = g.append('g')
                 .append("text")
@@ -860,27 +611,5 @@ let line6text = g.append('g')
 	 									.attr('font-size', '78%')
                     .style("color", "#f5f4f9")
                     .style("fill", "currentColor");
-                    
-        // let footnote1 = g.append('g')
-        //         .append("text")
-        //         		.attr("class", "axislabel")
-        //         		.attr("text-anchor", "end")
-        //         		.text('Data: ADP18-DemographicTables')
-        //         		.attr("transform", "rotate(-90)")
-        //         		 .attr('x', 0-margin.right/0.95)
-        //             .attr('y', height*1.9)
-	 						// 			.attr('font-size', '74%')
-        //             .style("color", "#f5f4f9")
-        //             .style("fill", "currentColor");
-                    
-  // let footnote2 = g.append('g')
-		// 						.append('text')  /////to site text you can always do negative values to be outside the chart
-  //                   .attr("class", "audsubhead5")
-  //                   .text('Percent of U.S. adults visiting art museums/galleries by demographic subgroup: 2012, 2017')
-  //                   .attr('x', margin.left/18)
-  //                   .attr('y', height+margin.top/2.1)
-  //                   .attr('font-size', '80%')
-  //                   .style("color", "#f5f4f9")
-  //                   .style("fill", "currentColor");
-
+   
    }; 
