@@ -9,11 +9,6 @@
 // <!--see indexSpace_Full_bubble_NumDateAccessions15.js for data wrangling-->
 
 
-// d3.json("BkMus10253fullaccessNumDatenationalityAll.json").then((data) => {
-//   // dataWrangling(data);
-//   svgPlot25(data); // called later in the dateWrangling function
-// });
-
 d3.json("data/after15groupsortcontinent.json").then((after15groupCount) => {
   // dataWrangling(data);
   svgPlot29(after15groupCount); // called later in the dateWrangling function
@@ -673,7 +668,4 @@ let heading16 = g.append('text')  //// append text to global
                 .style('font-weight', 'bolder') 
                 .style('font-size', '1.1em') 
                 
-
-
-
 }
