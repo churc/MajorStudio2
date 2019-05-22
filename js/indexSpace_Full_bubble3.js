@@ -51,7 +51,6 @@ d3.json("data/nationalityCountdatacontinent.JSON").then((data)=>{
 
  //Initialize a simple force layout, using the nodes and edges in dataset
 
-
  let force = d3.forceSimulation(data)  /////gets concentric circles
   			  .force("charge", d3.forceManyBody().strength(15))
   				// .force("link", d3.forceLink(dataset.edges).distance(30))  
@@ -61,12 +60,6 @@ d3.json("data/nationalityCountdatacontinent.JSON").then((data)=>{
   				}));
 
 
-// var colors = d3.scaleSequential(d3.interpolateOrRd).domain([1, 13])
-
-// var colors = d3.scale.threshold()
-//   .domain([1, 14])  
-//   .range(["blue","yellow","green","orange"]); 
- 
  //Create nodes as circles
 console.log(data)
 
@@ -154,8 +147,7 @@ console.log(data)
                             .style("fill", "#2d2725")
                             .style("font-size", "18px")
                     
- 
-                       
+     
    var circles = nodes.append("circle")
           	.attr("r", (d,i) => { 
           		return radarea(d.count);
