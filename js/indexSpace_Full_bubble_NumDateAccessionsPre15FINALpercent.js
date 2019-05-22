@@ -303,7 +303,7 @@ console.log(sum)
 //   console.log(percentage+"%")
 // }
 
-////do get percentages on the whole dataset
+////get percentages on the whole dataset
 
 
 return_data = [];
@@ -351,13 +351,6 @@ let force = d3.forceSimulation(before15grouppercent)
   				    return radareadate(d.percent) + 1;
   				}));
 
-
-
-// var colors = d3.scaleLinear().domain([1,13]).range(["#c9d3d6", "#ffe114"])
-
-// var colors = d3.scaleOrdinal().domain([1,13]).range(["#E0D985","#ffe114","#c9d3d6", "#98ba9e", "#e0f75d", "#c5e3f9", "#c9d3d6", "#ffa14f","#b50f26","#b61127","#b81327","#ba1527","#bc1727"])
-
-// var colors = d3.scaleSequential(d3.interpolateGrBl).domain([1, 13])
 
  
  //Create nodes as circles
@@ -576,12 +569,6 @@ console.log(sortcontinent)
 
 })
 
-// let heading15 = g.append('text')  //// append text to global
-//                 .text('1943-2015')
-//                 .attr('x', width/2.8)
-//                 .attr('y', height+margin.bottom/1.4)
-//                 .attr("fill", "#f5fcf7")
-//                 .attr('font-size', '1.4em')
 		    
 let heading15 = g.append('text')  //// append text to global
                 .text('1943-2015')
@@ -599,13 +586,4 @@ let heading16 = g.append('text')  //// append text to global
                 .style('font-weight', 'bolder') 
                 .style('font-size', '1.1em')
                 
-// let heading17 = g.append('text')  //// append text to global
-//                 .text('97.18%')
-//                 .attr('x', width/2.8)
-//                 .attr('y', height+margin.bottom/1)
-//                 .style("fill", "#f5fcf7")
-//                 .style('font-weight', 'bolder') 
-//                 .style('font-size', '1.1em')
-
-  
 }
