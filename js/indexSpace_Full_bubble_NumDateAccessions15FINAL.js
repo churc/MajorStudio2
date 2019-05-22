@@ -11,11 +11,6 @@
 // <!--see indexSpace_Full_bubble_NumDateAccessions15.js for data wrangling-->
 
 
-// d3.json("BkMus10253fullaccessNumDatenationalityAll.json").then((data) => {
-//   // dataWrangling(data);
-//   svgPlot25(data); // called later in the dateWrangling function
-// });
-
 d3.json("data/after15groupsortcontinent.json").then((after15groupCount) => {
   // dataWrangling(data);
   svgPlot25(after15groupCount); // called later in the dateWrangling function
@@ -88,9 +83,7 @@ d3.json("data/after15groupsortcontinent.json").then((after15groupCount) => {
                 //         })
                 //         console.log(filtered.length);
 
-                            
-   
-            //   	var newData = filtered;  ////arrays that contain artist data
+   //   	var newData = filtered;  ////arrays that contain artist data
             
  //////not needed here with exported NationalityCount    
                 // let nested_data = d3.nest()
@@ -361,18 +354,11 @@ let force = d3.forceSimulation(after15groupCount)  /////gets concentric circles
   				    return radareadate(d.count) + 1;
   				}));
 
-// // var colors = d3.scaleOrdinal(d3.schemeCategory10);
-// // var colors = d3.scaleSequential(d3.interpolateYlOrRd).domain([1, 10])
 
-// var colors = d3.scaleSequential(d3.interpolateOrRd).domain([1, 6])
 
 var colors = d3.scaleLinear().domain([1,13]).range(["#c9d3d6", "#ffe114","#c9d3d6", "#e0f75d", "#c5e3f9","#ffd6c9","#ffa14f"])
 
 
-// // var colors = d3.scale.threshold()
-// //   .domain([1, 14])  
-// //   .range(["blue","yellow","green","orange"]); 
- 
 // //Create nodes as circles
 console.log(after15groupCount.length)
 
